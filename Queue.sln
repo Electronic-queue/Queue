@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{273CD5C4-8489-432A-B21A-D72A1F10D995}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.Domain", "Queue.Domain\Queue.Domain.csproj", "{6F22C0F3-5F13-4E73-ABAB-7C0608C610FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue.Domain", "Queue.Domain\Queue.Domain.csproj", "{6F22C0F3-5F13-4E73-ABAB-7C0608C610FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.Application", "Queue.Application\Queue.Application.csproj", "{80FA700F-6415-4237-99FD-3859E9845F28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue.Application", "Queue.Application\Queue.Application.csproj", "{80FA700F-6415-4237-99FD-3859E9845F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.Persistence", "Queue.Persistence\Queue.Persistence.csproj", "{7FF92C49-FEF9-4F74-AEF5-65307F67AAA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue.Persistence", "Queue.Persistence\Queue.Persistence.csproj", "{7FF92C49-FEF9-4F74-AEF5-65307F67AAA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.WebApi", "Queue.WebApi\Queue.WebApi.csproj", "{C7CA363B-8842-49EE-BED5-9642D0CDAA1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue.WebApi", "Queue.WebApi\Queue.WebApi.csproj", "{C7CA363B-8842-49EE-BED5-9642D0CDAA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
