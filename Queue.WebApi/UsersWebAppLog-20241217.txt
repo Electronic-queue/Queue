@@ -1,0 +1,24 @@
+2024-12-17 03:17:39.557 +05:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-17 03:17:39.764 +05:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-17 03:17:40.177 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-17 03:17:40.178 +05:00 [INF] Hosting environment: Development
+2024-12-17 03:17:40.178 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-17 03:17:40.267 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/ - null null
+2024-12-17 03:17:40.590 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/ - 404 null null 340.4327ms
+2024-12-17 03:17:40.596 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/, Response status code: 404
