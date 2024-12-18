@@ -1,0 +1,123 @@
+2024-12-19 00:10:37.001 +05:00 [INF] Executed DbCommand (195ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 00:10:37.306 +05:00 [INF] Executed DbCommand (240ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 00:10:37.660 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 00:10:37.667 +05:00 [INF] Hosting environment: Development
+2024-12-19 00:10:37.677 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 00:10:37.869 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 00:10:37.869 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/ - null null
+2024-12-19 00:10:38.730 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/ - 499 null null 884.5212ms
+2024-12-19 00:10:38.732 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/, Response status code: 499
+2024-12-19 00:10:38.853 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 200 null text/html;charset=utf-8 1008.4179ms
+2024-12-19 00:10:38.918 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.js - null null
+2024-12-19 00:10:38.918 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 00:10:38.918 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 00:10:38.938 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.js - 200 null application/javascript;charset=utf-8 12.3276ms
+2024-12-19 00:10:38.943 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 12.3229ms
+2024-12-19 00:10:39.043 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 124.422ms
+2024-12-19 00:10:39.188 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 00:10:39.416 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 227.5041ms
+2024-12-19 00:15:50.688 +05:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 00:15:50.948 +05:00 [INF] Executed DbCommand (212ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 00:15:51.243 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 00:15:51.243 +05:00 [INF] Hosting environment: Development
+2024-12-19 00:15:51.243 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 00:15:51.302 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/ - null null
+2024-12-19 00:15:51.489 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/ - 404 null null 194.4437ms
+2024-12-19 00:15:51.494 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/, Response status code: 404
+2024-12-19 00:15:51.992 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 00:15:52.138 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 200 null text/html;charset=utf-8 144.2519ms
+2024-12-19 00:15:52.152 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.js - null null
+2024-12-19 00:15:52.154 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 00:15:52.159 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 00:15:52.163 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.js - 200 null application/javascript;charset=utf-8 11.1902ms
+2024-12-19 00:15:52.183 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 8.4538ms
+2024-12-19 00:15:52.239 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.3591ms
+2024-12-19 00:15:52.304 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 00:15:52.497 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 193.1836ms
+2024-12-19 00:21:19.474 +05:00 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 00:21:19.604 +05:00 [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 00:21:19.872 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 00:21:19.880 +05:00 [INF] Hosting environment: Development
+2024-12-19 00:21:19.880 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 00:21:19.907 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/ - null null
+2024-12-19 00:21:20.104 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 00:21:20.152 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/ - 301 null null 253.2286ms
+2024-12-19 00:21:20.256 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 150.2211ms
+2024-12-19 00:21:20.262 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 00:21:20.275 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger-ui-standalone-preset.js - null null
+2024-12-19 00:21:20.275 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.css - null null
+2024-12-19 00:21:20.278 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger-ui.css - null null
+2024-12-19 00:21:20.281 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 00:21:20.283 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger-ui-bundle.js - null null
+2024-12-19 00:21:20.289 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 00:21:20.295 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 34.4126ms
+2024-12-19 00:21:20.297 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 18.0842ms
+2024-12-19 00:21:20.321 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-12-19 00:21:20.321 +05:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2024-12-19 00:21:20.321 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-12-19 00:21:20.321 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.css - 200 202 text/css 46.9324ms
+2024-12-19 00:21:20.323 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger-ui.css - 200 152035 text/css 44.8596ms
+2024-12-19 00:21:20.335 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger-ui-standalone-preset.js - 200 230007 text/javascript 60.3908ms
+2024-12-19 00:21:20.345 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-12-19 00:21:20.354 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.5344ms
+2024-12-19 00:21:20.371 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger-ui-bundle.js - 200 1426050 text/javascript 88.2494ms
+2024-12-19 00:21:20.547 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 00:21:20.583 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/favicon-32x32.png - null null
+2024-12-19 00:21:20.585 +05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-12-19 00:21:20.586 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/favicon-32x32.png - 200 628 image/png 2.5954ms
+2024-12-19 00:21:20.751 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 204.3362ms
+2024-12-19 00:21:21.470 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 00:21:21.520 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 404 null null 49.9799ms
+2024-12-19 00:21:21.522 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/swagger/index.html, Response status code: 404
+2024-12-19 00:21:24.634 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 00:21:24.638 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.5238ms
+2024-12-19 00:21:24.849 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 00:21:24.871 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.9207ms

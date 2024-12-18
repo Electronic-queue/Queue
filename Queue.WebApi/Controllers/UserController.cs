@@ -11,11 +11,20 @@ using System.Net;
 
 namespace Queue.WebApi.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class UserController : BaseController
     {
+        /// <summary>
+        /// Получить список всех пользователей.
+        /// </summary>
+        /// <param name="id">Идентификатор пользователя (опционально).</param>
+        /// <returns>Возвращает список пользователей.</returns>
+        /// 
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<ActionResult<UserListVm>> GetAll(Guid id)
         {
             var query = new GetUserListQuery
@@ -26,7 +35,14 @@ namespace Queue.WebApi.Controllers
             var vm = await Mediator.Send(query);
             return Ok(vm);
         }
+        /// <summary>
+        /// Получить информацию о конкретном пользователе.
+        /// </summary>
+        /// <param name="id">Идентификатор пользователя.</param>
+        /// <returns>Возвращает детали пользователя.</returns>
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<UserDetailsVm>> Get(Guid id)
         {
             var query = new GetUserDetailsQuery
@@ -37,7 +53,17 @@ namespace Queue.WebApi.Controllers
             var vm = await Mediator.Send(query);
             return Ok(vm);
         }
+
+        /// <summary>
+        /// Создать нового пользователя.
+        /// </summary>
+        /// <param name="createUserDto">Данные нового пользователя.</param>
+        /// <returns>Возвращает идентификатор созданного пользователя.</returns>
+
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         public async Task<ActionResult<Guid>> Create([FromBody] CreateUserDto createUserDto)
         {
             var command = Mapper.Map<CreateUserCommand>(createUserDto);
@@ -45,14 +71,27 @@ namespace Queue.WebApi.Controllers
             return Ok(userId);
 
         }
+        /// <summary>
+        /// Обновить информацию о пользователе.
+        /// </summary>
+        /// <param name="updateUserDto">Данные для обновления пользователя.</param>
         [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
         public async Task<IActionResult> Update([FromBody] UpdateUsereDto updateUserDto)
         {
             await Mediator.Send(new UpdateUserCommand(updateUserDto.Id,updateUserDto.Iin,updateUserDto.FirstName,updateUserDto.LastName));
             return NoContent();
         }
+        /// <summary>
+        /// Удалить пользователя.
+        /// </summary>
+        /// <param name="id">Идентификатор пользователя.</param>
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(UpdateUsereDto), (int)HttpStatusCode.Accepted)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = await Mediator.Send(new DeleteUserCommand(id));

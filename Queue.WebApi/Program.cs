@@ -8,6 +8,7 @@ using Queue.WebApi.Services;
 using Serilog;
 using Serilog.Events;
 using System;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,7 +45,13 @@ builder.Services.AddCors(options =>
 builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(config =>
+{
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    config.IncludeXmlComments(xmlPath);
+});
+        
 
 var app = builder.Build();
 
@@ -69,7 +76,11 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(config =>
+{
+    config.RoutePrefix = string.Empty;
+    config.SwaggerEndpoint("swagger/v1/swagger.json", "Users API");
+});
 app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
