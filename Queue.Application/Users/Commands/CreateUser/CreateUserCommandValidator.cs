@@ -1,20 +1,14 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Queue.Application.Common.Validators;
 
-namespace Queue.Application.Users.Commands.CreateUser
+namespace Queue.Application.Users.Commands.CreateUser;
+
+public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {
-    public  class CreateUserCommandValidator:AbstractValidator<CreateUserCommand>
+    public CreateUserCommandValidator()
     {
-        public CreateUserCommandValidator()
-        {
-            RuleFor(createUserCommand =>
-            createUserCommand.Iin).NotEmpty();
-            RuleFor(createUserCommand=>
-            createUserCommand.FirstName).MaximumLength(250).NotEmpty();
-        }
+        RuleFor(x =>  x.Iin).SetValidator(new UserIinValidator());
+        RuleFor(createUserCommand =>
+        createUserCommand.FirstName).MaximumLength(250).NotEmpty();
     }
 }

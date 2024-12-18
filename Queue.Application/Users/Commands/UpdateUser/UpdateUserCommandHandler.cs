@@ -1,38 +1,34 @@
-﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Queue.Application.Common.Exceptions;
-using Queue.Application.Interfaces;
-using Queue.Domain;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Queue.Domain.Common.Exceptions;
+using Queue.Domain.Entites;
+using Queue.Domain.Interfaces;
 
-namespace Queue.Application.Users.Commands.UpdateUser
+
+namespace Queue.Application.Users.Commands.UpdateUser;
+
+public class UpdateUserCommandHandler(IUserRepository _userRepository, ILogger<UpdateUserCommandHandler> _logger) : IRequestHandler<UpdateUserCommand, Result>
 {
-    public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Unit>
+    public async Task<Result> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
     {
-        private readonly IQueuesDbContext _dbContext;
+    var user = new User
+    {
+        Id = request.Id,
+        Iin = request.Iin,
+        FirstName = request.FirstName,
+        LastName = request.LastName,
 
-        public UpdateUserCommandHandler(IQueuesDbContext dbContext) =>
-            _dbContext = dbContext;
 
-        public async Task<Unit> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
-        {
-            var entity = await _dbContext.Users
-                .FirstOrDefaultAsync(user => user.Id == request.Id, cancellationToken);
 
-            if (entity == null)
-            {
-                throw new NotFoundException(nameof(User), request.Id);
-            }
+    };
 
-            entity.Iin = request.Iin;
-            entity.FirstName = request.FirstName;
-            entity.LastName = request.LastName;
+    var entity = await _userRepository.UpdateAsync(user);
 
-            await _dbContext.SaveChangesAsync(cancellationToken);
-
-            return Unit.Value;
-        }
+    if(entity.IsFailed) 
+    {
+        return Result.Failure(new Error(Errors.BadRequest, "UpdateError"));
+    }
+    return Result.Success(entity);
     }
 }

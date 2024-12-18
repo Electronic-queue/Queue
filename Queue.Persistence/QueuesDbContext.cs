@@ -1,16 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Queue.Application.Interfaces;
-using Queue.Domain;
+using Queue.Domain.Entites;
 using Queue.Persistence.EntityTypeConfigurations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queue.Persistence
 {
-    public class QueuesDbContext:DbContext,IQueuesDbContext
+    public class QueuesDbContext:DbContext
     {
         public DbSet<User> Users { get; set; }
 
@@ -19,7 +14,7 @@ namespace Queue.Persistence
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration()); 
             base.OnModelCreating(builder); 
         }
 

@@ -1,34 +1,26 @@
-﻿using MediatR;
-using Queue.Application.Common.Exceptions;
-using Queue.Application.Interfaces;
-using Queue.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Queue.Domain.Common.Exceptions;
+using Queue.Domain.Interfaces;
 
-namespace Queue.Application.Users.Commands.DeleteUser
+namespace Queue.Application.Users.Commands.DeleteUser;
+
+public class DeleteUserCommandHandler(IUserRepository _userRepository, ILogger<DeleteUserCommandHandler> _logger) : IRequestHandler<DeleteUserCommand, Result>
 {
-    public class DeleteUserCommandHandler :
-        IRequestHandler<DeleteUserCommand>
+    public async Task<Result> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
     {
-        public readonly IQueuesDbContext _dbContext;
-
-        public DeleteUserCommandHandler(IQueuesDbContext dbContext) =>
-            _dbContext = dbContext;
-        public async Task<Unit> Handle(DeleteUserCommand request,
-            CancellationToken cancellationToken)
-        {
-            var entity = await _dbContext.Users
-                .FindAsync(new object[] { request.Id }, cancellationToken);
-            if (entity == null || entity.Id != request.Id)
+        
+            _logger.LogInformation("Запрос на удалениие пользователя");
+            var entity = await _userRepository.DeleteAsync(request.Id);
+            if (entity.IsFailed)
             {
-                throw new NotFoundException(nameof(User),request.Id);
+                return Result.Failure(new Error(Errors.BadRequest, "DeleteError"));
             }
-            _dbContext.Users.Remove(entity);
-            await _dbContext.SaveChangesAsync(cancellationToken);
-            return Unit.Value;
-        }
+            return Result.Success(entity);
+            
+            
+        
+        
     }
 }

@@ -1,38 +1,38 @@
-﻿using MediatR;
-using Queue.Application.Interfaces;
-using Queue.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
+using Queue.Domain.Common.Exceptions;
+using Queue.Domain.Entites;
+using Queue.Domain.Interfaces;
 
-namespace Queue.Application.Users.Commands.CreateUser
+namespace Queue.Application.Users.Commands.CreateUser;
+
+public class CreateUserCommandHandler(IUserRepository _userRepository) : IRequestHandler<CreateUserCommand, Result<Guid>>
 {
-     public class CreateUserCommandHandler
-        :IRequestHandler<CreateUserCommand,Guid>
+    public async Task<Result<Guid>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        private readonly IQueuesDbContext _dbContext;
 
-        public CreateUserCommandHandler(IQueuesDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-        public async Task<Guid> Handle (CreateUserCommand request,
-            CancellationToken cancellationToken)
-        {
-            var user = new User
-            {
-                Iin=request.Iin,
-                FirstName=request.FirstName,
-                LastName=request.LastName,
-                Id=Guid.NewGuid(),
-                CreationDate=DateTime.Now
-            };
 
-            await _dbContext.Users.AddAsync(user,cancellationToken);
-            await _dbContext.SaveChangesAsync(cancellationToken);
-            return user.Id;
+        
+        var user = new User
+        {
+            Id = Guid.NewGuid(),
+            Iin = request.Iin,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+           
+            CreationDate = DateTime.FromFileTimeUtc(5)
+        };
+        var result = await _userRepository.AddAsync(new User { });
+        if (result.IsFailed)
+        {
+            return Result.Failure<Guid>(new Error(Errors.BadRequest, "Ошибка такая-то"));
         }
+
+
+
+
+        return Result.Success(user.Id);
     }
 }
+
+

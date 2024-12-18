@@ -7,20 +7,20 @@ using Queue.Application.Users.Queries.GetUserDetails;
 using Queue.Application.Users.Queries.GetUserList;
 using Queue.Domain;
 using Queue.WebApi.Models;
+using System.Net;
 
 namespace Queue.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class UserController : BaseController
     {
-        private readonly IMapper _mapper;
-        public UserController(IMapper mapper) => _mapper = mapper;
+
         [HttpGet]
-        public async Task<ActionResult<UserListVm>> GetAll()
+        public async Task<ActionResult<UserListVm>> GetAll(Guid id)
         {
             var query = new GetUserListQuery
             {
-                Id = Id
+                Id = id
 
             };
             var vm = await Mediator.Send(query);
@@ -40,28 +40,24 @@ namespace Queue.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateUserDto createUserDto)
         {
-            var command = _mapper.Map<CreateUserCommand>(createUserDto);
-            command.Id = Id;
+            var command = Mapper.Map<CreateUserCommand>(createUserDto);
             var userId = await Mediator.Send(command);
             return Ok(userId);
+
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateUsereDto updateUserDto)
         {
-            var command = _mapper.Map<UpdateUserCommand>(updateUserDto);
-            command.Id = Id;
-            await Mediator.Send(command);
+            await Mediator.Send(new UpdateUserCommand(updateUserDto.Id,updateUserDto.Iin,updateUserDto.FirstName,updateUserDto.LastName));
             return NoContent();
         }
         [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(UpdateUsereDto), (int)HttpStatusCode.Accepted)]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var command = new DeleteUserCommand
-            {
-                Id = id
-               
-            };
-            await Mediator.Send(command);
+            var command = await Mediator.Send(new DeleteUserCommand(id));
+            
+          
             return NoContent();
         }
     }

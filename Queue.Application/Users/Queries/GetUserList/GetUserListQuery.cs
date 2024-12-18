@@ -1,13 +1,10 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
+using Queue.Domain.Entites;
 
 namespace Queue.Application.Users.Queries.GetUserList
 {
-    public class GetUserListQuery:IRequest<UserListVm>
+    public class GetUserListQuery:IRequest<Result<List<User>>>
     {
         public Guid Id {  get; set; }
     }

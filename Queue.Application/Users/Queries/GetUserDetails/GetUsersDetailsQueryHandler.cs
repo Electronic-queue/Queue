@@ -1,38 +1,25 @@
 ﻿using AutoMapper;
+using KDS.Primitives.FluentResult;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Queue.Application.Common.Exceptions;
-using Queue.Application.Interfaces;
-using Queue.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Queue.Domain.Entites;
+using Queue.Domain.Interfaces;
 
 namespace Queue.Application.Users.Queries.GetUserDetails
 {
-    public class GetUsersDetailsQueryHandler:
-        IRequestHandler<GetUserDetailsQuery,UserDetailsVm>
+    public class GetUsersDetailsQueryHandler(IUserRepository _userRepository,IMapper _mapper):
+        IRequestHandler<GetUserDetailsQuery,Result>
     {
-        private readonly IQueuesDbContext _dbContext;
-        private readonly IMapper _mapper;
-        public GetUsersDetailsQueryHandler(IQueuesDbContext dbContext,
-            IMapper mapper) => (_dbContext, _mapper) = (dbContext, mapper);
-
-        
-        public async Task<UserDetailsVm> Handle(GetUserDetailsQuery request,
+         
+        public async Task<Result> Handle(GetUserDetailsQuery request,
             CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Users
-                .FirstOrDefaultAsync(user=>
-                user.Id == request.Id,cancellationToken);
-
-            if (entity == null || entity.Id != request.Id)
+            var result = await _userRepository.GetUserDetails(request.Id);
+            if (result == null)
             {
-                throw new NotFoundException(nameof(User),request.Id);
+                return Result.Failure(new Error("405", "Error"));
             }
-            return _mapper.Map<UserDetailsVm>(entity);
+            return Result.Success(result);
         }
     }
 }

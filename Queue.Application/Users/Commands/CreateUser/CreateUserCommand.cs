@@ -1,18 +1,7 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
 
-namespace Queue.Application.Users.Commands.CreateUser
-{
-    public class CreateUserCommand:IRequest<Guid>
-    {
-        public int Iin { get; set; }
-        public string FirstName {  get; set; }
-        
-        public string LastName { get; set; }
-        public Guid Id { get; set; }
-    }
-}
+namespace Queue.Application.Users.Commands.CreateUser;
+
+public record CreateUserCommand(Guid Id,string Iin, string FirstName, string LastName) : IRequest<Result<Guid>>;
+

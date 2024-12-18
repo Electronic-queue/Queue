@@ -1,18 +1,9 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
 
-namespace Queue.Application.Users.Commands.UpdateUser
+namespace Queue.Application.Users.Commands.UpdateUser;
+
+public record UpdateUserCommand(Guid Id, string Iin, string FirstName, string LastName) : IRequest<Result>
 {
-    public class UpdateUserCommand:IRequest<Unit>
-    {
-        public Guid Id { get; set; }
-        public int Iin {  get; set; }
-        public string FirstName {  get; set; }
-        public string LastName { get; set; }
-
-    }
+   
 }

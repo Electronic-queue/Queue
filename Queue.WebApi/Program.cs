@@ -17,10 +17,11 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
+builder.Services.AddPersistence(builder.Configuration);
 
 builder.Services.AddAutoMapper(config =>
 {
-    config.AddProfile(new AssemblyMappingProfile(typeof(IQueuesDbContext).Assembly));
+   
     config.AddProfile(new AssemblyMappingProfile(AppDomain.CurrentDomain.GetAssemblies()));
 });
 
@@ -43,6 +44,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -65,6 +67,9 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");

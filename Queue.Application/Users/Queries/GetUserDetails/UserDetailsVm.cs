@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Queue.Application.Common.Mappings;
-using Queue.Domain;
+using Queue.Domain.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;

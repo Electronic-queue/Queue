@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Queue.Application.Interfaces;
+using Queue.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,7 @@ namespace Queue.Persistence
             {
                 options.UseSqlServer(connectionString);
             });
-            services.AddScoped<IQueuesDbContext>(provider =>
-            provider.GetService<QueuesDbContext>());
+            services.AddScoped<IUserRepository, SqlUserRepository>();
             return services;
         }
     }

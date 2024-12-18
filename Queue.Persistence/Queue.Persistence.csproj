@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="KDS.Primitives.Abstraction" Version="1.0.0" />
+    <PackageReference Include="KDS.Primitives.FluentApiResponse" Version="1.0.0" />
+    <PackageReference Include="KDS.Primitives.FluentResult" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
@@ -14,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Queue.Application\Queue.Application.csproj" />
+    <ProjectReference Include="..\Queue.Domain\Queue.Domain.csproj" />
   </ItemGroup>
 
 </Project>

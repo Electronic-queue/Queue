@@ -1,14 +1,7 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KDS.Primitives.FluentResult;
+using MediatR;
 
 namespace Queue.Application.Users.Commands.DeleteUser
 {
-    public class DeleteUserCommand:IRequest
-    {
-        public Guid Id { get; set; }
-    }
+    public record DeleteUserCommand(Guid Id):IRequest<Result>;
 }
