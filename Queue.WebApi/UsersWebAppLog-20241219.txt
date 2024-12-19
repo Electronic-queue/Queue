@@ -205,3 +205,48 @@ SELECT 1 ELSE SELECT 0
 2024-12-19 16:36:19.127 +06:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 1077.5029ms
 2024-12-19 16:36:19.128 +06:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
 2024-12-19 16:36:19.150 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/User?UserId=1 - 500 null application/json 1147.9632ms
+2024-12-19 17:11:28.700 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-19 17:11:28.721 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-19 17:11:28.784 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:11:28.784 +06:00 [INF] Hosting environment: Development
+2024-12-19 17:11:28.784 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-19 17:11:29.668 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-19 17:11:29.863 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 202.0312ms
+2024-12-19 17:11:29.905 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:11:29.905 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-19 17:11:29.906 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 2.0238ms
+2024-12-19 17:11:29.919 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 14.5305ms
+2024-12-19 17:11:29.924 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-19 17:11:29.958 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.3069ms
+2024-12-19 17:11:29.994 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-19 17:11:30.093 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.2103ms
+2024-12-19 17:19:00.838 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-19 17:19:00.861 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-19 17:19:00.939 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:19:00.939 +06:00 [INF] Hosting environment: Development
+2024-12-19 17:19:00.939 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-19 17:19:02.068 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-19 17:19:02.251 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 188.6399ms
+2024-12-19 17:19:02.260 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-19 17:19:02.260 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:19:02.262 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 1.7182ms
+2024-12-19 17:19:02.275 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 15.1308ms
+2024-12-19 17:19:02.278 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-19 17:19:02.309 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.3316ms
+2024-12-19 17:19:02.343 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-19 17:19:02.450 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.0492ms
+2024-12-19 17:21:24.775 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-19 17:21:24.792 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-19 17:21:24.849 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:21:24.850 +06:00 [INF] Hosting environment: Development
+2024-12-19 17:21:24.850 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-19 17:21:25.483 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-19 17:21:25.641 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 163.3691ms
+2024-12-19 17:21:25.651 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-19 17:21:25.651 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:21:25.655 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 3.7074ms
+2024-12-19 17:21:25.666 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-19 17:21:25.668 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 17.1381ms
+2024-12-19 17:21:25.698 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.4281ms
+2024-12-19 17:21:25.732 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-19 17:21:25.822 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.256ms
