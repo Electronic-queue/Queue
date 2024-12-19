@@ -19,13 +19,14 @@ namespace Queue.Persistence
             {
                 return Result.Failure(new Error("DatabaseError", ex.Message));
             }
-            
+
         }
 
         public async Task<Result> DeleteAsync(Guid id)
         {
-            var user=await _dbContext.Users.FindAsync(id);
-            if(user != null)
+            var user = await _dbContext.Users.Where(w => !w.IsDeleted).FirstOrDefaultAsync(f => f.Id.Equals(id));
+
+            if (user is null)
             {
                 return Result.Failure(new Error("Not Found", "User Not Found"));
             }
@@ -37,17 +38,17 @@ namespace Queue.Persistence
             }
             catch (Exception ex)
             {
-                return Result.Failure(new Error("DatabaseError",ex.Message));
+                return Result.Failure(new Error("DatabaseError", ex.Message));
             }
         }
 
-        
 
-        public async  Task<Result<List<User>>> GetAllAsync()
+
+        public async Task<Result<List<User>>> GetAllAsync()
         {
             try
             {
-                var user= await _dbContext.Users.ToListAsync();
+                var user = await _dbContext.Users.ToListAsync();
                 return Result.Success(user);
             }
             catch (Exception ex)
@@ -58,12 +59,12 @@ namespace Queue.Persistence
             }
         }
 
-        public async  Task<Result> GetUserById(Guid id)
+        public async Task<Result> GetUserById(Guid id)
         {
             try
             {
                 var user = await _dbContext.Users.FindAsync(id);
-                if(user != null)
+                if (user != null)
                 {
                     return Result.Failure(new Error("NotFound", "UserNotFound"));
 
@@ -82,14 +83,14 @@ namespace Queue.Persistence
             try
             {
                 var userResult = await _dbContext.Users.FindAsync(id);
-                if(userResult != null)
+                if (userResult != null)
                 {
                     return Result.Failure(new Error("101", "User not Found"));
 
                 }
                 return Result.Success(userResult);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Result.Failure(new Error("404", "DatabaseError"));
             }
@@ -119,8 +120,8 @@ namespace Queue.Persistence
 
         }
 
-        
 
-        
+
+
     }
 }

@@ -121,3 +121,1575 @@ SELECT 1 ELSE SELECT 0
 2024-12-19 00:21:24.638 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.5238ms
 2024-12-19 00:21:24.849 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
 2024-12-19 00:21:24.871 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.9207ms
+2024-12-19 13:14:25.136 +05:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:14:25.369 +05:00 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:14:25.860 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:14:25.862 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:14:25.862 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:14:25.948 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:14:28.051 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:14:28.057 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:14:28.059 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 2079.1543ms
+2024-12-19 13:14:28.069 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:14:28.095 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 44.3064ms
+2024-12-19 13:14:28.104 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 37.2867ms
+2024-12-19 13:14:28.203 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 139.8687ms
+2024-12-19 13:14:28.281 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:14:28.533 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 251.78ms
+2024-12-19 13:14:52.010 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User - null null
+2024-12-19 13:14:52.069 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 13:14:52.137 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:15:03.024 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 10882.5276ms
+2024-12-19 13:15:03.026 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 13:15:03.126 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User - 500 null application/json 11116.466ms
+2024-12-19 13:17:52.977 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 93
+2024-12-19 13:17:53.005 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:17:53.009 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:17:53.020 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:17:53.235 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 215.0086ms
+2024-12-19 13:17:53.236 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:17:53.277 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 300.0672ms
+2024-12-19 13:18:33.988 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 93
+2024-12-19 13:18:33.990 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:18:33.991 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:18:33.991 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:26:04.501 +05:00 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:26:04.761 +05:00 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:26:05.779 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:26:05.780 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:26:05.780 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:26:05.876 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:26:06.655 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 805.4989ms
+2024-12-19 13:26:06.674 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:26:06.678 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:26:06.685 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 11.2906ms
+2024-12-19 13:26:07.016 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:26:07.019 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 8.3347ms
+2024-12-19 13:26:07.144 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 128.6799ms
+2024-12-19 13:26:07.264 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:26:07.585 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 321.637ms
+2024-12-19 13:26:20.366 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 78
+2024-12-19 13:26:20.384 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:26:20.438 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:26:20.503 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:26:31.934 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 11424.6227ms
+2024-12-19 13:26:31.940 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:29:11.330 +05:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:29:11.505 +05:00 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:29:11.857 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:29:11.858 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:29:11.858 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:29:11.922 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:29:12.324 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 411.5202ms
+2024-12-19 13:29:12.355 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:29:12.362 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 7.2429ms
+2024-12-19 13:29:12.373 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:29:12.373 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:29:12.380 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 3.6374ms
+2024-12-19 13:29:12.446 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.3844ms
+2024-12-19 13:29:12.597 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:29:12.890 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 292.5692ms
+2024-12-19 13:29:59.909 +05:00 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:30:00.084 +05:00 [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:30:00.412 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:30:00.421 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:30:00.422 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:30:00.462 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:30:00.836 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 391.7346ms
+2024-12-19 13:30:00.862 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:30:00.862 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:30:00.862 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:30:00.881 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 19.6778ms
+2024-12-19 13:30:00.883 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 19.0032ms
+2024-12-19 13:30:00.939 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.7708ms
+2024-12-19 13:30:01.018 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:30:01.381 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 364.3592ms
+2024-12-19 13:30:22.993 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 99
+2024-12-19 13:30:23.001 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:30:23.027 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:30:23.058 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:30:35.086 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 12022.8345ms
+2024-12-19 13:30:35.087 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:30:35.116 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 12123.2346ms
+2024-12-19 13:30:48.640 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 94
+2024-12-19 13:30:48.642 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:30:48.643 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:30:48.643 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:30:51.169 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"zxczxczxczxc","FirstName":"asdasdasdadzxcz","LastName":"asdasdasdadzxcv","$type":"CreateUserCommand"} 
+2024-12-19 13:30:51.937 +05:00 [ERR] Failed executing DbCommand (472ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:30:51.989 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:30:58.863 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:30:58.882 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 10238.0078ms
+2024-12-19 13:30:58.883 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:30:58.970 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 10330.1882ms
+2024-12-19 13:31:36.178 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 94
+2024-12-19 13:31:36.179 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:31:36.179 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:31:36.180 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:31:37.938 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"021221500030","FirstName":"asdasdasdadzxcz","LastName":"asdasdasdadzxcv","$type":"CreateUserCommand"} 
+2024-12-19 13:31:38.119 +05:00 [ERR] Failed executing DbCommand (112ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:31:38.123 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:31:38.178 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:31:38.181 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 2001.2419ms
+2024-12-19 13:31:38.182 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:31:38.263 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 2084.5693ms
+2024-12-19 13:31:48.135 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 94
+2024-12-19 13:31:48.135 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:31:48.135 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:31:48.135 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:31:58.173 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"021221500030","FirstName":"asdasdasdadzxcz","LastName":"asdasdasdadzxcv","$type":"CreateUserCommand"} 
+2024-12-19 13:31:58.267 +05:00 [ERR] Failed executing DbCommand (88ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:31:58.270 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:32:48.645 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:32:48.656 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 60520.285ms
+2024-12-19 13:32:48.657 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:32:48.725 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 60590.5562ms
+2024-12-19 13:32:50.634 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 94
+2024-12-19 13:32:50.634 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:32:50.635 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:32:50.635 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:32:52.742 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"021221500030","FirstName":"asdasdasdadzxcz","LastName":"asdasdasdadzxcv","$type":"CreateUserCommand"} 
+2024-12-19 13:33:09.194 +05:00 [ERR] Failed executing DbCommand (80ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:33:09.198 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ea337ec2-a4ea-452b-adf3-e638dd4faa98
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:41:56.894 +05:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:41:56.925 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2024-12-19 13:41:57.012 +05:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2024-12-19 13:41:57.111 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2024-12-19 13:41:57.232 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:41:57.286 +05:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-12-19 13:41:57.348 +05:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-12-19 13:41:57.358 +05:00 [INF] Applying migration '20241219084127_AddIsDeletedToUser'.
+2024-12-19 13:41:57.462 +05:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'Iin');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Users] ALTER COLUMN [Iin] nvarchar(max) NOT NULL;
+2024-12-19 13:41:57.517 +05:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit);
+2024-12-19 13:41:57.563 +05:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20241219084127_AddIsDeletedToUser', N'9.0.0');
+2024-12-19 13:41:57.677 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2024-12-19 13:42:07.564 +05:00 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:42:07.661 +05:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:42:08.109 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:42:08.119 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:42:08.119 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:42:08.171 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:42:08.171 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 13:42:08.391 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 404 null null 228.3164ms
+2024-12-19 13:42:08.395 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/swagger/index.html, Response status code: 404
+2024-12-19 13:42:08.530 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 368.6562ms
+2024-12-19 13:42:11.270 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 13:42:11.282 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 404 null null 12.6802ms
+2024-12-19 13:42:11.282 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/swagger/index.html, Response status code: 404
+2024-12-19 13:42:14.332 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/index.html - null null
+2024-12-19 13:42:14.338 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/index.html - 404 null null 5.8912ms
+2024-12-19 13:42:14.338 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44375/swagger/index.html, Response status code: 404
+2024-12-19 13:42:18.067 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:42:18.079 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 11.577ms
+2024-12-19 13:42:18.090 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:42:18.090 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:42:18.096 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 5.8049ms
+2024-12-19 13:42:18.096 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 4.4354ms
+2024-12-19 13:42:18.117 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:42:18.176 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.5078ms
+2024-12-19 13:42:18.237 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:42:18.407 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 170.5318ms
+2024-12-19 13:42:48.014 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 75
+2024-12-19 13:42:48.028 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:42:48.034 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:42:48.064 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:42:57.256 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"040404040404","FirstName":"Vasya","LastName":"Pupkin","$type":"CreateUserCommand"} 
+2024-12-19 13:42:58.839 +05:00 [ERR] Failed executing DbCommand (101ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:42:58.892 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:43:07.853 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:43:07.878 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 19811.5463ms
+2024-12-19 13:43:07.880 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:43:30.955 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 42941.6678ms
+2024-12-19 13:43:52.920 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 75
+2024-12-19 13:43:52.920 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:43:52.921 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:43:52.921 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:43:57.152 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"040404040404","FirstName":"Vasya","LastName":"Pupkin","$type":"CreateUserCommand"} 
+2024-12-19 13:43:58.150 +05:00 [ERR] Failed executing DbCommand (60ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:43:58.153 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:44:32.883 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:44:32.886 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 39964.651ms
+2024-12-19 13:44:32.886 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:44:35.931 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 43010.6238ms
+2024-12-19 13:44:38.585 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 75
+2024-12-19 13:44:41.747 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:44:41.747 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:44:41.748 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:44:44.027 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"040404040404","FirstName":"Vasya","LastName":"Pupkin","$type":"CreateUserCommand"} 
+2024-12-19 13:44:45.083 +05:00 [ERR] Failed executing DbCommand (80ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:44:45.086 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:44:51.279 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:44:51.282 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 9534.248ms
+2024-12-19 13:44:51.282 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:44:54.926 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 16340.8096ms
+2024-12-19 13:44:57.278 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 75
+2024-12-19 13:45:04.256 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:45:04.256 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:45:04.256 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:45:06.533 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"040404040404","FirstName":"Vasya","LastName":"Pupkin","$type":"CreateUserCommand"} 
+2024-12-19 13:45:08.130 +05:00 [ERR] Failed executing DbCommand (80ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:45:08.133 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cec36529-6012-4b53-993d-4c4869796e0f
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:45:38.250 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:45:38.251 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 33995.3297ms
+2024-12-19 13:45:38.252 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:50:30.821 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 333542.2205ms
+2024-12-19 13:50:48.746 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 75
+2024-12-19 13:50:48.747 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:50:48.747 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:50:48.748 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:50:51.523 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"040404040404","FirstName":"Vasya","LastName":"Pupkin","$type":"CreateUserCommand"} 
+2024-12-19 13:53:27.752 +05:00 [ERR] Failed executing DbCommand (56ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:53:27.755 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2d6a3f31-6b3f-4b90-9ace-d53dbd41ce76
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:2d6a3f31-6b3f-4b90-9ace-d53dbd41ce76
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 13:56:09.397 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 13:56:09.399 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 320650.7042ms
+2024-12-19 13:56:09.399 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:56:58.358 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 369612.0202ms
+2024-12-19 13:57:24.295 +05:00 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 13:57:24.424 +05:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 13:57:24.699 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 13:57:24.701 +05:00 [INF] Hosting environment: Development
+2024-12-19 13:57:24.701 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 13:57:24.742 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 13:57:25.023 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 13:57:25.023 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 13:57:25.023 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 13:57:25.046 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 310.5833ms
+2024-12-19 13:57:25.047 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 24.0794ms
+2024-12-19 13:57:25.053 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 23.9825ms
+2024-12-19 13:57:25.097 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.2853ms
+2024-12-19 13:57:25.150 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 13:57:25.308 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 158.2425ms
+2024-12-19 13:57:51.213 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 76
+2024-12-19 13:57:51.218 +05:00 [INF] CORS policy execution successful.
+2024-12-19 13:57:51.243 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 13:57:51.269 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 13:57:55.987 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"121212121212","FirstName":"string","LastName":"string","$type":"CreateUserCommand"} 
+2024-12-19 13:58:52.954 +05:00 [ERR] Failed executing DbCommand (96ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 13:58:52.981 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fbcffaff-17f4-4c34-abb1-206014055062
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fbcffaff-17f4-4c34-abb1-206014055062
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 14:02:00.436 +05:00 [ERR] Failed executing DbCommand (57ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Guid), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5),
+(@p6, @p7, @p8, @p9, @p10, @p11);
+2024-12-19 14:02:00.439 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fbcffaff-17f4-4c34-abb1-206014055062
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:fbcffaff-17f4-4c34-abb1-206014055062
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 14:10:25.245 +05:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:10:25.413 +05:00 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:10:25.684 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:10:25.685 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:10:25.685 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:10:25.741 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:10:26.057 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 323.2846ms
+2024-12-19 14:10:26.063 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:10:26.077 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 8.5657ms
+2024-12-19 14:10:26.080 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:10:26.080 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:10:26.085 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 2.991ms
+2024-12-19 14:10:26.126 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.44ms
+2024-12-19 14:10:26.175 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:10:26.305 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.2949ms
+2024-12-19 14:10:47.999 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 66
+2024-12-19 14:10:48.006 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:10:48.031 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:10:48.059 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:10:48.137 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-19 14:10:48.180 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 117.5857ms
+2024-12-19 14:10:48.180 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:10:48.181 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 400 null application/json; charset=utf-8 181.8547ms
+2024-12-19 14:11:05.166 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 60
+2024-12-19 14:11:05.167 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:11:05.168 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:11:05.169 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:11:05.173 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-19 14:11:05.177 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 7.8009ms
+2024-12-19 14:11:05.177 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:11:05.177 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 400 null application/json; charset=utf-8 11.8923ms
+2024-12-19 14:11:26.716 +05:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:11:26.866 +05:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:11:27.232 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:11:27.250 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:11:27.250 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:11:27.308 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:11:27.690 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 389.5274ms
+2024-12-19 14:11:27.739 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:11:27.749 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:11:27.781 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:11:27.804 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 65.0403ms
+2024-12-19 14:11:27.805 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 73.1702ms
+2024-12-19 14:11:27.876 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 115.8491ms
+2024-12-19 14:11:27.954 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:11:28.163 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 208.4212ms
+2024-12-19 14:11:39.463 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 66
+2024-12-19 14:11:39.471 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:11:39.494 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:11:39.520 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:12:15.518 +05:00 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:12:15.661 +05:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:12:15.981 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:12:15.982 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:12:15.983 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:12:16.015 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:12:16.280 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:12:16.312 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:12:16.313 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:12:16.333 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 315.3749ms
+2024-12-19 14:12:16.346 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 23.7355ms
+2024-12-19 14:12:16.391 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 33.6225ms
+2024-12-19 14:12:16.455 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 174.4355ms
+2024-12-19 14:12:16.516 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:12:16.671 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 155.7601ms
+2024-12-19 14:12:31.542 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 66
+2024-12-19 14:12:31.547 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:12:31.568 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:12:31.590 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:12:31.659 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-19 14:12:31.727 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 134.2611ms
+2024-12-19 14:12:31.728 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:12:31.729 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 400 null application/json; charset=utf-8 187.1839ms
+2024-12-19 14:13:49.380 +05:00 [INF] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:13:49.495 +05:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:13:49.737 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:13:49.738 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:13:49.738 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:13:49.762 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:13:50.196 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:13:50.196 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:13:50.200 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:13:50.211 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 443.7238ms
+2024-12-19 14:13:50.215 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 18.7279ms
+2024-12-19 14:13:50.215 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 16.851ms
+2024-12-19 14:13:50.284 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.0089ms
+2024-12-19 14:13:50.349 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:13:50.592 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 243.025ms
+2024-12-19 14:14:21.405 +05:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:14:21.509 +05:00 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:14:21.757 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:14:21.758 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:14:21.758 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:14:21.787 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:14:22.046 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 268.0163ms
+2024-12-19 14:14:22.055 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:14:22.055 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:14:22.069 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:14:22.077 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 22.2492ms
+2024-12-19 14:14:22.078 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 16.4426ms
+2024-12-19 14:14:22.114 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.3988ms
+2024-12-19 14:14:22.174 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:14:22.345 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 171.8251ms
+2024-12-19 14:14:46.882 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 76
+2024-12-19 14:14:46.887 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:14:46.916 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:14:46.940 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:14:56.918 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"121212121212","FirstName":"string","LastName":"string","$type":"CreateUserCommand"} 
+2024-12-19 14:14:59.601 +05:00 [ERR] Failed executing DbCommand (184ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 14:14:59.643 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:28f363fe-9890-4d32-88a5-d7da25bfeb38
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'FirstName', table 'aybolat_db.aybolat_user.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:28f363fe-9890-4d32-88a5-d7da25bfeb38
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-19 14:15:49.935 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 14:15:49.953 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 63009.8932ms
+2024-12-19 14:15:49.955 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:15:53.405 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 500 null application/json 66523.2675ms
+2024-12-19 14:15:57.712 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 76
+2024-12-19 14:15:57.713 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:15:57.713 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:15:57.713 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:16:22.915 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"121212121212","FirstName":"string","LastName":"string","$type":"CreateUserCommand"} 
+2024-12-19 14:17:54.204 +05:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:17:54.339 +05:00 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:17:54.606 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:17:54.606 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:17:54.607 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:17:54.632 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:17:54.895 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 269.2654ms
+2024-12-19 14:17:54.914 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:17:54.914 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:17:54.915 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:17:54.945 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 34.175ms
+2024-12-19 14:17:54.946 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 42.5387ms
+2024-12-19 14:17:55.007 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.4272ms
+2024-12-19 14:17:55.062 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:17:55.315 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 253.2348ms
+2024-12-19 14:18:11.811 +05:00 [INF] Request starting HTTP/2 POST https://localhost:44375/api/User - application/json 76
+2024-12-19 14:18:11.816 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:18:11.835 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:18:11.866 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:18:14.691 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"Iin":"121212121212","FirstName":"string","LastName":"string","$type":"CreateUserCommand"} 
+2024-12-19 14:18:19.293 +05:00 [INF] Executed DbCommand (120ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreationDate], [FirstName], [Iin], [IsDeleted], [LastName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-19 14:23:32.176 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 14:23:32.190 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 320321.7755ms
+2024-12-19 14:23:32.191 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-19 14:23:41.747 +05:00 [INF] Request finished HTTP/2 POST https://localhost:44375/api/User - 200 null application/json; charset=utf-8 329936.611ms
+2024-12-19 14:29:18.899 +05:00 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:29:19.043 +05:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:29:19.304 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:29:19.312 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:29:19.312 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:29:19.340 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:29:19.643 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:29:19.643 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:29:19.644 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:29:19.665 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 327.9924ms
+2024-12-19 14:29:19.666 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 22.7552ms
+2024-12-19 14:29:19.672 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 22.5595ms
+2024-12-19 14:29:19.716 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.1651ms
+2024-12-19 14:29:19.760 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:29:19.895 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 135.4698ms
+2024-12-19 14:29:57.950 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User - null null
+2024-12-19 14:29:57.979 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 14:29:58.010 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:30:42.733 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 44719.1197ms
+2024-12-19 14:30:42.734 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 14:30:42.786 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User - 500 null application/json 44836.5665ms
+2024-12-19 14:30:47.266 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User?id=B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:30:47.267 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 14:30:47.268 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:30:47.298 +05:00 [INF] Users Request: GetUserListQuery "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"GetUserListQuery"} 
+2024-12-19 14:30:47.770 +05:00 [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+2024-12-19 14:30:47.846 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.User, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 14:30:47.884 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 615.6956ms
+2024-12-19 14:30:47.884 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 14:30:47.888 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User?id=B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 200 null application/json; charset=utf-8 622.0927ms
+2024-12-19 14:31:07.252 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:31:07.257 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:31:07.258 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:31:07.265 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:31:07.272 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:31:07.276 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:31:07.576 +05:00 [INF] Executed DbCommand (144ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:31:07.580 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:31:07.580 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 314.9875ms
+2024-12-19 14:31:07.580 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:31:07.581 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 329.5903ms
+2024-12-19 14:34:20.762 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:34:20.762 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:34:20.763 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:34:20.763 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:34:20.764 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:34:20.797 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:34:20.875 +05:00 [INF] Executed DbCommand (73ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:34:20.876 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:34:20.876 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 113.2081ms
+2024-12-19 14:34:20.876 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:34:20.876 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 114.7089ms
+2024-12-19 14:38:21.923 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:38:21.923 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:38:21.924 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:38:21.924 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:38:21.926 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:38:21.927 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:38:22.032 +05:00 [INF] Executed DbCommand (100ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:38:22.032 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:38:22.033 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 108.83ms
+2024-12-19 14:38:22.033 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:38:22.033 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 110.3766ms
+2024-12-19 14:38:56.265 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:38:56.265 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:38:56.265 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:38:56.265 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:38:58.824 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:38:58.825 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:38:58.923 +05:00 [INF] Executed DbCommand (95ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:38:58.923 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:38:58.923 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 2657.781ms
+2024-12-19 14:38:58.923 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:38:58.923 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 2658.6488ms
+2024-12-19 14:39:02.135 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:39:02.135 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:39:02.135 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:39:02.135 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:39:03.600 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:39:03.600 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:39:03.695 +05:00 [INF] Executed DbCommand (94ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:39:05.773 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:39:05.773 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 3638.3558ms
+2024-12-19 14:39:05.773 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:42:36.435 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 214298.5413ms
+2024-12-19 14:42:38.952 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:42:38.952 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:42:38.952 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:42:38.953 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:42:45.583 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:42:45.583 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:42:45.687 +05:00 [INF] Executed DbCommand (102ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:42:49.919 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:42:49.920 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 10966.8927ms
+2024-12-19 14:42:49.920 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:42:52.320 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 13368.562ms
+2024-12-19 14:45:18.440 +05:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 14:45:18.580 +05:00 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 14:45:18.867 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 14:45:18.867 +05:00 [INF] Hosting environment: Development
+2024-12-19 14:45:18.868 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 14:45:18.922 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 14:45:19.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 14:45:19.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 14:45:19.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 14:45:19.326 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 409.927ms
+2024-12-19 14:45:19.336 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 28.7922ms
+2024-12-19 14:45:19.338 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 22.9389ms
+2024-12-19 14:45:19.388 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.8017ms
+2024-12-19 14:45:19.443 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 14:45:19.598 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 155.3283ms
+2024-12-19 14:45:33.446 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:45:33.452 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:45:33.479 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:45:33.510 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:45:56.358 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:45:56.373 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:45:56.844 +05:00 [INF] Executed DbCommand (112ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:45:57.038 +05:00 [INF] Executed DbCommand (64ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [IsDeleted] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-12-19 14:45:58.367 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:45:58.371 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 24857.5697ms
+2024-12-19 14:45:58.372 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:45:59.460 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 26013.415ms
+2024-12-19 14:46:36.326 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:46:36.327 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:46:36.327 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:46:36.327 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:47:21.579 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:47:21.582 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:47:21.764 +05:00 [INF] Executed DbCommand (131ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:47:24.073 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:47:24.074 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 47746.1859ms
+2024-12-19 14:47:24.074 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:48:06.559 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 90232.4229ms
+2024-12-19 14:49:08.442 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 14:49:08.443 +05:00 [INF] CORS policy execution successful.
+2024-12-19 14:49:08.443 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:49:08.443 +05:00 [INF] Route matched with {action = "Delete", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 14:49:20.509 +05:00 [INF] Users Request: DeleteUserCommand "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"DeleteUserCommand"} 
+2024-12-19 14:49:20.511 +05:00 [INF] Запрос на удалениие пользователя
+2024-12-19 14:49:20.609 +05:00 [INF] Executed DbCommand (97ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2024-12-19 14:49:23.318 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-12-19 14:49:23.318 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi) in 14874.7411ms
+2024-12-19 14:49:23.318 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Delete (Queue.WebApi)'
+2024-12-19 14:49:28.522 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44375/api/User/B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 204 null null 20080.6748ms
+2024-12-19 15:09:51.113 +05:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 15:09:51.219 +05:00 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 15:09:51.500 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 15:09:51.500 +05:00 [INF] Hosting environment: Development
+2024-12-19 15:09:51.500 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 15:09:51.550 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 15:09:51.840 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 15:09:51.842 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 297.5979ms
+2024-12-19 15:09:51.842 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 15:09:51.844 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 15:09:51.864 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 22.8634ms
+2024-12-19 15:09:51.869 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 24.7759ms
+2024-12-19 15:09:51.923 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.084ms
+2024-12-19 15:09:51.980 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 15:09:52.118 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 138.4462ms
+2024-12-19 15:10:11.822 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User - null null
+2024-12-19 15:10:11.846 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 15:10:11.876 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 15:10:55.119 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 43239.0395ms
+2024-12-19 15:10:55.120 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 15:10:55.171 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User - 500 null application/json 43348.9602ms
+2024-12-19 15:11:06.270 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User?id=B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - null null
+2024-12-19 15:11:06.271 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 15:11:06.272 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(System.Guid) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 15:11:06.295 +05:00 [INF] Users Request: GetUserListQuery "00000000-0000-0000-0000-000000000000" {"Id":"b4b7c080-85b0-4d0f-96c5-3634f8d51b30","$type":"GetUserListQuery"} 
+2024-12-19 15:11:06.805 +05:00 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreationDate], [u].[FirstName], [u].[Iin], [u].[IsDeleted], [u].[LastName]
+FROM [Users] AS [u]
+2024-12-19 15:11:06.877 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.User, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 15:11:06.901 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 628.7903ms
+2024-12-19 15:11:06.901 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 15:11:06.906 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User?id=B4B7C080-85B0-4D0F-96C5-3634F8D51B30 - 200 null application/json; charset=utf-8 635.6565ms
+2024-12-19 15:13:21.447 +05:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-12-19 15:13:21.588 +05:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2024-12-19 15:13:21.895 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 15:13:21.903 +05:00 [INF] Hosting environment: Development
+2024-12-19 15:13:21.903 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-19 15:13:21.928 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-19 15:13:22.204 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-19 15:13:22.219 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 15:13:22.222 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 285.6394ms
+2024-12-19 15:13:22.225 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 21.9431ms
+2024-12-19 15:13:22.229 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-19 15:13:22.229 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 9.0161ms
+2024-12-19 15:13:22.282 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.9294ms
+2024-12-19 15:13:22.330 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-19 15:13:22.502 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 171.9402ms

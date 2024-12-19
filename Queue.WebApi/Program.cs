@@ -3,6 +3,7 @@ using Queue.Application;
 using Queue.Application.Common.Mappings;
 using Queue.Application.Interfaces;
 using Queue.Persistence;
+using Queue.WebApi.Common;
 using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
 using Serilog;
@@ -24,6 +25,7 @@ builder.Services.AddAutoMapper(config =>
 {
    
     config.AddProfile(new AssemblyMappingProfile(AppDomain.CurrentDomain.GetAssemblies()));
+    config.AddProfile(typeof(UserProfile));
 });
 
 builder.Services.AddApplication();

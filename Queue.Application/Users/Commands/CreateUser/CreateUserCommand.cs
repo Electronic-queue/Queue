@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Queue.Application.Users.Commands.CreateUser;
 
-public record CreateUserCommand(Guid Id,string Iin, string FirstName, string LastName) : IRequest<Result<Guid>>;
+public record CreateUserCommand(string Iin, string FirstName, string LastName) : IRequest<Result<Guid>>;
 

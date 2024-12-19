@@ -22,7 +22,7 @@ public class CreateUserCommandHandler(IUserRepository _userRepository) : IReques
            
             CreationDate = DateTime.FromFileTimeUtc(5)
         };
-        var result = await _userRepository.AddAsync(new User { });
+        var result = await _userRepository.AddAsync(user);
         if (result.IsFailed)
         {
             return Result.Failure<Guid>(new Error(Errors.BadRequest, "Ошибка такая-то"));

@@ -1,18 +1,12 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Queue.Application.Users.Commands.DeleteUser
+namespace Queue.Application.Users.Commands.DeleteUser;
+
+public class DeleteUserCommandValidator:AbstractValidator<DeleteUserCommand>
 {
-    public class DeleteUserCommandValidator:AbstractValidator<DeleteUserCommand>
+    public DeleteUserCommandValidator()
     {
-        public DeleteUserCommandValidator()
-        {
-            RuleFor(deleteUserCommand =>
-           deleteUserCommand.Id).NotEqual(Guid.Empty);
-        }
+        RuleFor(deleteUserCommand =>
+       deleteUserCommand.Id).NotEqual(Guid.Empty);
     }
 }

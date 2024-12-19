@@ -18,9 +18,5 @@ public class DeleteUserCommandHandler(IUserRepository _userRepository, ILogger<D
                 return Result.Failure(new Error(Errors.BadRequest, "DeleteError"));
             }
             return Result.Success(entity);
-            
-            
-        
-        
     }
 }
