@@ -12,7 +12,7 @@ namespace Queue.Application.Users.Queries.GetUserDetails
     {
         public GetUserDetailsQueryValidator()
         {
-            RuleFor(user=>user.Id).NotEqual(Guid.Empty);
+            RuleFor(user=>user.UserId).NotEqual(0);
         }
     }
 }

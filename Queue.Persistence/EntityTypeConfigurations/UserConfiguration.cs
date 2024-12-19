@@ -13,8 +13,8 @@ namespace Queue.Persistence.EntityTypeConfigurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(employee=>employee.Id);
-            builder.HasIndex(employee=>employee.Id).IsUnique();
+            builder.HasKey(employee=>employee.UserId);
+            builder.HasIndex(employee=>employee.UserId).IsUnique();
         }
     }
 }

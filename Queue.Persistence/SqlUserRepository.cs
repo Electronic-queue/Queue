@@ -22,7 +22,7 @@ namespace Queue.Persistence
             
         }
 
-        public async Task<Result> DeleteAsync(Guid id)
+        public async Task<Result> DeleteAsync(int id)
         {
             var user=await _dbContext.Users.FindAsync(id);
             if(user != null)
@@ -31,7 +31,7 @@ namespace Queue.Persistence
             }
             try
             {
-                user.IsDeleted = true;
+                //user.IsDeleted = true;
                 await _dbContext.SaveChangesAsync();
                 return Result.Success();
             }
@@ -77,7 +77,7 @@ namespace Queue.Persistence
             }
         }
 
-        public async Task<Result> GetUserDetails(Guid id)
+        public async Task<Result> GetUserDetails(int id)
         {
             try
             {
@@ -99,15 +99,18 @@ namespace Queue.Persistence
         {
             try
             {
-                var updateUser = await _dbContext.Users.FindAsync(user.Id);
+                var updateUser = await _dbContext.Users.FindAsync(user.UserId);
                 if (updateUser != null)
                 {
                     return Result.Failure(new Error("NotFound", "UserNotFound"));
 
                 }
-                updateUser.Iin = user.Iin;
                 updateUser.FirstName = user.FirstName;
                 updateUser.LastName = user.LastName;
+                updateUser.Surname = user.Surname;
+                updateUser.Login = user.Login;
+                updateUser.PasswordHash = user.PasswordHash;
+                updateUser.IsDeleted = user.IsDeleted;
                 await _dbContext.SaveChangesAsync();
                 return Result.Success();
             }

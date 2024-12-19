@@ -7,7 +7,6 @@ using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
 using Serilog;
 using Serilog.Events;
-using System;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,11 +26,11 @@ builder.Services.AddAutoMapper(config =>
 });
 
 builder.Services.AddApplication();
-builder.Services.AddPersistence(builder.Configuration);
+/*builder.Services.AddPersistence(builder.Configuration);
 
 builder.Services.AddDbContext<QueuesDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+*/
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -60,8 +59,8 @@ using (var scope = app.Services.CreateScope())
     var serviceProvider = scope.ServiceProvider;
     try
     {
-        var context = serviceProvider.GetRequiredService<QueuesDbContext>();
-        DbInitializer.Initialize(context);
+/*        var context = serviceProvider.GetRequiredService<QueuesDbContext>();
+        DbInitializer.Initialize(context);*/
     }
     catch (Exception ex)
     {

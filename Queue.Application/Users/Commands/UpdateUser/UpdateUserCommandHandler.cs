@@ -14,13 +14,12 @@ public class UpdateUserCommandHandler(IUserRepository _userRepository, ILogger<U
     {
     var user = new User
     {
-        Id = request.Id,
-        Iin = request.Iin,
         FirstName = request.FirstName,
         LastName = request.LastName,
-
-
-
+        Surname = request.Surname,
+        Login = request.Login,
+        PasswordHash = request.PasswordHash,
+        IsDeleted = request.IsDeleted,
     };
 
     var entity = await _userRepository.UpdateAsync(user);

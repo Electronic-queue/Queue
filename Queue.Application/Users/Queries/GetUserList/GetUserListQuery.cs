@@ -6,6 +6,6 @@ namespace Queue.Application.Users.Queries.GetUserList
 {
     public class GetUserListQuery:IRequest<Result<List<User>>>
     {
-        public Guid Id {  get; set; }
+        public int UserId {  get; set; }
     }
 }

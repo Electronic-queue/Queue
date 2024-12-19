@@ -12,11 +12,7 @@ namespace Queue.Application.Users.Commands.UpdateUser
         public UpdateUserCommandValidator()
         {
             RuleFor(updateUserCommand =>
-            updateUserCommand.Iin).NotEmpty();
-            RuleFor(updateUserCommand =>
             updateUserCommand.FirstName).MaximumLength(250).NotEmpty();
-            RuleFor(updateUserCommand =>
-            updateUserCommand.Id).NotEqual(Guid.Empty);
         }
     }
 }

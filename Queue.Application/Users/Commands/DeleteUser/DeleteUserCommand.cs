@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Queue.Application.Users.Commands.DeleteUser
 {
-    public record DeleteUserCommand(Guid Id):IRequest<Result>;
+    public record DeleteUserCommand(int UserId):IRequest<Result>;
 }

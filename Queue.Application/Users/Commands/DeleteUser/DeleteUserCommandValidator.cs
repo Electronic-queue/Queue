@@ -12,7 +12,7 @@ namespace Queue.Application.Users.Commands.DeleteUser
         public DeleteUserCommandValidator()
         {
             RuleFor(deleteUserCommand =>
-           deleteUserCommand.Id).NotEqual(Guid.Empty);
+           deleteUserCommand.UserId).NotEqual(0);
         }
     }
 }

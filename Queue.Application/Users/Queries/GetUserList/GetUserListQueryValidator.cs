@@ -6,7 +6,7 @@ namespace Queue.Application.Users.Queries.GetUserList
     {
         public GetUserListQueryValidator()
         {
-            RuleFor(user => user.Id).NotEmpty();
+            RuleFor(user => user.UserId).NotEmpty();
         }
     }
 }
