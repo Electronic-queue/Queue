@@ -6,33 +6,28 @@ using Queue.Domain.Interfaces;
 
 namespace Queue.Application.Users.Commands.CreateUser;
 
-public class CreateUserCommandHandler(IUserRepository _userRepository) : IRequestHandler<CreateUserCommand, Result<Guid>>
+public class CreateUserCommandHandler(IUserRepository _userRepository) : IRequestHandler<CreateUserCommand, Result>
 {
-    public async Task<Result<Guid>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-
-
-        
         var user = new User
         {
-            Id = Guid.NewGuid(),
-            Iin = request.Iin,
             FirstName = request.FirstName,
             LastName = request.LastName,
-           
-            CreationDate = DateTime.FromFileTimeUtc(5)
+            Surname = request.Surname,
+            Login = request.Login,
+            PasswordHash = request.PasswordHash,
+            CreatedOn = DateTime.FromFileTimeUtc(5),
+            CreatedBy = request.CreatedBy,
+            IsDeleted = request.IsDeleted,
         };
         var result = await _userRepository.AddAsync(user);
         if (result.IsFailed)
         {
-            return Result.Failure<Guid>(new Error(Errors.BadRequest, "Ошибка такая-то"));
+            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка такая-то"));
         }
 
-
-
-
-        return Result.Success(user.Id);
+        return Result.Success();
     }
+
 }
-
-

@@ -25,11 +25,11 @@ namespace Queue.WebApi.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<UserListVm>> GetAll(Guid id)
+        public async Task<ActionResult<UserListVm>> GetAll(int UserId)
         {
             var query = new GetUserListQuery
             {
-                Id = id
+                UserId = UserId
 
             };
             var vm = await Mediator.Send(query);
@@ -43,12 +43,12 @@ namespace Queue.WebApi.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<UserDetailsVm>> Get(Guid id)
+        public async Task<ActionResult<UserDetailsVm>> Get(int UserId)
         {
             var query = new GetUserDetailsQuery
             {
-                
-                Id = id
+
+                UserId = UserId
             };
             var vm = await Mediator.Send(query);
             return Ok(vm);
@@ -81,7 +81,7 @@ namespace Queue.WebApi.Controllers
 
         public async Task<IActionResult> Update([FromBody] UpdateUsereDto updateUserDto)
         {
-            await Mediator.Send(new UpdateUserCommand(updateUserDto.Id,updateUserDto.Iin,updateUserDto.FirstName,updateUserDto.LastName));
+            await Mediator.Send(new UpdateUserCommand(updateUserDto.UserId,updateUserDto.FirstName,updateUserDto.LastName,updateUserDto.Surname,updateUserDto.Login, updateUserDto.PasswordHash, updateUserDto.IsDeleted));
             return NoContent();
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Queue.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(int id)
         {
             var command = await Mediator.Send(new DeleteUserCommand(id));
             

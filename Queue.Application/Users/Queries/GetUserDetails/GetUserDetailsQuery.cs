@@ -10,6 +10,6 @@ namespace Queue.Application.Users.Queries.GetUserDetails
 {
     public class GetUserDetailsQuery:IRequest<Result>
     {
-        public Guid Id { get; set; }
+        public int UserId { get; set; }
     }
 }

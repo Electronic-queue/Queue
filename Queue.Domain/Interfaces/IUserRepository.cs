@@ -5,5 +5,5 @@ namespace Queue.Domain.Interfaces;
 
 public interface IUserRepository : IRepository<User>
 {
-    Task<Result> GetUserDetails(Guid id);
+    Task<Result> GetUserDetails(int id);
 }

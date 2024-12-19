@@ -7,6 +7,6 @@ public class DeleteUserCommandValidator:AbstractValidator<DeleteUserCommand>
     public DeleteUserCommandValidator()
     {
         RuleFor(deleteUserCommand =>
-       deleteUserCommand.Id).NotEqual(Guid.Empty);
+           deleteUserCommand.UserId).NotEqual(0);
     }
 }

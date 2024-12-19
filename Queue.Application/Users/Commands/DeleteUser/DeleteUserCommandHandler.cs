@@ -12,7 +12,7 @@ public class DeleteUserCommandHandler(IUserRepository _userRepository, ILogger<D
     {
         
             _logger.LogInformation("Запрос на удалениие пользователя");
-            var entity = await _userRepository.DeleteAsync(request.Id);
+            var entity = await _userRepository.DeleteAsync(request.UserId);
             if (entity.IsFailed)
             {
                 return Result.Failure(new Error(Errors.BadRequest, "DeleteError"));

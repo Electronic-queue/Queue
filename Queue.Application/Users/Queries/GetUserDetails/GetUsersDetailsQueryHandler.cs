@@ -14,7 +14,7 @@ namespace Queue.Application.Users.Queries.GetUserDetails
         public async Task<Result> Handle(GetUserDetailsQuery request,
             CancellationToken cancellationToken)
         {
-            var result = await _userRepository.GetUserDetails(request.Id);
+            var result = await _userRepository.GetUserDetails(request.UserId);
             if (result == null)
             {
                 return Result.Failure(new Error("405", "Error"));

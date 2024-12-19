@@ -9,7 +9,6 @@ public class UserProfile : Profile
     public UserProfile()
     {
         CreateMap<CreateUserDto, CreateUserCommand>()
-            .ForMember(dest => dest.Iin, opt => opt.MapFrom(src => src.Iin))
             .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
             .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName));
     }

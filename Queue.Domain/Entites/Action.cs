@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Queue.Domain.Entites;
 
 public partial class Action
 {
+    [Key]
     public int ActionId { get; set; }
 
     public string Name { get; set; } = null!;
