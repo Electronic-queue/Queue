@@ -1,0 +1,1143 @@
+2024-12-20 00:20:19.241 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:20:19.300 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:20:19.300 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:20:19.300 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:20:19.665 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 373.7718ms
+2024-12-20 00:20:19.700 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:20:19.700 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:20:19.700 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:20:19.732 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 33.2462ms
+2024-12-20 00:20:19.751 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 34.2089ms
+2024-12-20 00:20:19.806 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.4804ms
+2024-12-20 00:20:20.058 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:20:20.347 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 289.181ms
+2024-12-20 00:20:28.495 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:20:28.516 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.0326ms
+2024-12-20 00:20:30.617 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:20:30.630 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 13.1592ms
+2024-12-20 00:20:32.192 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:20:32.203 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.5324ms
+2024-12-20 00:21:03.935 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:21:03.947 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 12.2862ms
+2024-12-20 00:21:08.743 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:21:08.751 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.0828ms
+2024-12-20 00:21:09.876 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:21:09.884 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.435ms
+2024-12-20 00:21:11.600 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:21:11.612 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.1976ms
+2024-12-20 00:21:14.122 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:21:14.133 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 11.6001ms
+2024-12-20 00:22:48.137 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:22:48.192 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:22:48.197 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:22:48.197 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:22:48.546 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 363.5508ms
+2024-12-20 00:22:48.563 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:22:48.567 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:22:48.567 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:22:48.588 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 26.1484ms
+2024-12-20 00:22:48.589 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 25.8834ms
+2024-12-20 00:22:48.634 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.4312ms
+2024-12-20 00:22:48.687 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:22:48.862 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 174.6481ms
+2024-12-20 00:22:53.734 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:22:53.768 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 33.578ms
+2024-12-20 00:24:36.586 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:24:36.620 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:24:36.631 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:24:36.632 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:24:36.915 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 304.0343ms
+2024-12-20 00:24:36.917 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:24:36.923 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:24:36.930 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:24:36.967 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 47.7773ms
+2024-12-20 00:24:36.967 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 44.7109ms
+2024-12-20 00:24:37.053 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 123.588ms
+2024-12-20 00:24:37.110 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:24:37.321 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 210.6128ms
+2024-12-20 00:24:41.484 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:24:41.508 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 24.6417ms
+2024-12-20 00:24:43.042 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:24:43.056 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.9851ms
+2024-12-20 00:29:07.964 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:29:08.036 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:29:08.039 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:29:08.040 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:29:08.401 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 376.571ms
+2024-12-20 00:29:08.443 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:29:08.443 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:29:08.443 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:29:08.480 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 41.305ms
+2024-12-20 00:29:08.481 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 32.1691ms
+2024-12-20 00:29:08.539 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.0985ms
+2024-12-20 00:29:08.620 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:29:08.897 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 278.4761ms
+2024-12-20 00:29:12.996 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:29:13.017 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 21.5749ms
+2024-12-20 00:29:15.403 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:29:15.420 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.1338ms
+2024-12-20 00:29:16.354 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:29:16.369 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 15.1439ms
+2024-12-20 00:29:17.219 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:29:17.228 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.5518ms
+2024-12-20 00:29:19.253 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:29:19.265 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 11.8271ms
+2024-12-20 00:29:20.913 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:29:20.921 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.5231ms
+2024-12-20 00:29:21.736 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:29:21.746 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 9.3431ms
+2024-12-20 00:30:36.272 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:30:36.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:30:36.319 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:30:36.319 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:30:36.707 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:30:36.707 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:30:36.714 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 418.1496ms
+2024-12-20 00:30:36.720 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:30:36.716 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 22.66ms
+2024-12-20 00:30:36.715 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 34.6176ms
+2024-12-20 00:30:36.876 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 155.5895ms
+2024-12-20 00:30:36.983 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:30:37.295 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 312.2918ms
+2024-12-20 00:33:17.416 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:33:17.440 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:33:17.449 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:33:17.449 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:33:17.785 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 353.4706ms
+2024-12-20 00:33:17.803 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:33:17.803 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:33:17.803 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:33:17.824 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 21.5552ms
+2024-12-20 00:33:17.825 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 21.289ms
+2024-12-20 00:33:17.873 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.618ms
+2024-12-20 00:33:17.919 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:33:18.196 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 276.9901ms
+2024-12-20 00:36:46.978 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:36:47.062 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:36:47.066 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:36:47.066 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:36:47.522 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:36:47.522 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:36:47.522 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:36:47.577 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 486.6478ms
+2024-12-20 00:36:47.583 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 71.7812ms
+2024-12-20 00:36:47.581 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 72.2962ms
+2024-12-20 00:36:47.623 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.6819ms
+2024-12-20 00:36:47.690 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:36:47.894 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 204.1458ms
+2024-12-20 00:36:51.562 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:36:51.592 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 30.0276ms
+2024-12-20 00:36:55.634 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:36:55.647 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.7084ms
+2024-12-20 00:36:57.364 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:36:57.374 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 9.7123ms
+2024-12-20 00:36:58.376 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:36:58.387 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.6582ms
+2024-12-20 00:37:00.648 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:37:00.661 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 13.5508ms
+2024-12-20 00:37:44.192 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:37:44.223 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:37:44.230 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:37:44.230 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:37:44.559 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 344.9186ms
+2024-12-20 00:37:44.564 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:37:44.564 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:37:44.572 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:37:44.611 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 43.6384ms
+2024-12-20 00:37:44.620 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 44.5517ms
+2024-12-20 00:37:44.660 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 93.3541ms
+2024-12-20 00:37:44.703 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:37:44.975 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 271.6169ms
+2024-12-20 00:41:46.693 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:41:46.776 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:41:46.784 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:41:46.784 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:41:47.346 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 584.0208ms
+2024-12-20 00:41:47.378 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:41:47.378 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:41:47.378 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:41:47.429 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 51.9129ms
+2024-12-20 00:41:47.430 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 37.1263ms
+2024-12-20 00:41:47.484 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.1677ms
+2024-12-20 00:41:47.560 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:41:47.908 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 348.1908ms
+2024-12-20 00:41:50.441 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:41:50.464 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 22.7791ms
+2024-12-20 00:41:51.989 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:41:52.007 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.299ms
+2024-12-20 00:42:02.178 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:42:02.196 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 18.0976ms
+2024-12-20 00:42:03.153 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:42:03.162 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.625ms
+2024-12-20 00:43:52.810 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:43:52.838 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:43:52.847 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:43:52.847 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:43:53.240 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:43:53.255 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:43:53.256 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 428.5251ms
+2024-12-20 00:43:53.259 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 15.6575ms
+2024-12-20 00:43:53.292 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:43:53.328 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 60.7193ms
+2024-12-20 00:43:53.394 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.0201ms
+2024-12-20 00:43:53.472 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:43:53.681 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 208.3685ms
+2024-12-20 00:43:56.940 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:43:56.948 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 7.7897ms
+2024-12-20 00:44:03.018 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:44:03.035 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.3395ms
+2024-12-20 00:44:12.183 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:44:12.187 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 4.3191ms
+2024-12-20 00:44:13.836 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:44:13.845 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.1964ms
+2024-12-20 00:44:15.009 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:44:15.014 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 5.3959ms
+2024-12-20 00:44:16.187 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:44:16.195 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.4578ms
+2024-12-20 00:44:19.408 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:44:19.412 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 4.2947ms
+2024-12-20 00:44:21.768 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:44:21.778 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.9118ms
+2024-12-20 00:44:24.563 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:44:24.567 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 3.6541ms
+2024-12-20 00:44:26.079 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:44:26.086 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.7816ms
+2024-12-20 00:55:22.152 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 00:55:22.210 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 00:55:22.216 +05:00 [INF] Hosting environment: Development
+2024-12-20 00:55:22.217 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 00:55:22.570 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 368.8318ms
+2024-12-20 00:55:22.596 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 00:55:22.596 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 00:55:22.600 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 00:55:22.657 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 27.0413ms
+2024-12-20 00:55:22.657 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 61.9587ms
+2024-12-20 00:55:22.714 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 115.1472ms
+2024-12-20 00:55:22.790 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:23.013 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 222.6178ms
+2024-12-20 00:55:26.361 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:26.373 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 11.9063ms
+2024-12-20 00:55:29.358 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:29.368 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.1635ms
+2024-12-20 00:55:30.818 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:30.823 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 5.7043ms
+2024-12-20 00:55:32.248 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:32.260 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.6266ms
+2024-12-20 00:55:33.168 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:33.175 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 6.9876ms
+2024-12-20 00:55:34.094 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:34.103 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.7309ms
+2024-12-20 00:55:35.092 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:35.098 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 5.7415ms
+2024-12-20 00:55:36.828 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:36.834 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.9984ms
+2024-12-20 00:55:38.003 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:38.008 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 4.8505ms
+2024-12-20 00:55:38.779 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 00:55:38.787 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.5749ms
+2024-12-20 00:55:40.981 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 00:55:40.987 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 6.0157ms
+2024-12-20 01:24:00.687 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 01:24:00.712 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 01:24:00.730 +05:00 [INF] Hosting environment: Development
+2024-12-20 01:24:00.730 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 01:24:00.849 +05:00 [INF] CorrelationId: ad7ddedb-4259-4136-8539-11d181e207c8
+2024-12-20 01:24:01.038 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 334.5882ms
+2024-12-20 01:24:01.040 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 01:24:01.040 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 01:24:01.040 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 01:24:01.043 +05:00 [INF] CorrelationId: 43071227-c942-41b8-87e9-e9239777f52f
+2024-12-20 01:24:01.077 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 22.6459ms
+2024-12-20 01:24:01.077 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 37.5902ms
+2024-12-20 01:24:01.120 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.0247ms
+2024-12-20 01:24:01.179 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 01:24:01.181 +05:00 [INF] CorrelationId: 21ea64c9-df39-4845-9c3b-42a8029260d3
+2024-12-20 01:24:01.395 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 215.3717ms
+2024-12-20 01:24:07.574 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User?UserId=1&api-version=1 - null null
+2024-12-20 01:24:07.574 +05:00 [INF] CorrelationId: f5552e73-70bf-403c-b229-47f8a660deff
+2024-12-20 01:24:07.606 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-20 01:24:07.627 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(Int32) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 01:24:07.681 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 49.455ms
+2024-12-20 01:24:07.682 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-20 01:24:07.733 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User?UserId=1&api-version=1 - 500 null application/json 159.4232ms
+2024-12-20 01:24:11.396 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/api/User?UserId=1&api-version=1 - null null
+2024-12-20 01:24:11.396 +05:00 [INF] CorrelationId: 359efae6-8a23-4bbf-920e-22410c096117
+2024-12-20 01:24:11.397 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-20 01:24:11.397 +05:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(Int32) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 01:24:11.425 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 27.5332ms
+2024-12-20 01:24:11.425 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-20 01:24:11.449 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/api/User?UserId=1&api-version=1 - 500 null application/json 53.669ms
+2024-12-20 01:26:12.669 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 01:26:12.696 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.html - null null
+2024-12-20 01:26:12.708 +05:00 [INF] Hosting environment: Development
+2024-12-20 01:26:12.708 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 01:26:12.919 +05:00 [INF] CorrelationId: e4eab866-e1ed-4242-9b38-1672dbacf676
+2024-12-20 01:26:13.138 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.html - 200 null text/html;charset=utf-8 451.3988ms
+2024-12-20 01:26:13.138 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 01:26:13.146 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/index.js - null null
+2024-12-20 01:26:13.157 +05:00 [INF] CorrelationId: bde0eef1-7966-42f7-98f9-07ef90c51b37
+2024-12-20 01:26:13.163 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/_vs/browserLink - null null
+2024-12-20 01:26:13.192 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 46.068ms
+2024-12-20 01:26:13.220 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/index.js - 200 null application/javascript;charset=utf-8 76.9279ms
+2024-12-20 01:26:13.290 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 136.5373ms
+2024-12-20 01:26:13.352 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
+2024-12-20 01:26:13.354 +05:00 [INF] CorrelationId: 29e6e59d-521f-40dd-908f-6890efc50866
+2024-12-20 01:26:13.651 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 299.5549ms
+2024-12-20 01:26:24.782 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v2/swagger.json - null null
+2024-12-20 01:26:24.782 +05:00 [INF] CorrelationId: 
+2024-12-20 01:26:24.800 +05:00 [INF] Request finished HTTP/2 GET https://loce9045038-adf7-4b5c-88c6-fd33ef3f5ac5alhost:44375/swagger/v2/swagger.json - 200 null application/json;charset=utf-8 18.399ms
+2024-12-20 15:43:17.889 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 15:43:17.934 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 15:43:17.937 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 15:43:17.938 +05:00 [INF] Hosting environment: Development
+2024-12-20 15:43:17.938 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 15:43:18.424 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:43:18.711 +05:00 [INF] CorrelationId: 93cc353f-cef1-43dc-9206-5b62772c32aa
+2024-12-20 15:43:18.971 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 572.8971ms
+2024-12-20 15:43:18.980 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:43:18.980 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:43:18.981 +05:00 [INF] CorrelationId: c8a7b23c-d1ad-4111-b92f-e11ff8aabf61
+2024-12-20 15:43:18.984 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.5604ms
+2024-12-20 15:43:18.989 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:43:18.997 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 17.8452ms
+2024-12-20 15:43:19.055 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.2681ms
+2024-12-20 15:43:19.133 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:43:19.136 +05:00 [INF] CorrelationId: 900a3495-e1b9-48dc-883f-7986a8c99f5f
+2024-12-20 15:43:19.399 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 266.1617ms
+2024-12-20 15:43:32.416 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 114
+2024-12-20 15:43:32.416 +05:00 [INF] CorrelationId: 45291257-846c-4ec6-a476-51e7c4a74829
+2024-12-20 15:43:32.428 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:43:32.510 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:43:32.577 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:43:33.128 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 542.2339ms
+2024-12-20 15:43:33.130 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:43:33.196 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 781.9508ms
+2024-12-20 15:44:22.589 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 119
+2024-12-20 15:44:22.592 +05:00 [INF] CorrelationId: bc4dd1e1-e2f6-4991-a1c7-9bfec0058baf
+2024-12-20 15:44:22.603 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:44:22.605 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:44:22.606 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:44:22.686 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 80.6782ms
+2024-12-20 15:44:22.687 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:44:22.723 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 135.6014ms
+2024-12-20 15:45:33.099 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 119
+2024-12-20 15:45:33.106 +05:00 [INF] CorrelationId: 0c8d1d51-1ede-48f1-a3dc-98f3fc828dbd
+2024-12-20 15:45:33.110 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:45:33.110 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:45:33.110 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:45:33.159 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 48.417ms
+2024-12-20 15:45:33.160 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:45:33.199 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 100.0691ms
+2024-12-20 15:45:37.192 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 119
+2024-12-20 15:45:37.193 +05:00 [INF] CorrelationId: 12b1c26e-4d22-4eb1-ba4f-74132e728e24
+2024-12-20 15:45:37.193 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:45:37.193 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:45:37.193 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:45:37.246 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 51.9484ms
+2024-12-20 15:45:37.246 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:45:37.287 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 94.6514ms
+2024-12-20 15:46:01.000 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 15:46:01.089 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 15:46:01.096 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 15:46:01.097 +05:00 [INF] Hosting environment: Development
+2024-12-20 15:46:01.097 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 15:46:55.402 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:46:55.879 +05:00 [INF] CorrelationId: 2d77727a-b2f2-4185-bb48-b98d265c4636
+2024-12-20 15:46:56.483 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 1129.2124ms
+2024-12-20 15:46:57.980 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:46:57.995 +05:00 [INF] CorrelationId: 1977ce72-7d9f-44f8-b108-4b7c8fd34cb0
+2024-12-20 15:46:57.996 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:46:57.999 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 18.9145ms
+2024-12-20 15:46:58.004 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:46:58.153 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 173.2452ms
+2024-12-20 15:46:58.264 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 267.4745ms
+2024-12-20 15:46:58.710 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:46:58.716 +05:00 [INF] CorrelationId: 3ebc72c5-3efb-4874-a0f4-ce3391ef43c7
+2024-12-20 15:46:59.568 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 857.495ms
+2024-12-20 15:47:11.436 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:47:11.436 +05:00 [INF] CorrelationId: f4583efc-9a82-4e7d-8940-5dbb6d5eed75
+2024-12-20 15:47:11.444 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:47:11.487 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:47:11.515 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:47:17.696 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 6173.2759ms
+2024-12-20 15:47:17.704 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:47:31.993 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 20558.3663ms
+2024-12-20 15:48:40.439 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:48:40.439 +05:00 [INF] CorrelationId: 7b4d1843-042a-4d86-bba1-771f173383e8
+2024-12-20 15:48:40.440 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:48:40.441 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:48:40.441 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:48:46.013 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 5572.1331ms
+2024-12-20 15:48:46.016 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:48:51.441 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 11002.4775ms
+2024-12-20 15:49:14.896 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:49:14.896 +05:00 [INF] CorrelationId: 730a896c-78c0-4c12-9e78-d4812e34c9a1
+2024-12-20 15:49:14.899 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:49:14.899 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:49:14.903 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:49:21.218 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 6314.6961ms
+2024-12-20 15:49:21.221 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:50:00.268 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 45375.6684ms
+2024-12-20 15:50:06.786 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:50:06.787 +05:00 [INF] CorrelationId: 522e34ce-f6da-4bdd-87cd-c11e2d227f42
+2024-12-20 15:50:06.787 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:50:06.787 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:50:06.787 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:51:46.102 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 99314.6714ms
+2024-12-20 15:51:46.110 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:51:46.135 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 99349.3166ms
+2024-12-20 15:51:47.171 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:51:47.191 +05:00 [INF] CorrelationId: 55d95a37-2357-4fe0-b57e-4d31dc98a56b
+2024-12-20 15:51:47.192 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 21.6964ms
+2024-12-20 15:51:47.205 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:51:47.205 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:51:47.205 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:51:47.206 +05:00 [INF] CorrelationId: b4e9eb87-5c7e-4c01-ba9e-369cf43c222c
+2024-12-20 15:51:47.206 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 1.7634ms
+2024-12-20 15:51:47.207 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 2.2014ms
+2024-12-20 15:51:47.217 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.4415ms
+2024-12-20 15:51:47.359 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:51:47.359 +05:00 [INF] CorrelationId: 848e36d9-a0de-4280-955b-e8ccdaf61c0e
+2024-12-20 15:51:47.389 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.714ms
+2024-12-20 15:51:56.456 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:51:56.457 +05:00 [INF] CorrelationId: ea6a765b-240e-45c0-b38a-ec7f4a0c2548
+2024-12-20 15:51:56.457 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:51:56.458 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:51:56.466 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.v1.UserController (Queue.WebApi).
+2024-12-20 15:52:20.491 +05:00 [INF] Executed action Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi) in 24025.1074ms
+2024-12-20 15:52:20.495 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.v1.UserController.Create (Queue.WebApi)'
+2024-12-20 15:53:31.381 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 15:53:31.424 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 15:53:31.432 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 15:53:31.433 +05:00 [INF] Hosting environment: Development
+2024-12-20 15:53:31.433 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 15:53:34.706 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:53:34.990 +05:00 [INF] CorrelationId: f87df3ea-b017-4132-a785-5a0280154e59
+2024-12-20 15:53:35.252 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 606.7852ms
+2024-12-20 15:53:35.260 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:53:35.260 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:53:35.262 +05:00 [INF] CorrelationId: f4ff9597-61bc-45f0-87cc-bd8743c63200
+2024-12-20 15:53:35.265 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.2598ms
+2024-12-20 15:53:35.270 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:53:35.288 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 28.1188ms
+2024-12-20 15:53:35.340 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.0207ms
+2024-12-20 15:53:35.432 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:53:35.435 +05:00 [INF] CorrelationId: b9228a13-60db-4572-be4f-94985419f4b0
+2024-12-20 15:53:35.719 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 286.7263ms
+2024-12-20 15:53:45.184 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:53:45.185 +05:00 [INF] CorrelationId: 1cbd1ba4-eca7-44c4-96a3-d5841a41ca68
+2024-12-20 15:53:45.192 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:53:45.238 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:53:45.267 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 15:53:47.946 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 2673.9812ms
+2024-12-20 15:53:47.952 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:55:05.530 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 15:55:05.558 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 15:55:05.563 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 15:55:05.563 +05:00 [INF] Hosting environment: Development
+2024-12-20 15:55:05.563 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 15:55:06.166 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:55:06.352 +05:00 [INF] CorrelationId: 7a8e2737-d0ea-4fc2-a9cc-df2313a33c90
+2024-12-20 15:55:06.557 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 412.1227ms
+2024-12-20 15:55:06.567 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:55:06.567 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:55:06.569 +05:00 [INF] CorrelationId: a7b26a9d-3aa0-4043-ab23-83cb2942c586
+2024-12-20 15:55:06.572 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.8353ms
+2024-12-20 15:55:06.576 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:55:06.582 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 14.8283ms
+2024-12-20 15:55:06.627 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.0336ms
+2024-12-20 15:55:06.735 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:55:06.738 +05:00 [INF] CorrelationId: c94bc0c1-53af-4d00-a727-d76b845e7185
+2024-12-20 15:55:07.067 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 331.805ms
+2024-12-20 15:55:16.804 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:55:16.806 +05:00 [INF] CorrelationId: 27594ce4-eada-492e-ac53-fc0bc3d52bae
+2024-12-20 15:55:16.812 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:55:16.846 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:55:16.867 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 15:55:20.086 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 3213.8648ms
+2024-12-20 15:55:20.092 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:57:55.980 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 15:57:56.013 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 15:57:56.015 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 15:57:56.016 +05:00 [INF] Hosting environment: Development
+2024-12-20 15:57:56.016 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 15:57:56.659 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 15:57:56.806 +05:00 [INF] CorrelationId: c472807d-7a8e-49e7-b35d-d767db90dad2
+2024-12-20 15:57:56.986 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 346.975ms
+2024-12-20 15:57:56.995 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 15:57:56.995 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 15:57:56.996 +05:00 [INF] CorrelationId: f0a7980b-0be8-4f1d-ae02-6f4e19b69f27
+2024-12-20 15:57:56.999 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.3367ms
+2024-12-20 15:57:57.003 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 15:57:57.009 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 14.5477ms
+2024-12-20 15:57:57.054 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.7102ms
+2024-12-20 15:57:57.160 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 15:57:57.176 +05:00 [INF] CorrelationId: 19e3fc49-76d5-4d7d-899d-53f06e06dc56
+2024-12-20 15:57:57.529 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 369.6347ms
+2024-12-20 15:58:07.192 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 15:58:07.193 +05:00 [INF] CorrelationId: e1729fbe-0041-4bab-a02f-c0ac9e05270c
+2024-12-20 15:58:07.199 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:58:07.243 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:58:07.278 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 15:58:10.058 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 2774.9966ms
+2024-12-20 15:58:10.061 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:58:39.730 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 32538.6423ms
+2024-12-20 15:58:54.609 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 108
+2024-12-20 15:58:54.609 +05:00 [INF] CorrelationId: d3b0b8ba-eea8-4146-b637-1eed701fd88d
+2024-12-20 15:58:54.611 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:58:54.611 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:58:54.611 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 15:58:56.217 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 1604.9535ms
+2024-12-20 15:58:56.217 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:58:56.239 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 1631.5849ms
+2024-12-20 15:59:22.674 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 108
+2024-12-20 15:59:22.676 +05:00 [INF] CorrelationId: d4834bbf-f25e-4068-ac34-6988e4bebd8a
+2024-12-20 15:59:22.677 +05:00 [INF] CORS policy execution successful.
+2024-12-20 15:59:22.678 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 15:59:22.678 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 15:59:26.200 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 3522.4098ms
+2024-12-20 15:59:26.203 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:00:19.139 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 56457.1694ms
+2024-12-20 16:00:22.360 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 108
+2024-12-20 16:00:22.361 +05:00 [INF] CorrelationId: b3fe4f9b-b8c1-466d-b65f-53b9b69c7cb1
+2024-12-20 16:00:22.368 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:00:22.371 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:00:22.371 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:04:35.365 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:04:35.400 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:04:35.402 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:04:35.402 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:04:35.402 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:04:35.867 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:04:36.058 +05:00 [INF] CorrelationId: 39472b80-4de2-4325-a968-77167a93abe5
+2024-12-20 16:04:36.228 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 380.441ms
+2024-12-20 16:04:36.236 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:04:36.236 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:04:36.238 +05:00 [INF] CorrelationId: 215e0d2d-f48a-4f66-8d79-c9c48f1501ba
+2024-12-20 16:04:36.241 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.4635ms
+2024-12-20 16:04:36.245 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:04:36.251 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 15.7483ms
+2024-12-20 16:04:36.290 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.9384ms
+2024-12-20 16:04:36.374 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:04:36.376 +05:00 [INF] CorrelationId: 4f2ed781-e24b-4a95-b265-eb68af5ba4a2
+2024-12-20 16:04:36.621 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 247.9019ms
+2024-12-20 16:04:45.282 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 120
+2024-12-20 16:04:45.283 +05:00 [INF] CorrelationId: ef2f7967-cd06-4659-b98d-9ad7c593e013
+2024-12-20 16:04:45.287 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:04:45.328 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:04:45.350 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:04:48.660 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 3306.4325ms
+2024-12-20 16:04:48.663 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:07:36.392 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:07:36.419 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:07:36.421 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:07:36.421 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:07:36.421 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:07:39.513 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:07:39.714 +05:00 [INF] CorrelationId: 8ebd6363-24f1-450d-b537-227420f0b918
+2024-12-20 16:07:39.883 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 390.0389ms
+2024-12-20 16:07:39.900 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:07:39.900 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:07:39.901 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:07:39.902 +05:00 [INF] CorrelationId: 79b70bb6-7292-4c50-b0f5-3b65b04c1a29
+2024-12-20 16:07:39.925 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 24.6354ms
+2024-12-20 16:07:39.942 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 42.3139ms
+2024-12-20 16:07:39.971 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.2333ms
+2024-12-20 16:07:40.028 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:07:40.030 +05:00 [INF] CorrelationId: cf79bec5-35ab-4f07-8532-a699262abd1a
+2024-12-20 16:07:40.299 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 270.9255ms
+2024-12-20 16:07:51.247 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:07:51.248 +05:00 [INF] CorrelationId: 25fe95a8-cc46-434f-ac12-8719c75fbc8a
+2024-12-20 16:07:51.253 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:07:51.284 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:07:51.305 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:07:54.650 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:08:05.872 +05:00 [ERR] Failed executing DbCommand (49ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:08:05.915 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:08:05.992 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-20 16:08:06.015 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 14706.1533ms
+2024-12-20 16:08:06.017 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:08:06.103 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 14856.3421ms
+2024-12-20 16:08:54.162 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:08:54.162 +05:00 [INF] CorrelationId: 3708866d-4df8-4b30-af40-f3d76ad69d0e
+2024-12-20 16:08:54.164 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:08:54.164 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:08:54.165 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:08:57.603 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:09:01.274 +05:00 [ERR] Failed executing DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:09:01.295 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:11:59.376 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-20 16:11:59.377 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 185212.7752ms
+2024-12-20 16:11:59.378 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:12:13.068 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 198907.1333ms
+2024-12-20 16:17:58.844 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:17:58.849 +05:00 [INF] CorrelationId: b8eb7601-1687-4b43-b29a-d3b172ff97f9
+2024-12-20 16:17:58.850 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:17:58.851 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:17:58.851 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:18:25.237 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:19:10.551 +05:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:19:10.552 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:20:21.014 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:20:21.060 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:20:21.065 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:20:21.065 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:20:21.065 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:20:24.270 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:20:24.411 +05:00 [INF] CorrelationId: a227ce0b-ac99-43ef-8092-49fcc17cded9
+2024-12-20 16:20:24.553 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 302.4214ms
+2024-12-20 16:20:24.565 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:20:24.565 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:20:24.566 +05:00 [INF] CorrelationId: bcd7d082-9045-46b3-b6af-2297d698f132
+2024-12-20 16:20:24.569 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.124ms
+2024-12-20 16:20:24.572 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:20:24.592 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 27.483ms
+2024-12-20 16:20:24.624 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.7146ms
+2024-12-20 16:20:24.684 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:20:24.686 +05:00 [INF] CorrelationId: 05182e59-6043-477a-a542-5baac4761e68
+2024-12-20 16:20:24.905 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 221.1842ms
+2024-12-20 16:20:59.182 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:20:59.183 +05:00 [INF] CorrelationId: f305faba-269d-4d5b-a147-bc4cbf2e6b7e
+2024-12-20 16:20:59.187 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:20:59.221 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:20:59.242 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:21:05.620 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 6374.8827ms
+2024-12-20 16:21:05.624 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:21:26.586 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:21:26.613 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:21:26.616 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:21:26.616 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:21:26.616 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:21:29.127 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:21:29.226 +05:00 [INF] CorrelationId: 3fcd9431-d442-40f5-97ae-4bd31220ea76
+2024-12-20 16:21:29.362 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 252.1212ms
+2024-12-20 16:21:29.374 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:21:29.374 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:21:29.375 +05:00 [INF] CorrelationId: e02b84ab-c061-48c3-972a-f503375c28cf
+2024-12-20 16:21:29.378 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.05ms
+2024-12-20 16:21:29.381 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:21:29.387 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 13.5683ms
+2024-12-20 16:21:29.425 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.7269ms
+2024-12-20 16:21:29.502 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:21:29.506 +05:00 [INF] CorrelationId: 6d0d15d6-59a0-442f-b884-82f7a5103d5f
+2024-12-20 16:21:29.717 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 215.0995ms
+2024-12-20 16:21:36.262 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:21:36.262 +05:00 [INF] CorrelationId: 348e762c-3ef0-4d53-8e92-46f391a2661b
+2024-12-20 16:21:36.266 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:21:36.306 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:21:36.334 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:22:01.581 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:22:47.221 +05:00 [ERR] Failed executing DbCommand (43ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:22:47.250 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:27:33.453 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:27:33.506 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:27:33.509 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:27:33.509 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:27:33.509 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:27:36.492 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:27:36.877 +05:00 [INF] CorrelationId: 32940682-6ec5-44ad-8c39-09849b33c8c9
+2024-12-20 16:27:37.050 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 598.1482ms
+2024-12-20 16:27:37.063 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:27:37.063 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:27:37.064 +05:00 [INF] CorrelationId: 6fb0ea40-beda-40cc-ad4a-ddc96593be06
+2024-12-20 16:27:37.071 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 8.6718ms
+2024-12-20 16:27:37.073 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:27:37.089 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 25.9347ms
+2024-12-20 16:27:37.127 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.023ms
+2024-12-20 16:27:37.198 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:27:37.200 +05:00 [INF] CorrelationId: 8f2d5304-08ff-4af8-93d2-aa1debf06a2b
+2024-12-20 16:27:37.479 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 281.9749ms
+2024-12-20 16:27:48.304 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:27:48.305 +05:00 [INF] CorrelationId: 413ad040-da11-47fc-ac27-1da12cb33859
+2024-12-20 16:27:48.309 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:27:48.346 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:27:48.373 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:28:03.095 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:28:45.933 +05:00 [ERR] Failed executing DbCommand (34ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:28:45.967 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:33:08.145 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:33:08.174 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:33:08.178 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:33:08.178 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:33:08.178 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:33:10.621 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:33:10.758 +05:00 [INF] CorrelationId: f42a42e6-6908-4e15-89c8-95aace69e6ae
+2024-12-20 16:33:10.916 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 310.7116ms
+2024-12-20 16:33:10.922 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:33:10.922 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:33:10.923 +05:00 [INF] CorrelationId: 9890be70-007d-48c3-b61d-4063cc7a2e09
+2024-12-20 16:33:10.925 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 3.5985ms
+2024-12-20 16:33:10.929 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:33:10.935 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 12.972ms
+2024-12-20 16:33:10.998 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.2309ms
+2024-12-20 16:33:11.091 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:33:11.093 +05:00 [INF] CorrelationId: d9cfb22c-52fb-4820-bc74-7befeb3554b2
+2024-12-20 16:33:11.347 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 256.856ms
+2024-12-20 16:33:19.527 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:33:19.528 +05:00 [INF] CorrelationId: 31089001-cd01-44c0-87cf-5c0125c70fc5
+2024-12-20 16:33:19.531 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:33:19.564 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:33:19.588 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:33:26.814 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:34:19.718 +05:00 [ERR] Failed executing DbCommand (44ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:34:19.757 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:34:19.809 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-20 16:34:19.828 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 60235.643ms
+2024-12-20 16:34:19.833 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:34:19.918 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 60390.9859ms
+2024-12-20 16:34:20.938 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:34:20.938 +05:00 [INF] CorrelationId: 7e85d41e-ddd1-4e70-aff0-d024a8b0a2e2
+2024-12-20 16:34:20.938 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:34:20.939 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:34:20.939 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:34:24.130 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":3,"$type":"CreateUserCommand"} 
+2024-12-20 16:34:26.184 +05:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:34:26.187 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.Data.SqlTypes.SqlTypeException: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:38:16.375 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-20 16:38:16.418 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-20 16:38:16.420 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-20 16:38:16.421 +05:00 [INF] Hosting environment: Development
+2024-12-20 16:38:16.421 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-20 16:38:18.979 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-20 16:38:19.215 +05:00 [INF] CorrelationId: eeaaf3f9-d403-43ce-90fa-e85910886f25
+2024-12-20 16:38:19.396 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 442.4412ms
+2024-12-20 16:38:19.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-20 16:38:19.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-20 16:38:19.407 +05:00 [INF] CorrelationId: fac5cdfc-e1a4-46c4-9ffb-a9b5be46981b
+2024-12-20 16:38:19.411 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.8895ms
+2024-12-20 16:38:19.414 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-20 16:38:19.421 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 15.1107ms
+2024-12-20 16:38:19.475 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.4512ms
+2024-12-20 16:38:19.574 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-20 16:38:19.577 +05:00 [INF] CorrelationId: bec6a38a-e1cd-45bf-a215-8b6f7a820513
+2024-12-20 16:38:19.886 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 312.1419ms
+2024-12-20 16:38:28.473 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:38:28.473 +05:00 [INF] CorrelationId: 36955f78-220d-4d66-a1ef-d6026fd369ad
+2024-12-20 16:38:28.478 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:38:28.515 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:38:28.540 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:38:32.660 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":0,"$type":"CreateUserCommand"} 
+2024-12-20 16:38:39.066 +05:00 [INF] Executed DbCommand (280ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:38:39.130 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY SAME TABLE constraint "FK__Users__CreatedBy__51EF2864". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8bfb85d4-d832-45ac-814a-9ab9dff47d8c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY SAME TABLE constraint "FK__Users__CreatedBy__51EF2864". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8bfb85d4-d832-45ac-814a-9ab9dff47d8c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-20 16:38:53.983 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-20 16:38:54.001 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 25458.3431ms
+2024-12-20 16:38:54.003 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:38:54.071 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 500 null application/json 25598.6214ms
+2024-12-20 16:38:56.762 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - application/json 141
+2024-12-20 16:38:56.763 +05:00 [INF] CorrelationId: 568ef5d3-fdcd-4874-a246-e7de32e9b4d1
+2024-12-20 16:38:56.764 +05:00 [INF] CORS policy execution successful.
+2024-12-20 16:38:56.764 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:38:56.765 +05:00 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Models.CreateUserDto) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-20 16:39:02.032 +05:00 [INF] Users Request: CreateUserCommand "00000000-0000-0000-0000-000000000000" {"FirstName":"string","LastName":"string","Surname":"string","Login":"string","PasswordHash":"string","CreatedBy":3,"$type":"CreateUserCommand"} 
+2024-12-20 16:39:04.014 +05:00 [INF] Executed DbCommand (91ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 100), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (Size = 4000), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[Users] ([CreatedBy], [CreatedOn], [FirstName], [IsDeleted], [LastName], [Login], [PasswordHash], [Surname])
+OUTPUT INSERTED.[UserID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-12-20 16:39:10.043 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-20 16:39:12.940 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 16174.4314ms
+2024-12-20 16:39:12.940 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
+2024-12-20 16:39:12.941 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 200 null application/json; charset=utf-8 16178.8855ms
