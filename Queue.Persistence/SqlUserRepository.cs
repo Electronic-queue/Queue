@@ -69,7 +69,7 @@ namespace Queue.Persistence
                 var user = await _dbContext.Users.FindAsync(id);
                 if (user != null)
                 {
-                    return Result.Failure(new Error("NotFound", "UserNotFound"));
+                    return Result.Failure(new Error("ProblemResponse", "UserNotFound"));
 
                 }
                 return Result.Success(user);

@@ -8,8 +8,10 @@ namespace Queue.Application.Users.Commands.CreateUser;
 
 public class CreateUserCommandHandler(IUserRepository _userRepository) : IRequestHandler<CreateUserCommand, Result>
 {
+    private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
+        
         var user = new User
         {
             FirstName = request.FirstName,
@@ -17,16 +19,19 @@ public class CreateUserCommandHandler(IUserRepository _userRepository) : IReques
             Surname = request.Surname,
             Login = request.Login,
             PasswordHash = request.PasswordHash,
-            CreatedOn = DateTime.FromFileTimeUtc(5),
+            CreatedOn = DateTimeOffset.UtcNow.ToOffset(UtcOffset).DateTime,
             CreatedBy = request.CreatedBy,
-            IsDeleted = request.IsDeleted,
+            IsDeleted = false,
         };
         var result = await _userRepository.AddAsync(user);
         if (result.IsFailed)
         {
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка такая-то"));
+            return Result.Failure<int>(new Error(Errors.BadRequest, "Неизвестная ошибка."));
         }
-
+        if (request.FirstName == "" || request.LastName == "" || request.Login == "" || request.PasswordHash == "")
+        {
+            return Result.Failure<int>(new Error(Errors.BadRequest, "Обязательные поля должны быть заполнены."));
+        }
         return Result.Success();
     }
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using KDS.Primitives.FluentResult;
 using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Users.Commands.CreateUser;
 using Queue.Application.Users.Commands.DeleteUser;
@@ -22,19 +23,22 @@ namespace Queue.WebApi.Controllers
         /// <returns>Возвращает список пользователей.</returns>
         /// 
 
-        [HttpGet]
+        [HttpGet()]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<UserListVm>> GetAll(int UserId)
+        public async Task<ActionResult<UserListVm>> GetAll(int userId)
         {
             var query = new GetUserListQuery
             {
-                UserId = UserId
+                UserId = userId
 
             };
             var vm = await Mediator.Send(query);
+
             return Ok(vm);
+            //return ResultSucces.Success(vm);
         }
+
         /// <summary>
         /// Получить информацию о конкретном пользователе.
         /// </summary>
@@ -64,10 +68,14 @@ namespace Queue.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public async Task<ActionResult<Guid>> Create([FromBody] CreateUserDto createUserDto)
+        public async Task<ActionResult<int>> Create([FromBody] CreateUserDto createUserDto)
         {
             var command = Mapper.Map<CreateUserCommand>(createUserDto);
-            var userId = await Mediator.Send(command);
+            Result userId = await Mediator.Send(command);
+            if (userId.IsFailed)
+            {
+                return BadRequest(userId);
+            }
             return Ok(userId);
 
         }

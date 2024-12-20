@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Queue.Application;
 using Queue.Application.Common.Mappings;
 using Queue.Application.Interfaces;
@@ -11,10 +13,8 @@ using Serilog.Events;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-    .WriteTo.File("UsersWebAppLog-.txt", rollingInterval: RollingInterval.Day)
+    .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
 builder.Host.UseSerilog();
@@ -52,7 +52,6 @@ builder.Services.AddSwaggerGen(config =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     config.IncludeXmlComments(xmlPath);
 });
-        
 
 var app = builder.Build();
 
@@ -74,7 +73,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
+app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI(config =>
@@ -88,4 +87,5 @@ app.UseCors("AllowAll");
 app.UseRouting();
 app.MapControllers();
 
+Log.Information("Приложение запущено");
 app.Run();

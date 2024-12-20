@@ -8,6 +8,6 @@ public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     public CreateUserCommandValidator()
     {
         RuleFor(createUserCommand =>
-        createUserCommand.FirstName).MaximumLength(250).NotEmpty();
+        createUserCommand.FirstName).MinimumLength(1).MaximumLength(250).NotEmpty();
     }
 }

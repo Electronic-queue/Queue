@@ -1732,3 +1732,66 @@ SELECT 1 ELSE SELECT 0
 2024-12-19 16:33:54.848 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/_vs/browserLink - 200 null text/javascript; charset=UTF-8 150.7262ms
 2024-12-19 16:33:55.132 +05:00 [INF] Request starting HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - null null
 2024-12-19 16:33:55.399 +05:00 [INF] Request finished HTTP/2 GET https://localhost:44375/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 267.4349ms
+2024-12-19 17:56:22.770 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-19 17:56:22.787 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-19 17:56:22.843 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:56:22.844 +06:00 [INF] Hosting environment: Development
+2024-12-19 17:56:22.844 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-19 17:56:23.615 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-19 17:56:23.797 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 187.7703ms
+2024-12-19 17:56:23.806 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-19 17:56:23.807 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:56:23.811 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 4.7919ms
+2024-12-19 17:56:23.818 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-19 17:56:23.821 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 13.2218ms
+2024-12-19 17:56:23.855 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.165ms
+2024-12-19 17:56:23.886 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-19 17:56:23.966 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.4156ms
+2024-12-19 17:57:00.655 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/User?UserId=1 - null null
+2024-12-19 17:57:00.676 +06:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:57:00.713 +06:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(Int32) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 17:57:11.649 +06:00 [INF] Users Request: GetUserListQuery "00000000-0000-0000-0000-000000000000" {"UserId":1,"$type":"GetUserListQuery"} 
+2024-12-19 17:57:14.250 +06:00 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserID], [u].[CreatedBy], [u].[CreatedOn], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[Login], [u].[PasswordHash], [u].[Surname]
+FROM [elec_queue].[Users] AS [u]
+2024-12-19 17:57:14.290 +06:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.User, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 17:57:14.337 +06:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 13618.6685ms
+2024-12-19 17:57:14.337 +06:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:57:14.343 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/User?UserId=1 - 200 null application/json; charset=utf-8 13689.3066ms
+2024-12-19 17:57:30.004 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/User?UserId=1 - null null
+2024-12-19 17:57:30.026 +06:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:57:30.026 +06:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(Int32) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 17:57:33.029 +06:00 [INF] Users Request: GetUserListQuery "00000000-0000-0000-0000-000000000000" {"UserId":1,"$type":"GetUserListQuery"} 
+2024-12-19 17:57:33.107 +06:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserID], [u].[CreatedBy], [u].[CreatedOn], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[Login], [u].[PasswordHash], [u].[Surname]
+FROM [elec_queue].[Users] AS [u]
+2024-12-19 17:57:33.112 +06:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.User, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 17:57:33.112 +06:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 3085.9618ms
+2024-12-19 17:57:33.112 +06:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:57:33.113 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/User?UserId=1 - 200 null application/json; charset=utf-8 3109.4036ms
+2024-12-19 17:58:24.445 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-19 17:58:24.479 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-19 17:58:24.544 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-19 17:58:24.544 +06:00 [INF] Hosting environment: Development
+2024-12-19 17:58:24.544 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-19 17:58:24.757 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-19 17:58:24.898 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 148.2804ms
+2024-12-19 17:58:24.911 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-19 17:58:24.911 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-19 17:58:24.914 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 3.4729ms
+2024-12-19 17:58:24.922 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-19 17:58:24.924 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 13.6004ms
+2024-12-19 17:58:24.955 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.6757ms
+2024-12-19 17:58:24.985 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-19 17:58:25.058 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.6004ms
+2024-12-19 17:58:49.840 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/User/users/all/1 - null null
+2024-12-19 17:58:49.855 +06:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:58:49.874 +06:00 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Users.Queries.GetUserList.UserListVm]] GetAll(Int32) on controller Queue.WebApi.Controllers.UserController (Queue.WebApi).
+2024-12-19 17:58:54.711 +06:00 [INF] Users Request: GetUserListQuery "00000000-0000-0000-0000-000000000000" {"UserId":1,"$type":"GetUserListQuery"} 
+2024-12-19 17:58:56.313 +06:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserID], [u].[CreatedBy], [u].[CreatedOn], [u].[FirstName], [u].[IsDeleted], [u].[LastName], [u].[Login], [u].[PasswordHash], [u].[Surname]
+FROM [elec_queue].[Users] AS [u]
+2024-12-19 17:58:56.338 +06:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.User, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-19 17:58:56.363 +06:00 [INF] Executed action Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi) in 6486.1517ms
+2024-12-19 17:58:56.364 +06:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.GetAll (Queue.WebApi)'
+2024-12-19 17:58:56.369 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/User/users/all/1 - 200 null application/json; charset=utf-8 6529.309ms

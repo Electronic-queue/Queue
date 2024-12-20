@@ -9,6 +9,4 @@ public record CreateUserCommand(
     string? Surname, 
     string Login, 
     string PasswordHash, 
-    DateTime CreatedOn, 
-    int? CreatedBy,
-    bool IsDeleted) : IRequest<Result>;
+    int? CreatedBy) : IRequest<Result>;

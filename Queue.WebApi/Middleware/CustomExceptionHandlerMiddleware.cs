@@ -1,4 +1,8 @@
-﻿using Queue.Domain.Common.Exceptions;
+﻿using FluentValidation;
+using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Queue.Domain.Common.Exceptions;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text.Json;
@@ -16,38 +20,40 @@ public class CustomExceptionHandlerMiddleware
         {
             await _next(context);
         }
-        catch(ValidationException ex)
+        catch (FluentValidation.ValidationException ex)
         {
-            await HandleExceptionAsync(context, ex);
+            var result = JsonSerializer.Serialize(ex.Message);
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            await context.Response.WriteAsync(result);
         }
         catch (Exception ex)
         {
-            await HandleExceptionAsync(context, ex);
+            var result = JsonSerializer.Serialize(ex.Message);
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            await context.Response.WriteAsync(result);
         }
     }
 
-    private Task HandleExceptionAsync(HttpContext context, Exception ex)
-    {
-        var code=HttpStatusCode.InternalServerError;
-        var result = string.Empty;
-        switch(ex)
-        {
-            case ValidationException validationException:
-                code = HttpStatusCode.BadRequest;
-                result = JsonSerializer.Serialize(validationException.ValidationResult);
-                break;
+    //private Task HandleExceptionAsync(HttpContext context, Exception ex)
+    //{
+    //    var code = HttpStatusCode.InternalServerError;
+    //    var result = string.Empty;
+    //    switch (ex)
+    //    {
 
-            case NotFoundException:
-                code = HttpStatusCode.NotFound;
-                break;
-        }
-        context.Response.ContentType = "application/json";
-        context.Response.StatusCode=(int)code;
+    //        case NotFoundException:
+    //            code = HttpStatusCode.NotFound;
+    //            break;
+    //    }
+    //    context.Response.ContentType = "application/json";
+    //    context.Response.StatusCode = (int)code;
 
-        if(result==string.Empty)
-        {
-            result=JsonSerializer.Serialize(new {error=ex.Message});
-        }
-        return context.Response.WriteAsync(result);
-    }
+    //    if (result == string.Empty)
+    //    {
+    //        result = JsonSerializer.Serialize(new { error = ex.Message });
+    //    }
+    //    return context.Response.WriteAsync(result);
+    //}
 }
