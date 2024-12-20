@@ -1,29 +1,34 @@
-﻿using CorrelationId.Abstractions;
-using Serilog.Context;
+﻿namespace Queue.WebApi.Middleware;
 
-namespace Queue.WebApi.Middleware
+public class CorrelationIdMiddleware
 {
-    public class CorrelationIdMiddleware
+    private readonly RequestDelegate _next;
+    private readonly ILogger<CorrelationIdMiddleware> _logger;
+
+    public CorrelationIdMiddleware(RequestDelegate next, ILogger<CorrelationIdMiddleware> logger)
     {
-        private readonly RequestDelegate _next;
-        public CorrelationIdMiddleware(RequestDelegate next)
-        {
-            _next = next;
-        }
-        public async Task InvokeAsync(HttpContext context)
-        {
-            if (!context.Request.Headers.TryGetValue("X-Correlation-ID", out var correlationId))
-            {
-                correlationId = Guid.NewGuid().ToString();
-                context.Request.Headers["X-Correlation-ID"] = correlationId;
-            }
+        _next = next;
+        _logger = logger;
+    }
 
+    public async Task InvokeAsync(HttpContext context)
+    {
+        var correlationId = context.Request.Headers["X-Correlation-ID"].FirstOrDefault();
+
+        if (string.IsNullOrEmpty(correlationId))
+        {
+            correlationId = Guid.NewGuid().ToString();
+        }
+
+        context.Response.OnStarting(() =>
+        {
             context.Response.Headers["X-Correlation-ID"] = correlationId;
+            return Task.CompletedTask;
+        });
 
-            using (LogContext.PushProperty("CorrelationId", correlationId))
-            {
-                await _next(context);
-            }
-        }
+        _logger.LogInformation($"CorrelationId: {correlationId}");
+
+        context.Items["CorrelationId"] = correlationId;
+        await _next(context);
     }
 }
