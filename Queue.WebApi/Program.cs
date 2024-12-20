@@ -66,7 +66,6 @@ builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>,
         ConfigureSwaggerOptions>();
 builder.Services.AddApiVersioning();
 
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -87,6 +86,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
 app.UseMiddleware<CorrelationIdMiddleware>();
 app.UseSwagger();
@@ -111,4 +111,5 @@ app.UseRouting();
 app.UseApiVersioning();
 app.MapControllers();
 
+Log.Information("Приложение запущено");
 app.Run();

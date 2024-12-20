@@ -5,7 +5,7 @@ using Queue.WebApi.Models;
 namespace Queue.WebApi.Common;
 
 public class UserProfile : Profile
-{
+{ 
     public UserProfile()
     {
         CreateMap<CreateUserDto, CreateUserCommand>()

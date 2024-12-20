@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using KDS.Primitives.FluentResult;
 using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Users.Commands.CreateUser;
 using Queue.Application.Users.Commands.DeleteUser;
@@ -39,9 +40,10 @@ public class UserController : BaseController
         };
         var vm = await Mediator.Send(query);
         _logger.LogInformation("CorrelationId: {CorrelationId} - Данные о пользователе с ID {UserId} получены.", correlationId, UserId);
-
-        return Ok(vm);
+            return Ok(vm);
+            //return ResultSucces.Success(vm);
     }
+
     /// <summary>
     /// Получить информацию о конкретном пользователе.
     /// </summary>
@@ -75,6 +77,10 @@ public class UserController : BaseController
     {
         var command = Mapper.Map<CreateUserCommand>(createUserDto);
         var userId = await Mediator.Send(command);
+            if (userId.IsFailed)
+            {
+                return BadRequest(userId);
+            }
         return Ok(userId);
 
     }

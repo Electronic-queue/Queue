@@ -10,5 +10,4 @@ public record CreateUserCommand(
     string? Surname, 
     string Login, 
     string PasswordHash, 
-    int? CreatedBy
-    ) : IRequest<Result>;
+    int? CreatedBy) : IRequest<Result>;
