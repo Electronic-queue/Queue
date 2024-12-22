@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
-namespace Queue.Persistence
+namespace Queue.Persistence.Repository
 {
     public class SqlUserRepository(QueuesDbContext _dbContext) : IUserRepository
     {
@@ -22,7 +22,7 @@ namespace Queue.Persistence
 
         }
 
-        public async Task<Result> DeleteAsync(Guid id)
+        public async Task<Result> DeleteAsync(int id)
         {
             var user = await _dbContext.Users.Where(w => !w.IsDeleted).FirstOrDefaultAsync(f => f.UserId.Equals(id));
 
@@ -42,10 +42,7 @@ namespace Queue.Persistence
             }
         }
 
-        public Task<Result> DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public async Task<Result<List<User>>> GetAllAsync()
         {
@@ -62,7 +59,7 @@ namespace Queue.Persistence
             }
         }
 
-        public async Task<Result> GetUserById(Guid id)
+        public async Task<Result> GetUserById(int id)
         {
             try
             {
@@ -81,7 +78,7 @@ namespace Queue.Persistence
             }
         }
 
-        public async Task<Result> GetUserDetails(Guid id)
+        public async Task<Result> GetUserDetails(int id)
         {
             try
             {
@@ -99,10 +96,7 @@ namespace Queue.Persistence
             }
         }
 
-        public Task<Result> GetUserDetails(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public async Task<Result> UpdateAsync(User user)
         {
@@ -114,7 +108,7 @@ namespace Queue.Persistence
                     return Result.Failure(new Error("NotFound", "UserNotFound"));
 
                 }
- 
+
                 updateUser.FirstName = user.FirstName;
                 updateUser.LastName = user.LastName;
                 await _dbContext.SaveChangesAsync();

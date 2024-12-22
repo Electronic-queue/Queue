@@ -27,7 +27,7 @@ public class CreateUserCommandHandler(IUserRepository _userRepository) : IReques
         var result = await _userRepository.AddAsync(user);
         if (result.IsFailed)
         {
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка такая-то"));
+            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления"));
         }
 
         return Result.Success();

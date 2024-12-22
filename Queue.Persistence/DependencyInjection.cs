@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Queue.Domain.Interfaces;
+using Queue.Persistence.Repository;
 
 namespace Queue.Persistence;
 
@@ -16,6 +17,7 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString);
         });
         services.AddScoped<IUserRepository, SqlUserRepository>();
+        services.AddScoped<IWindowRepository, SqlWindowRepository>();
         return services;
     }
 }

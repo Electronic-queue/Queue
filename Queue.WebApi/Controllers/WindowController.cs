@@ -1,22 +1,26 @@
-﻿using AutoMapper;
-using KDS.Primitives.FluentResult;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Users.Commands.CreateUser;
 using Queue.Application.Users.Commands.DeleteUser;
 using Queue.Application.Users.Commands.UpdateUser;
 using Queue.Application.Users.Queries.GetUserDetails;
 using Queue.Application.Users.Queries.GetUserList;
-using Queue.Domain;
+using Queue.Application.Windows.Commands.CreateWindow;
+using Queue.Application.Windows.Commands.DeleteWindow;
+using Queue.Application.Windows.Commands.UpdateWindow;
+using Queue.Application.Windows.Queries.GetWindowDetails;
+using Queue.Application.Windows.Queries.GetWindowList;
 using Queue.WebApi.Contracts.UserContracts;
+using Queue.WebApi.Contracts.WIndowContracts;
 using System.Net;
 
 namespace Queue.WebApi.Controllers;
+
 
 [ApiVersion("1.0")]
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class UserController : BaseController
+public class WindowController : BaseController
 {
     private readonly ILogger<UserController> _logger;
     /// <summary>
@@ -29,19 +33,18 @@ public class UserController : BaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<UserListVm>> GetAll(int UserId)
+    public async Task<ActionResult<WindowLIistVm>> GetAll(int WindowId)
     {
         var correlationId = HttpContext.Items["CorrelationId"]?.ToString();
         _logger.LogInformation("CorrelationId: {CorrelationId} - Получение списка пользователей.", correlationId);
-        var query = new GetUserListQuery
+        var query = new GetWindowListQuery
         {
-            UserId = UserId
-
+            WindowId=WindowId
         };
         var vm = await Mediator.Send(query);
-        _logger.LogInformation("CorrelationId: {CorrelationId} - Данные о пользователе с ID {UserId} получены.", correlationId, UserId);
-            return Ok(vm);
-            //return ResultSucces.Success(vm);
+        _logger.LogInformation("CorrelationId: {CorrelationId} - Данные о пользователе с ID {UserId} получены.", correlationId, WindowId);
+        return Ok(vm);
+        //return ResultSucces.Success(vm);
     }
 
     /// <summary>
@@ -52,12 +55,12 @@ public class UserController : BaseController
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<UserDetailsVm>> Get(int UserId)
+    public async Task<ActionResult<WindowDetailsVm>> Get(int WindowId)
     {
-        var query = new GetUserDetailsQuery
+        var query = new GetWindowDetailsQuery
         {
 
-            UserId = UserId
+            WindowId = WindowId
         };
         var vm = await Mediator.Send(query);
         return Ok(vm);
@@ -66,35 +69,35 @@ public class UserController : BaseController
     /// <summary>
     /// Создать нового пользователя.
     /// </summary>
-    /// <param name="createUserDto">Данные нового пользователя.</param>
+    /// <param name="createWindowDto">Данные нового пользователя.</param>
     /// <returns>Возвращает идентификатор созданного пользователя.</returns>
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateUserDto createUserDto)
+    public async Task<ActionResult<int>> Create([FromBody] CreateWindowDto createWindowDto)
     {
-        var command = Mapper.Map<CreateUserCommand>(createUserDto);
-        var userId = await Mediator.Send(command);
-            if (userId.IsFailed)
-            {
-                return BadRequest(userId);
-            }
-        return Ok(userId);
+        var command = Mapper.Map<CreateWindowCommand>(createWindowDto);
+        var windowId = await Mediator.Send(command);
+        if (windowId.IsFailed)
+        {
+            return BadRequest(windowId);
+        }
+        return Ok(windowId);
 
     }
     /// <summary>
     /// Обновить информацию о пользователе.
     /// </summary>
-    /// <param name="updateUserDto">Данные для обновления пользователя.</param>
+    /// <param name="updateWindowDto">Данные для обновления пользователя.</param>
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-    public async Task<IActionResult> Update([FromBody] UpdateUsereDto updateUserDto)
+    public async Task<IActionResult> Update([FromBody] UpdateWindowDto updateWindowDto)
     {
-        await Mediator.Send(new UpdateUserCommand(updateUserDto.UserId,updateUserDto.FirstName,updateUserDto.LastName,updateUserDto.Surname,updateUserDto.Login, updateUserDto.PasswordHash, updateUserDto.IsDeleted));
+        await Mediator.Send(new UpdateWindowCommand(updateWindowDto.WindowId, updateWindowDto.WindowNumber,updateWindowDto.WindowStatusId, updateWindowDto.CreatedBy));
         return NoContent();
     }
     /// <summary>
@@ -107,9 +110,9 @@ public class UserController : BaseController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteUserCommand(id));
-        
-      
+        var command = await Mediator.Send(new DeleteWindowCommand(id));
+
+
         return NoContent();
     }
 }

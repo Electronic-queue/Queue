@@ -1,5 +1,5 @@
-﻿ using System.ComponentModel.DataAnnotations;
-namespace Queue.WebApi.Models;
+﻿using System.ComponentModel.DataAnnotations;
+namespace Queue.WebApi.Contracts.UserContracts;
 
 public record CreateUserDto(string FirstName,
     string LastName,
@@ -7,5 +7,5 @@ public record CreateUserDto(string FirstName,
     string Login,
     string PasswordHash,
     int? CreatedBy);
-   int? CreatedBy);
+
 
