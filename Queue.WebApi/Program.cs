@@ -7,6 +7,7 @@ using Queue.Persistence;
 using Queue.WebApi;
 using Queue.WebApi.Common.RecordProfile;
 using Queue.WebApi.Common.RecordStatusProfile;
+using Queue.WebApi.Common.ServiceProfile;
 using Queue.WebApi.Common.WindowProfile;
 using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
@@ -32,6 +33,9 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile(typeof(WindowProfile));
     config.AddProfile(typeof(RecordStatusProfile));
     config.AddProfile(typeof(RecordProfile));
+    config.AddProfile(typeof(NotificationTypeProfile));
+    config.AddProfile(typeof(NotificationProfile));
+    config.AddProfile(typeof(ServiceProfile));
 });
 
 builder.Services.AddApplication();

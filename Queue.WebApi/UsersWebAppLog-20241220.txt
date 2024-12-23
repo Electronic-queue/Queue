@@ -1141,22 +1141,3 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
 2024-12-20 16:39:12.940 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserController.Create (Queue.WebApi) in 16174.4314ms
 2024-12-20 16:39:12.940 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserController.Create (Queue.WebApi)'
 2024-12-20 16:39:12.941 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/User?api-version=1 - 200 null application/json; charset=utf-8 16178.8855ms
-2024-12-20 18:03:53.844 +05:00 [INF] Приложение запущено
-2024-12-20 18:03:54.652 +05:00 [INF] Now listening on: https://localhost:7092
-2024-12-20 18:03:54.660 +05:00 [INF] Now listening on: http://localhost:5294
-2024-12-20 18:03:54.671 +05:00 [INF] Application started. Press Ctrl+C to shut down.
-2024-12-20 18:03:54.673 +05:00 [INF] Hosting environment: Development
-2024-12-20 18:03:54.673 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
-2024-12-20 18:03:56.316 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
-2024-12-20 18:03:56.497 +05:00 [INF] CorrelationId: 6ca2da0e-2290-4e9b-96e7-4573603de134
-2024-12-20 18:03:56.800 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 501.0652ms
-2024-12-20 18:03:56.829 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
-2024-12-20 18:03:56.830 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
-2024-12-20 18:03:56.831 +05:00 [INF] CorrelationId: 49bf9375-f21f-4587-9468-9c4b5b3321e7
-2024-12-20 18:03:56.834 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 6.1066ms
-2024-12-20 18:03:56.846 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
-2024-12-20 18:03:56.848 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 19.7731ms
-2024-12-20 18:03:56.910 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.4486ms
-2024-12-20 18:03:57.052 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
-2024-12-20 18:03:57.054 +05:00 [INF] CorrelationId: c28260b9-8974-4834-96eb-9be383085091
-2024-12-20 18:03:57.409 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 357.0747ms
