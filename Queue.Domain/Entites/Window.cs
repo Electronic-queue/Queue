@@ -13,6 +13,7 @@ public partial class Window
 
     public DateTime CreatedOn { get; set; }
     
+
     public int? CreatedBy { get; set; }
 
     public virtual User? CreatedByNavigation { get; set; }

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Queue.Application;
 using Queue.Application.Common.Mappings;
@@ -9,10 +8,10 @@ using Queue.Application.Interfaces;
 using Queue.Domain.Entites;
 using Queue.Persistence;
 using Queue.WebApi;
-using Queue.WebApi.Common.NotificationProfile;
-using Queue.WebApi.Common.NotificationTypeProfile;
 using Queue.WebApi.Common.UserProfile;
 using Queue.WebApi.Common.WindowProfile;
+using Queue.WebApi.Common.NotificationProfile;
+using Queue.WebApi.Common.NotificationTypeProfile;
 using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
 using Serilog;
@@ -72,7 +71,6 @@ builder.Services.AddVersionedApiExplorer(options =>
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>,
         ConfigureSwaggerOptions>();
 builder.Services.AddApiVersioning();
-
 
 var app = builder.Build();
 

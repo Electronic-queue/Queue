@@ -1,4 +1,4 @@
-﻿namespace Queue.WebApi.Models;
+﻿namespace Queue.WebApi.Contracts.UserContracts;
 
 public record UpdateUsereDto(int UserId,
     string FirstName,

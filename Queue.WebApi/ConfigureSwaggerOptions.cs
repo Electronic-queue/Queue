@@ -28,10 +28,7 @@ namespace Queue.WebApi
                         : "API documentation"
                 });
             }
-            options.CustomOperationIds(apiDescription =>
-                    apiDescription.TryGetMethodInfo(out MethodInfo methodInfo)
-                        ? methodInfo.Name
-                        : null);
+            
         }
     }
 }

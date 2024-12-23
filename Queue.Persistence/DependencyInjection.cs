@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Queue.Domain.Interfaces;
+using Queue.Persistence.Repository;
 
 namespace Queue.Persistence;
 
