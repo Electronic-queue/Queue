@@ -16,10 +16,10 @@ public static class DependencyInjection
         {
             options.UseSqlServer(connectionString);
         });
-        services.AddScoped<IUserRepository, SqlUserRepository>();
         services.AddScoped<IWindowRepository, SqlWindowRepository>();
         services.AddScoped<INotificationTypeRepository, SqlNotificationTypeRepository>();
         services.AddScoped<INotificationRepository, SqlNotificationRepository>();
+        services.AddScoped<IServiceRepository, SqlServiceRepository>();
         return services;
     }
 }

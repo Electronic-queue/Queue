@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
 using Queue.Application.Common.Mappings;
+using Queue.Application.Services.Queries.GetServiceById;
 using Queue.Domain.Entites;
 
-namespace Queue.Application.Services.Queries.GetServiceById;
+namespace Queue.Application.Services.Queries.GetServiceList;
 
-public class ServiceByIdVm : IMapWith<Service>
+public class ServiceLookupDto : IMapWith<Service>
 {
     public int ServiceId { get; set; }
 
@@ -53,7 +54,7 @@ public class ServiceByIdVm : IMapWith<Service>
             opt => opt.MapFrom(Service => Service.ParentserviceId))
             .ForMember(ServiceVm => ServiceVm.QueueTypeId,
             opt => opt.MapFrom(Service => Service.QueueTypeId))
-            .ForMember(ServiceVm => ServiceVm.CreatedOn, 
+            .ForMember(ServiceVm => ServiceVm.CreatedOn,
             opt => opt.MapFrom(Service => Service.CreatedOn))
             .ForMember(ServiceVm => ServiceVm.CreatedBy,
             opt => opt.MapFrom(Service => Service.CreatedBy));

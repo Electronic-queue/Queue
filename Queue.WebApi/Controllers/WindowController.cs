@@ -1,15 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Queue.Application.Users.Commands.CreateUser;
-using Queue.Application.Users.Commands.DeleteUser;
-using Queue.Application.Users.Commands.UpdateUser;
-using Queue.Application.Users.Queries.GetUserDetails;
-using Queue.Application.Users.Queries.GetUserList;
 using Queue.Application.Windows.Commands.CreateWindow;
 using Queue.Application.Windows.Commands.DeleteWindow;
 using Queue.Application.Windows.Commands.UpdateWindow;
 using Queue.Application.Windows.Queries.GetWindowDetails;
 using Queue.Application.Windows.Queries.GetWindowList;
-using Queue.WebApi.Contracts.UserContracts;
 using Queue.WebApi.Contracts.WIndowContracts;
 using System.Net;
 
@@ -22,7 +16,7 @@ namespace Queue.WebApi.Controllers;
 
 public class WindowController : BaseController
 {
-    private readonly ILogger<UserController> _logger;
+    private readonly ILogger<WindowController> _logger;
     /// <summary>
     /// Получить список всех пользователей.
     /// </summary>

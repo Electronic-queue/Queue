@@ -1,7 +1,4 @@
-﻿using KDS.Primitives.FluentResult;
-using MediatR;
-using System.ComponentModel.DataAnnotations;
-namespace Queue.WebApi.Contracts.NotificationContracts;
+﻿namespace Queue.WebApi.Contracts.NotificationContracts;
 
 public record CreateNotificationDto(
     string NameRu,

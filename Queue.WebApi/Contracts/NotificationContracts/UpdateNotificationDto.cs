@@ -1,7 +1,4 @@
-﻿using KDS.Primitives.FluentResult;
-using MediatR;
-
-namespace Queue.WebApi.Contracts.NotificationContracts;
+﻿namespace Queue.WebApi.Contracts.NotificationContracts;
 
 public record UpdateNotificationDto(
     int NotificationId,
