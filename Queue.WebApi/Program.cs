@@ -9,7 +9,10 @@ using Queue.Application.Interfaces;
 using Queue.Domain.Entites;
 using Queue.Persistence;
 using Queue.WebApi;
-using Queue.WebApi.Common;
+using Queue.WebApi.Common.NotificationProfile;
+using Queue.WebApi.Common.NotificationTypeProfile;
+using Queue.WebApi.Common.UserProfile;
+using Queue.WebApi.Common.WindowProfile;
 using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
 using Serilog;
@@ -32,6 +35,9 @@ builder.Services.AddAutoMapper(config =>
    
     config.AddProfile(new AssemblyMappingProfile(AppDomain.CurrentDomain.GetAssemblies()));
     config.AddProfile(typeof(UserProfile));
+    config.AddProfile(typeof(WindowProfile));
+    config.AddProfile(typeof(NotificationTypeProfile));
+    config.AddProfile(typeof(NotificationProfile));
 });
 
 builder.Services.AddApplication();
