@@ -1,14 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Queue.Application;
 using Queue.Application.Common.Mappings;
 using Queue.Application.Interfaces;
-using Queue.Domain.Entites;
 using Queue.Persistence;
 using Queue.WebApi;
-using Queue.WebApi.Common.UserProfile;
+using Queue.WebApi.Common.RecordProfile;
+using Queue.WebApi.Common.RecordStatusProfile;
 using Queue.WebApi.Common.WindowProfile;
 using Queue.WebApi.Middleware;
 using Queue.WebApi.Services;
@@ -31,8 +29,9 @@ builder.Services.AddAutoMapper(config =>
 {
    
     config.AddProfile(new AssemblyMappingProfile(AppDomain.CurrentDomain.GetAssemblies()));
-    config.AddProfile(typeof(UserProfile));
     config.AddProfile(typeof(WindowProfile));
+    config.AddProfile(typeof(RecordStatusProfile));
+    config.AddProfile(typeof(RecordProfile));
 });
 
 builder.Services.AddApplication();

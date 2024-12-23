@@ -15,7 +15,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             return Result.Failure(new Error("Database Error", ex.Message));
         }
@@ -24,13 +24,13 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
 
     public async Task<Result> DeleteAsync(int id)
     {
-        
+
         try
         {
             var window = await _dbContext.Windows.FindAsync(id);
             if (window is null)
             {
-                return Result.Failure(new Error("Not Found", "User not Found"));
+                return Result.Failure(new Error("Not Found", "Window not Found"));
 
             }
             _dbContext.Windows.Remove(window);
@@ -39,7 +39,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error",ex.Message));
+            return Result.Failure(new Error("Database Error", ex.Message));
         }
 
 
@@ -53,7 +53,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             var window = await _dbContext.Windows.ToListAsync();
             return Result.Success(window);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             return Result.Failure<List<Window>>(new Error("Database Error", ex.Message));
         }
@@ -67,7 +67,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             var window = await _dbContext.Windows.FindAsync(id);
             if (window is null)
             {
-                return Result.Failure(new Error("Not Found", "User not found"));
+                return Result.Failure(new Error("Not Found", "Window not found"));
             }
             return Result.Success(window);
         }
@@ -78,23 +78,25 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
         }
     }
 
-    public async Task<Result> UpdateAsync(Window window)
+    public async Task<Result> UpdateAsync(int windowId, int? windowStatusId=null, int? windowNumber = null,int? createdBy=null)
     {
-        
+
         try
         {
-            var windowUpdate = await _dbContext.Windows.FindAsync(window.WindowId);
-            if(windowUpdate is null)
+            var windowUpdate = await _dbContext.Windows.FindAsync(windowId);
+            if (windowUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "User Not Found"));
+                return Result.Failure(new Error("Not Found", "Window Not Found"));
             }
-            windowUpdate.UserWindows = window.UserWindows;
-            windowUpdate.WindowNumber = window.WindowNumber;
-            window.WindowStatus = window.WindowStatus;
+          
+            windowUpdate.WindowNumber = windowNumber??windowUpdate.WindowNumber;
+            windowUpdate.WindowStatusId = windowStatusId?? windowUpdate.WindowStatusId;
+            windowUpdate.CreatedBy=createdBy??windowUpdate.CreatedBy;
+
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             return Result.Failure(new Error("Database Error", ex.Message));
         }

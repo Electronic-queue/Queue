@@ -15,17 +15,18 @@ namespace Queue.Application.Windows.Commands.UpdateWindow
     {
         public async Task<Result> Handle(UpdateWindowCommand request,CancellationToken cancellationToken)
         {
-            var window = new Window
-            {
-                WindowNumber = request.WindowNumber,
-                CreatedBy = request.CreatedBy,
-            };
-            var entity=await windowRepository.UpdateAsync(window);
-            if (entity.IsFailed)
+            var window = await windowRepository.UpdateAsync(
+                windowId: request.WindowId,
+                windowNumber: request.WindowNumber,
+                windowStatusId: request.WindowStatusId,
+                createdBy:request.CreatedBy
+                );
+           
+            if (window.IsFailed)
             {
                 return Result.Failure(new Error(Errors.BadRequest, "UpdateError"));
             }
-            return Result.Success(entity);
+            return Result.Success();
         }
     }
 }

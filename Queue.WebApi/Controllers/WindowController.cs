@@ -1,15 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Queue.Application.Users.Commands.CreateUser;
-using Queue.Application.Users.Commands.DeleteUser;
-using Queue.Application.Users.Commands.UpdateUser;
-using Queue.Application.Users.Queries.GetUserDetails;
-using Queue.Application.Users.Queries.GetUserList;
 using Queue.Application.Windows.Commands.CreateWindow;
 using Queue.Application.Windows.Commands.DeleteWindow;
 using Queue.Application.Windows.Commands.UpdateWindow;
 using Queue.Application.Windows.Queries.GetWindowDetails;
 using Queue.Application.Windows.Queries.GetWindowList;
-using Queue.WebApi.Contracts.UserContracts;
 using Queue.WebApi.Contracts.WIndowContracts;
 using System.Net;
 
@@ -22,36 +16,34 @@ namespace Queue.WebApi.Controllers;
 
 public class WindowController : BaseController
 {
-    private readonly ILogger<UserController> _logger;
+    private readonly ILogger<WindowController> _logger;
     /// <summary>
-    /// Получить список всех пользователей.
+    /// Получить список всех окон
     /// </summary>
-    /// <param name="id">Идентификатор пользователя (опционально).</param>
-    /// <returns>Возвращает список пользователей.</returns>
+    ///
+    /// <returns>Возвращает список окон.</returns>
     /// 
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<WindowLIistVm>> GetAll(int WindowId)
+    public async Task<ActionResult<WindowLIistVm>> GetAll()
     {
         var correlationId = HttpContext.Items["CorrelationId"]?.ToString();
-        _logger.LogInformation("CorrelationId: {CorrelationId} - Получение списка пользователей.", correlationId);
-        var query = new GetWindowListQuery
-        {
-            WindowId=WindowId
-        };
+
+        var query = new GetWindowListQuery();
+       
         var vm = await Mediator.Send(query);
-        _logger.LogInformation("CorrelationId: {CorrelationId} - Данные о пользователе с ID {UserId} получены.", correlationId, WindowId);
+        
         return Ok(vm);
         //return ResultSucces.Success(vm);
     }
 
     /// <summary>
-    /// Получить информацию о конкретном пользователе.
+    /// Получить информацию о конкретном окне.
     /// </summary>
-    /// <param name="id">Идентификатор пользователя.</param>
-    /// <returns>Возвращает детали пользователя.</returns>
+    /// <param name="id">Идентификатор окна.</param>
+    /// <returns>Возвращает детали окна.</returns>
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -67,10 +59,10 @@ public class WindowController : BaseController
     }
 
     /// <summary>
-    /// Создать нового пользователя.
+    /// Создать новое окно.
     /// </summary>
-    /// <param name="createWindowDto">Данные нового пользователя.</param>
-    /// <returns>Возвращает идентификатор созданного пользователя.</returns>
+    /// <param name="createWindowDto">Данные нового окна.</param>
+    /// <returns>Возвращает идентификатор созданного окна.</returns>
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
@@ -88,9 +80,9 @@ public class WindowController : BaseController
 
     }
     /// <summary>
-    /// Обновить информацию о пользователе.
+    /// Обновить информацию об окне.
     /// </summary>
-    /// <param name="updateWindowDto">Данные для обновления пользователя.</param>
+    /// <param name="updateWindowDto">Данные для обновления окна.</param>
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -101,9 +93,9 @@ public class WindowController : BaseController
         return NoContent();
     }
     /// <summary>
-    /// Удалить пользователя.
+    /// Удалить окно.
     /// </summary>
-    /// <param name="id">Идентификатор пользователя.</param>
+    /// <param name="id">Идентификатор окна.</param>
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

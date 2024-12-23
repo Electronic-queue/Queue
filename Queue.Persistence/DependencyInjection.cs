@@ -16,8 +16,11 @@ public static class DependencyInjection
         {
             options.UseSqlServer(connectionString);
         });
-        services.AddScoped<IUserRepository, SqlUserRepository>();
+        services.AddScoped<IRecordStatusRepository, SqlRecordStatusRepository>();
         services.AddScoped<IWindowRepository, SqlWindowRepository>();
+        services.AddScoped<IRecordRepository, SqlRecordRepository>();
+
+
         return services;
     }
 }

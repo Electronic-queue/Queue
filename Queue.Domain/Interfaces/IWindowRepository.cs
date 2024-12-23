@@ -1,15 +1,13 @@
 ﻿using KDS.Primitives.FluentResult;
 using Queue.Domain.Entites;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Queue.Domain.Interfaces
+namespace Queue.Domain.Interfaces;
+
+public interface IWindowRepository
 {
-    public interface IWindowRepository:IRepository<Window>
-    {
-        Task<Result> GetWindowById(int id);
-    }
+    Task<Result> GetWindowById(int id);
+    Task<Result<List<Window>>> GetAllAsync();
+    Task<Result> AddAsync(Window window);
+    Task<Result> DeleteAsync(int id);
+    Task<Result> UpdateAsync(int windowId, int? windowStatusId = null, int? windowNumber = null, int? createdBy = null);
 }

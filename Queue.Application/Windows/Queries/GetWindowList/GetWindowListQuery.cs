@@ -6,5 +6,5 @@ namespace Queue.Application.Windows.Queries.GetWindowList;
 
 public class GetWindowListQuery:IRequest<Result<List<Window>>>
 {
-    public int WindowId { get; set; }
+  
 }
