@@ -9,16 +9,16 @@ using Queue.Domain.Interfaces;
 namespace Queue.Application.Notifications.Queries.GetNotificationById;
 
 public class GetServiceByIdQueryHandler(INotificationRepository _notificationRepository):
-    IRequestHandler<GetNotificationByIdQuery, Result<Notification>>
+    IRequestHandler<GetNotificationByIdQuery, Result>
 {
-    public async Task<Result<Notification>> Handle(GetNotificationByIdQuery request,
+    public async Task<Result> Handle(GetNotificationByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var result = await _notificationRepository.GetNotificationById(request.NotificationId);
+        var result = await _notificationRepository.GetNotificationdById(request.NotificationId);
         if (result.IsFailed)
         {
             return Result.Failure<Notification>(new Error(Errors.NotAllowed, "Ошибка при запросе уведомления."));
         }
-        return result;
+        return Result.Success();
     }
 }

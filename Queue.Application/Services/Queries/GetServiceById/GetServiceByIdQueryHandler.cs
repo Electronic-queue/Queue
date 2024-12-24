@@ -7,9 +7,9 @@ using Queue.Domain.Interfaces;
 namespace Queue.Application.Services.Queries.GetServiceById;
 
 public class GetServiceByIdQueryHandler(IServiceRepository _serviceRepository) :
-    IRequestHandler<GetServiceByIdQuery, Result<Service>>
+    IRequestHandler<GetServiceByIdQuery, Result>
 {
-    public async Task<Result<Service>> Handle(GetServiceByIdQuery request,
+    public async Task<Result> Handle(GetServiceByIdQuery request,
         CancellationToken cancellationToken)
     {
         var result = await _serviceRepository.GetServiceById(request.ServiceId);
@@ -17,6 +17,6 @@ public class GetServiceByIdQueryHandler(IServiceRepository _serviceRepository) :
         {
             return Result.Failure<Service>(new Error(Errors.NotAllowed, "Ошибка при запросе услуги."));
         }
-        return result;
+        return Result.Success();
     }
 }

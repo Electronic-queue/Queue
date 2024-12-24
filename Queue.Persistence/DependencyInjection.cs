@@ -19,6 +19,9 @@ public static class DependencyInjection
         services.AddScoped<IRecordStatusRepository, SqlRecordStatusRepository>();
         services.AddScoped<IWindowRepository, SqlWindowRepository>();
         services.AddScoped<IRecordRepository, SqlRecordRepository>();
+        services.AddScoped<INotificationRepository, SqlNotificationRepository>();
+        services.AddScoped<INotificationTypeRepository, SqlNotificationTypeRepository>();
+        services.AddScoped<IServiceRepository, SqlServiceRepository>();
 
 
         return services;

@@ -54,7 +54,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
         }
     }
 
-    public async Task<Result<Notification>> GetNotificationById(int id)
+    public async Task<Result> GetNotificationdById(int id)
     {
         try
         {
@@ -72,22 +72,22 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
         }
     }
 
-    public async Task<Result> UpdateAsync(Notification notification)
+    public async Task<Result> UpdateAsync(int notificationId, int? notificationTypeId=null, string? nameRu = null, string? nameKk = null, string? nameEn = null, string? contentRu = null, string? contentKk = null, string? contentEn = null)
     {
         try
         {
-            var notificationUpdate = await _dbContext.Notifications.FindAsync(notification.NotificationId);
+            var notificationUpdate = await _dbContext.Notifications.FindAsync(notificationId);
             if(notificationUpdate is null)
             {
                 return Result.Failure(new Error("Not Found", "Notification  not Found"));
             }
-            notificationUpdate.NameRu = notification.NameRu;
-            notificationUpdate.NameKk = notification.NameKk;
-            notificationUpdate.NameEn = notification.NameEn;
-            notificationUpdate.ContentRu = notification.ContentRu;
-            notificationUpdate.ContentKk = notification.ContentKk;
-            notificationUpdate.ContentEn = notification.ContentEn;
-            notificationUpdate.NotificationTypeId = notification.NotificationTypeId;
+            notificationUpdate.NameRu = nameRu??notificationUpdate.NameRu;
+            notificationUpdate.NameKk = nameKk??notificationUpdate.NameKk;
+            notificationUpdate.NameEn = nameEn??notificationUpdate.NameEn;
+            notificationUpdate.ContentRu = contentRu??notificationUpdate.ContentRu;
+            notificationUpdate.ContentKk = contentKk??notificationUpdate.ContentKk;
+            notificationUpdate.ContentEn = contentEn??notificationUpdate.ContentEn;
+            notificationUpdate.NotificationTypeId = notificationTypeId??notificationUpdate.NotificationTypeId;
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }

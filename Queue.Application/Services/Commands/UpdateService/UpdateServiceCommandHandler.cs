@@ -2,7 +2,6 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
-using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
 
@@ -12,26 +11,25 @@ public class UpdateServiceCommandHandler(IServiceRepository _serviceRepository, 
 {
     public async Task<Result> Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
     {
-        var service = new Service
-        {
-            ServiceId = request.ServiceId,
-            NameRu = request.NameRu,
-            NameKk = request.NameKk,
-            NameEn = request.NameEn,
-            DescriptionRu = request.DescriptionRu,
-            DescriptionKk = request.DescriptionKk,
-            DescriptionEn = request.DescriptionEn,
-            AverageExecutionTime = request.AverageExecutionTime,
-            QueueTypeId = request.QueueTypeId,
-            ParentserviceId = request.ParentserviceId,
-        };
-        var result = await _serviceRepository.UpdateAsync(service);
-        if(result.IsFailed) 
+        var service = await _serviceRepository.UpdateAsync(
+            serviceId: request.ServiceId,
+            nameRu: request.NameRu,
+            nameKk: request.NameKk,
+            nameEn: request.NameEn,
+            descriptionRu: request.DescriptionRu,
+            descriptionKk: request.DescriptionKk,
+            descriptionEn: request.DescriptionEn,
+            avarageExecutionTime: request.AverageExecutionTime,
+            queueTypeId: request.QueueTypeId,
+            parentServiceId: request.ParentserviceId
+            );
+
+        if (service.IsFailed)
         {
             _logger.LogError($"Ошибка при обновлении услуги с id: {request.ServiceId}.");
             return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления услуги."));
         }
         _logger.LogInformation($"Успешное обновление услуги с id: {request.ServiceId}.");
-        return result;
+        return Result.Success();
     }
 }

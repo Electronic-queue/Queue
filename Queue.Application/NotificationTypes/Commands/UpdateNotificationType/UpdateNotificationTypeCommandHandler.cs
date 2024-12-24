@@ -12,23 +12,22 @@ public class UpdateNotificationTypeCommandHandler(INotificationTypeRepository _n
 {
     public async Task<Result> Handle(UpdateNotificationTypeCommand request, CancellationToken cancellationToken)
     {
-        var notificationType = new NotificationType
-        {
-            NotificationTypeId = request.NotificationTypeId,
-            NameRu = request.NameRu,
-            NameKk = request.NameKk,
-            NameEn = request.NameEn,
-            DescriptionRu = request.DescriptionRu,
-            DescriptionKk = request.DescriptionKk,
-            DescriptionEn = request.DescriptionEn,
-        };
-        var result = await _notificationTypeRepository.UpdateAsync(notificationType);
-        if(result.IsFailed) 
+        var notificationType = await _notificationTypeRepository.UpdateAsync(
+            notificationTypeId:request.NotificationTypeId,
+            nameRu:request.NameRu,
+            nameKk:request.NameKk,
+            nameEn:request.NameEn,
+            descriptionRu:request.DescriptionRu,
+            descriptionKk:request.DescriptionKk,
+            descriptionEn:request.DescriptionEn
+            );
+       
+        if(notificationType.IsFailed) 
         {
             _logger.LogError($"Ошибка при обновлении типа уведомлений с id: {request.NotificationTypeId}.");
             return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления типа уведомлений."));
         }
         _logger.LogInformation($"Успешное обновление типа уведомления с id: {request.NotificationTypeId}.");
-        return result;
+        return Result.Success();
     }
 }

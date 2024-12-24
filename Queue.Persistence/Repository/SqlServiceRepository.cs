@@ -72,24 +72,24 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
         }
     }
 
-    public async Task<Result> UpdateAsync(Service Service)
+    public async Task<Result> UpdateAsync(int serviceId, string? nameRu = null, string? nameKk = null, string? nameEn = null, string? descriptionRu = null, string? descriptionKk = null, string? descriptionEn = null, int? avarageExecutionTime = null, int? parentServiceId = null, int? queueTypeId = null)
     {
         try
         {
-            var ServiceUpdate = await _dbContext.Services.FindAsync(Service.ServiceId);
-            if(ServiceUpdate is null)
+            var serviceUpdate = await _dbContext.Services.FindAsync(serviceId);
+            if(serviceUpdate is null)
             {
                 return Result.Failure(new Error("Not Found", "Service  not Found"));
             }
-            ServiceUpdate.NameRu = Service.NameRu;
-            ServiceUpdate.NameKk = Service.NameKk;
-            ServiceUpdate.NameEn = Service.NameEn;
-            ServiceUpdate.DescriptionRu = Service.DescriptionRu;
-            ServiceUpdate.DescriptionKk = Service.DescriptionKk;
-            ServiceUpdate.DescriptionEn = Service.DescriptionEn;
-            ServiceUpdate.AverageExecutionTime = Service.AverageExecutionTime;
-            ServiceUpdate.ParentserviceId = Service.ParentserviceId;
-            ServiceUpdate.QueueTypeId = Service.QueueTypeId;
+            serviceUpdate.NameRu = nameRu?? serviceUpdate.NameRu;
+            serviceUpdate.NameKk = nameKk?? serviceUpdate.NameKk;
+            serviceUpdate.NameEn = nameEn?? serviceUpdate.NameEn;
+            serviceUpdate.DescriptionRu =descriptionRu?? serviceUpdate.DescriptionRu;
+            serviceUpdate.DescriptionKk = descriptionKk?? serviceUpdate.DescriptionKk;
+            serviceUpdate.DescriptionEn = descriptionEn?? serviceUpdate.DescriptionEn;
+            serviceUpdate.AverageExecutionTime = avarageExecutionTime?? serviceUpdate.AverageExecutionTime;
+            serviceUpdate.ParentserviceId = parentServiceId?? serviceUpdate.ParentserviceId;
+            serviceUpdate.QueueTypeId = queueTypeId?? serviceUpdate.QueueTypeId;
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }

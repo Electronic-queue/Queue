@@ -74,21 +74,21 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
         }
     }
 
-    public async Task<Result> UpdateAsync(NotificationType notificationType)
+    public async Task<Result> UpdateAsync(int notificationTypeId, string? nameRu = null, string? nameKk = null, string? nameEn = null, string? descriptionRu = null, string? descriptionKk = null, string? descriptionEn = null)
     {
         try
         {
-            var notificationTypeUpdate = await _dbContext.NotificationTypes.FindAsync(notificationType.NotificationTypeId);
+            var notificationTypeUpdate = await _dbContext.NotificationTypes.FindAsync(notificationTypeId);
             if(notificationTypeUpdate is null)
             {
                 return Result.Failure(new Error("Not Found", "Notification Type not Found"));
             }
-            notificationTypeUpdate.NameRu = notificationType.NameRu;
-            notificationTypeUpdate.NameKk = notificationType.NameKk;
-            notificationTypeUpdate.NameEn = notificationType.NameEn;
-            notificationTypeUpdate.DescriptionRu = notificationType.DescriptionRu;
-            notificationTypeUpdate.DescriptionKk = notificationType.DescriptionKk;
-            notificationTypeUpdate.DescriptionEn = notificationType.DescriptionEn;
+            notificationTypeUpdate.NameRu = nameRu?? notificationTypeUpdate.NameRu;
+            notificationTypeUpdate.NameKk = nameKk?? notificationTypeUpdate.NameKk;
+            notificationTypeUpdate.NameEn = nameEn?? notificationTypeUpdate.NameEn;
+            notificationTypeUpdate.DescriptionRu = descriptionRu?? notificationTypeUpdate.DescriptionRu;
+            notificationTypeUpdate.DescriptionKk = descriptionKk?? notificationTypeUpdate.DescriptionKk;
+            notificationTypeUpdate.DescriptionEn = descriptionEn?? notificationTypeUpdate.DescriptionEn;
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }

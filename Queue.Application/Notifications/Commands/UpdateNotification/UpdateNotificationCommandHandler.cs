@@ -12,24 +12,23 @@ public class UpdateNotificationCommandHandler(INotificationRepository _notificat
 {
     public async Task<Result> Handle(UpdateNotificationCommand request, CancellationToken cancellationToken)
     {
-        var notification = new Notification
-        {
-            NotificationId = request.NotificationId,
-            NameRu = request.NameRu,
-            NameKk = request.NameKk,
-            NameEn = request.NameEn,
-            ContentRu = request.ContentRu,
-            ContentKk = request.ContentKk,
-            ContentEn = request.ContentEn,
-            NotificationTypeId = request.NotificationTypeId,
-        };
-        var result = await _notificationRepository.UpdateAsync(notification);
-        if(result.IsFailed) 
+        var notification = await _notificationRepository.UpdateAsync(
+            notificationId:request.NotificationId,
+            nameRu:request.NameRu,
+            nameKk:request.NameKk,
+            nameEn:request.NameEn,
+            contentRu:request.ContentRu,
+            contentKk:request.ContentKk,
+            contentEn:request.ContentEn,
+            notificationTypeId:request.NotificationTypeId
+            );
+        
+        if(notification.IsFailed) 
         {
             _logger.LogError($"Ошибка при обновлении уведомления с id: {request.NotificationId}.");
             return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления уведомления."));
         }
         _logger.LogInformation($"Успешное обновление уведомления с id: {request.NotificationId}.");
-        return result;
+        return Result.Success();
     }
 }

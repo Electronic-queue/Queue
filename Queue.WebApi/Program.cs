@@ -5,6 +5,8 @@ using Queue.Application.Common.Mappings;
 using Queue.Application.Interfaces;
 using Queue.Persistence;
 using Queue.WebApi;
+using Queue.WebApi.Common.NotificationProfile;
+using Queue.WebApi.Common.NotificationTypeProfile;
 using Queue.WebApi.Common.RecordProfile;
 using Queue.WebApi.Common.RecordStatusProfile;
 using Queue.WebApi.Common.ServiceProfile;
