@@ -2605,3 +2605,22 @@ Error Number:10065,State:0,Class:20
 2024-12-23 22:37:24.486 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
 2024-12-23 22:37:24.489 +06:00 [INF] CorrelationId: 1d61527e-2394-4488-af16-ae60cce3a910
 2024-12-23 22:37:25.099 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 613.5475ms
+2024-12-23 23:30:44.714 +06:00 [INF] Приложение запущено
+2024-12-23 23:30:45.219 +06:00 [INF] Now listening on: https://localhost:7092
+2024-12-23 23:30:45.222 +06:00 [INF] Now listening on: http://localhost:5294
+2024-12-23 23:30:45.390 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-23 23:30:45.391 +06:00 [INF] Hosting environment: Development
+2024-12-23 23:30:45.391 +06:00 [INF] Content root path: D:\C#Projects\ElecQueue\Queue.WebApi
+2024-12-23 23:30:46.211 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-23 23:30:46.403 +06:00 [INF] CorrelationId: 26f87425-6741-4365-b816-fd488e97bf09
+2024-12-23 23:30:46.604 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 409.3541ms
+2024-12-23 23:30:46.633 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-23 23:30:46.634 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-23 23:30:46.635 +06:00 [INF] CorrelationId: 9ae82f9d-9fcc-48bf-9ab7-08c7ae2f0526
+2024-12-23 23:30:46.658 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 25.2411ms
+2024-12-23 23:30:46.660 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-23 23:30:46.706 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 73.1519ms
+2024-12-23 23:30:46.808 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 147.8403ms
+2024-12-23 23:30:46.894 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-23 23:30:46.897 +06:00 [INF] CorrelationId: 4e6690d6-c7ca-481a-a567-65ddc53160bb
+2024-12-23 23:30:47.228 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 334.6504ms

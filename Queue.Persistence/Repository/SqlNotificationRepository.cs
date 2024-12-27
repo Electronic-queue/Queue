@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -45,7 +46,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
     {
         try
         {
-            var notification = await _dbContext.Notifications.ToListAsync();
+            List<Notification> notification = await _dbContext.Notifications.ToListAsync();
             return Result.Success(notification);
         }
         catch(Exception ex)
