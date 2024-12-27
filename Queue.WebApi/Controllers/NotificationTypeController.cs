@@ -4,6 +4,7 @@ using Queue.Application.NotificationTypes.Commands.DeleteNotificationType;
 using Queue.Application.NotificationTypes.Commands.UpdateNotificationType;
 using Queue.Application.NotificationTypes.Queries.GetNotificationTypeDetails;
 using Queue.Application.NotificationTypes.Queries.GetNotificationTypeList;
+using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.NotificationTypeContracts;
 using System.Net;
 
@@ -30,6 +31,10 @@ public class NotificationTypeController : BaseController
     {
         var query = new GetNotificationTypeListQuery();
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
         //return ResultSucces.Success(vm);
     }
@@ -49,6 +54,10 @@ public class NotificationTypeController : BaseController
             NotificationTypeId = notificationTypeId
         };
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -67,7 +76,7 @@ public class NotificationTypeController : BaseController
         var notificationTypeId = await Mediator.Send(command);
         if (notificationTypeId.IsFailed)
         {
-            return BadRequest(notificationTypeId);
+            return ProblemResponse(notificationTypeId.Error);
         }
         return Ok(notificationTypeId);
 
@@ -86,7 +95,7 @@ public class NotificationTypeController : BaseController
         var notificationTypeId = await Mediator.Send(command);
         if (notificationTypeId.IsFailed)
         {
-            return BadRequest(notificationTypeId);
+            return ProblemResponse(notificationTypeId.Error);
         }
         return Ok(notificationTypeId);
     }
@@ -101,6 +110,10 @@ public class NotificationTypeController : BaseController
     public async Task<IActionResult> Delete(int id)
     {
         var command = await Mediator.Send(new DeleteNotificationTypeCommand(id));
+        if (command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
         return NoContent();
     }
 }

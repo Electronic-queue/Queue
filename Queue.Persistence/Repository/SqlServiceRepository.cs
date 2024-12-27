@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -17,7 +18,7 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -28,7 +29,7 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
             var Service = await _dbContext.Services.FindAsync(id);
             if (Service is null)
             {
-                return Result.Failure(new Error("Not Found", "Service not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Service not Found"));
 
             }
             _dbContext.Services.Remove(Service);
@@ -37,7 +38,7 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error",ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -50,24 +51,24 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
         }
         catch(Exception ex)
         {
-            return Result.Failure<List<Service>>(new Error("Database Error", ex.Message));
+            return Result.Failure<List<Service>>(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
-    public async Task<Result<Service>> GetServiceById(int id)
+    public async Task<Result> GetServiceById(int id)
     {
         try
         {
             var Service = await _dbContext.Services.FindAsync(id);
             if (Service is null)
             {
-                return (Result<Service>)Result.Failure(new Error("Not Found", "Service not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Service not Found"));
             }
             return Result.Success(Service);
         }
         catch (Exception ex)
         {
-            return (Result<Service>)Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
 
         }
     }
@@ -79,7 +80,7 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
             var serviceUpdate = await _dbContext.Services.FindAsync(serviceId);
             if(serviceUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "Service  not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Service not Found"));
             }
             serviceUpdate.NameRu = nameRu?? serviceUpdate.NameRu;
             serviceUpdate.NameKk = nameKk?? serviceUpdate.NameKk;
@@ -95,7 +96,7 @@ public class SqlServiceRepository(QueuesDbContext _dbContext) : IServiceReposito
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 }

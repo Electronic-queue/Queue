@@ -1,6 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -18,7 +18,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -29,7 +29,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
             var notification = await _dbContext.Notifications.FindAsync(id);
             if (notification is null)
             {
-                return Result.Failure(new Error("Not Found", "Notification not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification not Found"));
 
             }
             _dbContext.Notifications.Remove(notification);
@@ -38,7 +38,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error",ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -46,12 +46,12 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
     {
         try
         {
-            List<Notification> notification = await _dbContext.Notifications.ToListAsync();
+            var notification = await _dbContext.Notifications.ToListAsync();
             return Result.Success(notification);
         }
         catch(Exception ex)
         {
-            return Result.Failure<List<Notification>>(new Error("Database Error", ex.Message));
+            return Result.Failure<List<Notification>>(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -62,13 +62,13 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
             var notification = await _dbContext.Notifications.FindAsync(id);
             if (notification is null)
             {
-                return (Result<Notification>)Result.Failure(new Error("Not Found", "Notification not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification not Found"));
             }
             return Result.Success(notification);
         }
         catch (Exception ex)
         {
-            return (Result<Notification>)Result.Failure(new Error("Database Error", ex.Message));
+            return (Result<Notification>)Result.Failure(new Error(Errors.InternalServerError, ex.Message));
 
         }
     }
@@ -80,7 +80,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
             var notificationUpdate = await _dbContext.Notifications.FindAsync(notificationId);
             if(notificationUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "Notification  not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification not Found"));
             }
             notificationUpdate.NameRu = nameRu??notificationUpdate.NameRu;
             notificationUpdate.NameKk = nameKk??notificationUpdate.NameKk;
@@ -94,7 +94,7 @@ public class SqlNotificationRepository(QueuesDbContext _dbContext) : INotificati
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 }

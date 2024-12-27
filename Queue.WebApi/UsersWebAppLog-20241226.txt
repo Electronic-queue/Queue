@@ -1,0 +1,1010 @@
+2024-12-26 11:20:25.918 +05:00 [INF] Приложение запущено
+2024-12-26 11:20:26.640 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:20:26.644 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:20:26.648 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:20:26.649 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:20:26.649 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:20:31.028 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:20:31.357 +05:00 [INF] CorrelationId: 57aa6720-dfeb-4737-8d4e-332f58d137df
+2024-12-26 11:20:31.707 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 692.4589ms
+2024-12-26 11:20:31.719 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:20:31.719 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:20:31.721 +05:00 [INF] CorrelationId: 5bd23e1d-3902-4279-837a-ebc638a8420e
+2024-12-26 11:20:31.725 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.3756ms
+2024-12-26 11:20:31.734 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:20:31.744 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 24.4017ms
+2024-12-26 11:20:31.884 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 149.9302ms
+2024-12-26 11:20:31.962 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:20:31.964 +05:00 [INF] CorrelationId: a6aca1b9-3605-4cee-b3fb-edd69261acf2
+2024-12-26 11:20:32.816 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 855.4814ms
+2024-12-26 11:20:47.063 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:20:47.064 +05:00 [INF] CorrelationId: 4e7cd011-7a76-4872-bc82-992bcf884d04
+2024-12-26 11:20:47.177 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:20:47.210 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:20:47.265 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:20:50.959 +05:00 [INF] Executed DbCommand (128ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:20:51.037 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:20:51.128 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 3913.9314ms
+2024-12-26 11:20:51.129 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:20:51.141 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 4078.1615ms
+2024-12-26 11:22:04.670 +05:00 [INF] Приложение запущено
+2024-12-26 11:22:05.204 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:22:05.208 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:22:05.212 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:22:05.213 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:22:05.213 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:22:08.016 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:22:08.241 +05:00 [INF] CorrelationId: 8caa43df-eb57-47ec-aa53-eae4565060fa
+2024-12-26 11:22:08.473 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 478.1088ms
+2024-12-26 11:22:08.485 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:22:08.485 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:22:08.487 +05:00 [INF] CorrelationId: 7d860767-af24-4d68-a23e-67132ac828ae
+2024-12-26 11:22:08.491 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.6606ms
+2024-12-26 11:22:08.500 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:22:08.503 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 18.1536ms
+2024-12-26 11:22:08.577 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.4687ms
+2024-12-26 11:22:08.696 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:22:08.699 +05:00 [INF] CorrelationId: edf8e729-1193-4071-a3dc-9396cf78ff93
+2024-12-26 11:22:09.242 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 546.4425ms
+2024-12-26 11:23:04.800 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/Window?api-version=1 - null null
+2024-12-26 11:23:04.801 +05:00 [INF] CorrelationId: 1bfd0d59-1f43-4fe4-9eb5-6d5b0aa26e6d
+2024-12-26 11:23:04.888 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:23:04.926 +05:00 [INF] Route matched with {action = "GetAll", controller = "Window"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Windows.Queries.GetWindowList.WindowLIistVm]] GetAll() on controller Queue.WebApi.Controllers.WindowController (Queue.WebApi).
+2024-12-26 11:23:04.969 +05:00 [INF] Users Request: GetWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetWindowListQuery"} 
+2024-12-26 11:23:09.016 +05:00 [INF] Executed DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[WindowID], [w].[CreatedBy], [w].[CreatedOn], [w].[WindowNumber], [w].[WindowStatusID]
+FROM [elec_queue].[Windows] AS [w]
+2024-12-26 11:23:09.194 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.Window, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:23:09.418 +05:00 [INF] Executed action Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi) in 4483.7959ms
+2024-12-26 11:23:09.420 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:23:09.439 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/Window?api-version=1 - 200 null application/json; charset=utf-8 4638.9784ms
+2024-12-26 11:23:41.223 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 53
+2024-12-26 11:23:41.224 +05:00 [INF] CorrelationId: 930689ee-2644-4e5a-800c-523d521f393d
+2024-12-26 11:23:41.233 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:23:41.243 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Create (Queue.WebApi)'
+2024-12-26 11:23:41.259 +05:00 [INF] Route matched with {action = "Create", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Contracts.UserWindowComtracts.CreateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:23:41.788 +05:00 [INF] Users Request: CreateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserId":7,"WindowId":16,"StartTime":null,"EndTime":null,"CreatedOn":null,"CreatedBy":4,"$type":"CreateUserWindowCommand"} 
+2024-12-26 11:23:42.411 +05:00 [INF] Executed DbCommand (208ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime), @p3='?' (DbType = DateTime), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[UserWindows] ([CreatedBy], [CreatedOn], [EndTime], [StartTime], [UserID], [WindowID])
+OUTPUT INSERTED.[UserWindowID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-12-26 11:23:42.485 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 11:23:42.488 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.Create (Queue.WebApi) in 1229.5142ms
+2024-12-26 11:23:42.489 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.Create (Queue.WebApi)'
+2024-12-26 11:23:42.489 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 1265.8586ms
+2024-12-26 11:24:00.214 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:24:00.225 +05:00 [INF] CorrelationId: da10e245-9e5c-4bab-9bc8-912c454bc626
+2024-12-26 11:24:00.225 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:24:00.232 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:24:00.238 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:24:00.571 +05:00 [INF] Executed DbCommand (208ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:24:00.573 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:24:00.582 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 349.832ms
+2024-12-26 11:24:00.582 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:24:00.582 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 369.2416ms
+2024-12-26 11:26:20.887 +05:00 [INF] Приложение запущено
+2024-12-26 11:26:21.416 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:26:21.419 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:26:21.423 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:26:21.424 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:26:21.424 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:26:24.104 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:26:24.309 +05:00 [INF] CorrelationId: 4b388bca-c118-4d57-891f-68d274ada7d5
+2024-12-26 11:26:24.538 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 450.7362ms
+2024-12-26 11:26:24.549 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:26:24.549 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:26:24.550 +05:00 [INF] CorrelationId: 523f1232-7279-40d3-a500-3eb7abec8936
+2024-12-26 11:26:24.554 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.4707ms
+2024-12-26 11:26:24.563 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:26:24.568 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 19.3956ms
+2024-12-26 11:26:24.640 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.8502ms
+2024-12-26 11:26:24.757 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:26:24.762 +05:00 [INF] CorrelationId: 34f97baf-95c0-4d0d-a89f-34afb015984b
+2024-12-26 11:26:25.400 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 642.9144ms
+2024-12-26 11:27:11.527 +05:00 [INF] Приложение запущено
+2024-12-26 11:27:12.263 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:27:12.269 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:27:12.274 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:27:12.274 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:27:12.274 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:27:14.668 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:27:14.865 +05:00 [INF] CorrelationId: 3885c013-fbcd-41c4-ace5-72a80962f829
+2024-12-26 11:27:15.143 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 494.5722ms
+2024-12-26 11:27:15.155 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:27:15.155 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:27:15.157 +05:00 [INF] CorrelationId: 0aea2d8e-ca3e-44fe-a618-95569d5bb072
+2024-12-26 11:27:15.161 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.6687ms
+2024-12-26 11:27:15.169 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:27:15.178 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 23.3335ms
+2024-12-26 11:27:15.240 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.0965ms
+2024-12-26 11:27:15.352 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:27:15.357 +05:00 [INF] CorrelationId: d202f265-db0f-43e6-8673-7df00d1166b7
+2024-12-26 11:27:15.965 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 614.6718ms
+2024-12-26 11:27:31.114 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:27:31.114 +05:00 [INF] CorrelationId: b8f92ff5-265e-4bd3-88bf-a2c77339d098
+2024-12-26 11:27:31.210 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:27:31.267 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:27:31.328 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:27:36.196 +05:00 [INF] Executed DbCommand (400ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:27:36.425 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:27:36.651 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 5374.2458ms
+2024-12-26 11:27:36.652 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:27:36.670 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 5556.3486ms
+2024-12-26 11:28:11.176 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 42
+2024-12-26 11:28:11.176 +05:00 [INF] CorrelationId: c05ef817-15c3-4f23-aad1-fd60571c694f
+2024-12-26 11:28:11.182 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:28:11.186 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:28:11.201 +05:00 [INF] Route matched with {action = "Update", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserWindowComtracts.UpdateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:28:11.726 +05:00 [INF] Users Request: UpdateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserWindowId":1,"UserId":0,"WindowId":17,"$type":"UpdateUserWindowCommand"} 
+2024-12-26 11:28:12.216 +05:00 [INF] Executed DbCommand (135ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+WHERE [u].[UserWindowID] = @__p_0
+2024-12-26 11:28:12.533 +05:00 [INF] Executed DbCommand (79ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[UserWindows] SET [UserID] = @p0, [WindowID] = @p1
+OUTPUT 1
+WHERE [UserWindowID] = @p2;
+2024-12-26 11:28:12.637 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:78908611-1f12-4777-be60-b0c096aa9924
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:78908611-1f12-4777-be60-b0c096aa9924
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-26 11:28:12.784 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 11:28:12.787 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi) in 1586.5077ms
+2024-12-26 11:28:12.788 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:28:12.788 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - 400 null application/json; charset=utf-8 1613.3221ms
+2024-12-26 11:30:23.732 +05:00 [INF] Приложение запущено
+2024-12-26 11:30:24.293 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:30:24.297 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:30:24.305 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:30:24.306 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:30:24.306 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:30:28.311 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:30:28.496 +05:00 [INF] CorrelationId: 4e52587e-fcc8-44bd-9809-5246ee52deee
+2024-12-26 11:30:28.812 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 524.807ms
+2024-12-26 11:30:28.825 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:30:28.825 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:30:28.826 +05:00 [INF] CorrelationId: 474672f8-2100-4443-bbd8-4f2e7d3dfaf9
+2024-12-26 11:30:28.853 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 27.702ms
+2024-12-26 11:30:28.861 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:30:28.879 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 54.7365ms
+2024-12-26 11:30:28.940 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.5105ms
+2024-12-26 11:30:29.022 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:30:29.024 +05:00 [INF] CorrelationId: 9be25ee3-e23e-4cf8-8fcf-ee35907ea34d
+2024-12-26 11:30:29.784 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 761.8407ms
+2024-12-26 11:31:01.888 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 41
+2024-12-26 11:31:01.899 +05:00 [INF] CorrelationId: f8fbec7f-9ffb-40fa-b950-1b43bbfb8a24
+2024-12-26 11:31:01.907 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:31:02.018 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:31:02.068 +05:00 [INF] Route matched with {action = "Update", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserWindowComtracts.UpdateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:31:06.136 +05:00 [INF] Users Request: UpdateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserWindowId":1,"UserId":0,"WindowId":17,"$type":"UpdateUserWindowCommand"} 
+2024-12-26 11:31:32.313 +05:00 [INF] Executed DbCommand (246ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+WHERE [u].[UserWindowID] = @__p_0
+2024-12-26 11:32:06.607 +05:00 [INF] Executed DbCommand (108ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[UserWindows] SET [UserID] = @p0, [WindowID] = @p1
+OUTPUT 1
+WHERE [UserWindowID] = @p2;
+2024-12-26 11:32:06.729 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f000e637-29a0-41ed-b38a-656a1731cc16
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f000e637-29a0-41ed-b38a-656a1731cc16
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-26 11:32:32.621 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 11:32:32.654 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi) in 90579.7994ms
+2024-12-26 11:32:32.656 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:32:32.678 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - 400 null application/json; charset=utf-8 90790.3635ms
+2024-12-26 11:33:44.772 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:33:44.775 +05:00 [INF] CorrelationId: d3ef4c6f-eefc-46be-93ad-03188795199d
+2024-12-26 11:33:44.787 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:33:44.806 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:33:44.815 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:33:45.079 +05:00 [INF] Executed DbCommand (207ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:33:45.099 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:33:45.197 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 390.4851ms
+2024-12-26 11:33:45.197 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:33:45.198 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 426.4581ms
+2024-12-26 11:34:42.787 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 41
+2024-12-26 11:34:42.793 +05:00 [INF] CorrelationId: 84c318e0-aa5a-4037-83ae-aa153223b78a
+2024-12-26 11:34:42.796 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:34:42.796 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:34:42.796 +05:00 [INF] Route matched with {action = "Update", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserWindowComtracts.UpdateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:34:47.802 +05:00 [INF] Users Request: UpdateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserWindowId":1,"UserId":0,"WindowId":17,"$type":"UpdateUserWindowCommand"} 
+2024-12-26 11:34:50.537 +05:00 [INF] Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+WHERE [u].[UserWindowID] = @__p_0
+2024-12-26 11:36:00.060 +05:00 [INF] Приложение запущено
+2024-12-26 11:36:00.587 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:36:00.590 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:36:00.594 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:36:00.594 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:36:00.594 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:36:03.047 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:36:03.254 +05:00 [INF] CorrelationId: 2381df01-2c40-40e7-aba9-4cdd1e2c1c14
+2024-12-26 11:36:03.559 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 535.9959ms
+2024-12-26 11:36:03.578 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:36:03.578 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:36:03.578 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:36:03.580 +05:00 [INF] CorrelationId: af41c89e-22a6-4fed-a6b5-254c70472bdc
+2024-12-26 11:36:03.585 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 7.8808ms
+2024-12-26 11:36:03.610 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 33.7731ms
+2024-12-26 11:36:03.672 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.1254ms
+2024-12-26 11:36:03.818 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:36:03.821 +05:00 [INF] CorrelationId: 5e877e42-b4d2-4df3-bc66-0b20f0596835
+2024-12-26 11:36:04.566 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 748.5659ms
+2024-12-26 11:36:19.523 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:36:19.523 +05:00 [INF] CorrelationId: 6690431d-b431-40d9-b1b2-27d7017c6f87
+2024-12-26 11:36:19.612 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:36:19.663 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:36:19.734 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:36:24.465 +05:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:36:24.703 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:36:24.876 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 5207.1167ms
+2024-12-26 11:36:24.877 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:36:24.888 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 5365.8844ms
+2024-12-26 11:36:48.680 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 41
+2024-12-26 11:36:48.681 +05:00 [INF] CorrelationId: f96672b4-d6cc-42e8-968d-0028ff37f3b5
+2024-12-26 11:36:48.689 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:36:48.694 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:36:48.711 +05:00 [INF] Route matched with {action = "Update", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserWindowComtracts.UpdateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:36:52.486 +05:00 [INF] Users Request: UpdateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserWindowId":1,"UserId":0,"WindowId":17,"$type":"UpdateUserWindowCommand"} 
+2024-12-26 11:36:54.977 +05:00 [INF] Executed DbCommand (128ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+WHERE [u].[UserWindowID] = @__p_0
+2024-12-26 11:37:16.314 +05:00 [INF] Executed DbCommand (94ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[UserWindows] SET [UserID] = @p0, [WindowID] = @p1
+OUTPUT 1
+WHERE [UserWindowID] = @p2;
+2024-12-26 11:37:16.418 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ebd18e48-b9d1-40d5-9eeb-e4cea3ae4aed
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserWindo__UserI__0E04126B". The conflict occurred in database "aybolat_db", table "elec_queue.Users", column 'UserID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ebd18e48-b9d1-40d5-9eeb-e4cea3ae4aed
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-26 11:40:16.038 +05:00 [INF] Приложение запущено
+2024-12-26 11:40:16.467 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:40:16.469 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:40:16.472 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:40:16.473 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:40:16.473 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:40:17.100 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:40:17.294 +05:00 [INF] CorrelationId: 89724b65-f495-440e-94c4-ace1d574bba0
+2024-12-26 11:40:17.520 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 435.8306ms
+2024-12-26 11:40:17.530 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:40:17.530 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:40:17.531 +05:00 [INF] CorrelationId: 08bda029-f69f-4e17-8c11-4334ef7306ab
+2024-12-26 11:40:17.555 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 24.4721ms
+2024-12-26 11:40:17.555 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:40:17.578 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 48.0769ms
+2024-12-26 11:40:17.621 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.7418ms
+2024-12-26 11:40:17.729 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:40:17.732 +05:00 [INF] CorrelationId: 9f70bb01-2469-45e6-af9f-35b2f053afe1
+2024-12-26 11:40:18.263 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 533.3459ms
+2024-12-26 11:40:32.393 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserService?api-version=1 - null null
+2024-12-26 11:40:32.394 +05:00 [INF] CorrelationId: 704388b5-4805-4a55-ad18-c4442006b878
+2024-12-26 11:40:32.473 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserServiceController.GetAll (Queue.WebApi)'
+2024-12-26 11:40:32.540 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserService]]] GetAll() on controller Queue.WebApi.Controllers.UserServiceController (Queue.WebApi).
+2024-12-26 11:40:32.605 +05:00 [INF] Users Request: GetUserServiceListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserServiceListQuery"} 
+2024-12-26 11:40:37.204 +05:00 [INF] Executed DbCommand (170ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserServiceID], [u].[CreatedBy], [u].[CreatedOn], [u].[Description_en], [u].[Description_kk], [u].[Description_ru], [u].[IsActive], [u].[ServiceID], [u].[UserID]
+FROM [elec_queue].[UserServices] AS [u]
+2024-12-26 11:40:37.402 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserService, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:40:37.608 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserServiceController.GetAll (Queue.WebApi) in 5057.016ms
+2024-12-26 11:40:37.609 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserServiceController.GetAll (Queue.WebApi)'
+2024-12-26 11:40:37.627 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserService?api-version=1 - 200 null application/json; charset=utf-8 5234.5718ms
+2024-12-26 11:41:14.724 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserService?api-version=1 - application/json 127
+2024-12-26 11:41:14.724 +05:00 [INF] CorrelationId: 6f30bf02-1650-4480-b44e-3bf4a2b6deb7
+2024-12-26 11:41:14.730 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:41:14.734 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserServiceController.Update (Queue.WebApi)'
+2024-12-26 11:41:14.749 +05:00 [INF] Route matched with {action = "Update", controller = "UserService"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserServiceContracts.UpdateUserServiceDto) on controller Queue.WebApi.Controllers.UserServiceController (Queue.WebApi).
+2024-12-26 11:41:17.934 +05:00 [INF] Users Request: UpdateUserServiceCommand "00000000-0000-0000-0000-000000000000" {"UserServiceId":2,"UserId":0,"ServiceId":0,"DescriptionRu":"AS","DescriptionKk":"string","DescriptionEn":"string","IsActive":true,"$type":"UpdateUserServiceCommand"} 
+2024-12-26 11:41:19.256 +05:00 [INF] Executed DbCommand (101ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserServiceID], [u].[CreatedBy], [u].[CreatedOn], [u].[Description_en], [u].[Description_kk], [u].[Description_ru], [u].[IsActive], [u].[ServiceID], [u].[UserID]
+FROM [elec_queue].[UserServices] AS [u]
+WHERE [u].[UserServiceID] = @__p_0
+2024-12-26 11:41:39.698 +05:00 [INF] Executed DbCommand (144ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[UserServices] SET [Description_ru] = @p0, [IsActive] = @p1, [ServiceID] = @p2, [UserID] = @p3
+OUTPUT 1
+WHERE [UserServiceID] = @p4;
+2024-12-26 11:41:39.778 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'Queue.Persistence.QueuesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserServi__Servi__24E777C3". The conflict occurred in database "aybolat_db", table "elec_queue.Services", column 'ServiceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:60801316-ab61-491f-a985-9d4245f79338
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK__UserServi__Servi__24E777C3". The conflict occurred in database "aybolat_db", table "elec_queue.Services", column 'ServiceID'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:60801316-ab61-491f-a985-9d4245f79338
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-12-26 11:45:02.322 +05:00 [INF] Приложение запущено
+2024-12-26 11:45:03.042 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 11:45:03.046 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 11:45:03.051 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 11:45:03.052 +05:00 [INF] Hosting environment: Development
+2024-12-26 11:45:03.052 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 11:45:03.778 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 11:45:04.024 +05:00 [INF] CorrelationId: 61b88660-4ab6-4e3a-b11e-b09866f51c37
+2024-12-26 11:45:04.285 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 539.031ms
+2024-12-26 11:45:04.299 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 11:45:04.299 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 11:45:04.300 +05:00 [INF] CorrelationId: 805902ac-73f9-405e-bca4-3520438e266e
+2024-12-26 11:45:04.318 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 19.0602ms
+2024-12-26 11:45:04.320 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 11:45:04.364 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 65.3406ms
+2024-12-26 11:45:04.407 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.8087ms
+2024-12-26 11:45:04.477 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 11:45:04.478 +05:00 [INF] CorrelationId: 89885747-d528-4066-ba5b-41b38c61606d
+2024-12-26 11:45:05.047 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 570.2748ms
+2024-12-26 11:45:37.926 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - application/json 41
+2024-12-26 11:45:37.927 +05:00 [INF] CorrelationId: f6750a30-d489-4dd2-8c06-f954d5ffde79
+2024-12-26 11:45:37.933 +05:00 [INF] CORS policy execution successful.
+2024-12-26 11:45:38.027 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:45:38.086 +05:00 [INF] Route matched with {action = "Update", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.UserWindowComtracts.UpdateUserWindowDto) on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:45:43.904 +05:00 [INF] Users Request: UpdateUserWindowCommand "00000000-0000-0000-0000-000000000000" {"UserWindowId":1,"UserId":null,"WindowId":17,"$type":"UpdateUserWindowCommand"} 
+2024-12-26 11:45:52.301 +05:00 [INF] Executed DbCommand (221ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+WHERE [u].[UserWindowID] = @__p_0
+2024-12-26 11:46:14.747 +05:00 [INF] Executed DbCommand (217ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[UserWindows] SET [WindowID] = @p0
+OUTPUT 1
+WHERE [UserWindowID] = @p1;
+2024-12-26 11:46:19.557 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 11:46:19.588 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi) in 41496.1894ms
+2024-12-26 11:46:19.589 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.Update (Queue.WebApi)'
+2024-12-26 11:46:19.606 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 41681.7175ms
+2024-12-26 11:46:37.416 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - null null
+2024-12-26 11:46:37.417 +05:00 [INF] CorrelationId: 8325723c-2c86-438d-a67a-540aaa96378b
+2024-12-26 11:46:37.424 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:46:37.434 +05:00 [INF] Route matched with {action = "GetAll", controller = "UserWindow"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.UserWindow]]] GetAll() on controller Queue.WebApi.Controllers.UserWindowController (Queue.WebApi).
+2024-12-26 11:46:37.440 +05:00 [INF] Users Request: GetUserWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetUserWindowListQuery"} 
+2024-12-26 11:46:37.589 +05:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserWindowID], [u].[CreatedBy], [u].[CreatedOn], [u].[EndTime], [u].[StartTime], [u].[UserID], [u].[WindowID]
+FROM [elec_queue].[UserWindows] AS [u]
+2024-12-26 11:46:37.595 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.UserWindow, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 11:46:37.679 +05:00 [INF] Executed action Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi) in 244.1439ms
+2024-12-26 11:46:37.679 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.UserWindowController.GetAll (Queue.WebApi)'
+2024-12-26 11:46:37.679 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/UserWindow?api-version=1 - 200 null application/json; charset=utf-8 264.3076ms
+2024-12-26 12:41:39.676 +05:00 [INF] Приложение запущено
+2024-12-26 12:41:40.046 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 12:41:40.048 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 12:41:40.050 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 12:41:40.050 +05:00 [INF] Hosting environment: Development
+2024-12-26 12:41:40.050 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 12:41:41.036 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 12:41:41.251 +05:00 [INF] CorrelationId: 7d533dc3-a082-4d74-bdc3-52309261c96a
+2024-12-26 12:41:41.571 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 574.8454ms
+2024-12-26 12:41:41.649 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 12:41:41.649 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 12:41:41.650 +05:00 [INF] CorrelationId: 5776c823-01ef-4b55-b0eb-983018bcfb1a
+2024-12-26 12:41:41.658 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 6.6643ms
+2024-12-26 12:41:41.671 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 12:41:41.698 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 49.28ms
+2024-12-26 12:41:41.805 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 133.8147ms
+2024-12-26 12:41:41.895 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 12:41:41.901 +05:00 [INF] CorrelationId: 5d60f76a-d745-4d0c-9ec5-85a7584fc4a7
+2024-12-26 12:41:42.244 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 349.0865ms
+2024-12-26 12:42:06.279 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - null null
+2024-12-26 12:42:06.280 +05:00 [INF] CorrelationId: ab137d02-8b56-4a7b-9641-7484306b5f00
+2024-12-26 12:42:06.339 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:42:06.370 +05:00 [INF] Route matched with {action = "GetAll", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ReasonsForCancellation]] GetAll() on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:42:06.402 +05:00 [INF] Users Request: GetReasonsForCancellationListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetReasonsForCancellationListQuery"} 
+2024-12-26 12:42:09.208 +05:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ReasonID], [r].[CreatedOn], [r].[Explanation], [r].[RecordID]
+FROM [elec_queue].[ReasonsForCancellation] AS [r]
+2024-12-26 12:42:09.255 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ReasonsForCancellation, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 12:42:09.351 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi) in 2977.7276ms
+2024-12-26 12:42:09.351 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:42:09.363 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 3083.3269ms
+2024-12-26 12:42:37.872 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/Record?api-version=1 - null null
+2024-12-26 12:42:37.874 +05:00 [INF] CorrelationId: 764fa89f-0077-4cbd-a90e-307890292e1f
+2024-12-26 12:42:37.882 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.RecordController.GetAll (Queue.WebApi)'
+2024-12-26 12:42:37.886 +05:00 [INF] Route matched with {action = "GetAll", controller = "Record"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.Record]] GetAll() on controller Queue.WebApi.Controllers.RecordController (Queue.WebApi).
+2024-12-26 12:42:37.889 +05:00 [INF] Users Request: GetRecordListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetRecordListQuery"} 
+2024-12-26 12:42:37.996 +05:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RecordID], [r].[CreatedBy], [r].[CreatedOn], [r].[EndTime], [r].[FirstName], [r].[IIN], [r].[IsCreatedByEmployee], [r].[LastName], [r].[RecordStatusID], [r].[ServiceID], [r].[StartTime], [r].[Surname], [r].[TicketNumber]
+FROM [elec_queue].[Records] AS [r]
+2024-12-26 12:42:38.093 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.Record, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 12:42:38.106 +05:00 [INF] Executed action Queue.WebApi.Controllers.RecordController.GetAll (Queue.WebApi) in 219.8749ms
+2024-12-26 12:42:38.106 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.RecordController.GetAll (Queue.WebApi)'
+2024-12-26 12:42:38.106 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/Record?api-version=1 - 200 null application/json; charset=utf-8 234.7557ms
+2024-12-26 12:42:54.471 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - application/json 44
+2024-12-26 12:42:54.471 +05:00 [INF] CorrelationId: b646a5da-9c64-4c23-9937-1410bc943ef5
+2024-12-26 12:42:54.485 +05:00 [INF] CORS policy execution successful.
+2024-12-26 12:42:54.486 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi)'
+2024-12-26 12:42:54.493 +05:00 [INF] Route matched with {action = "Create", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Contracts.ReasonsForCancellationContracts.CreateReasonsForCancellationDto) on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:42:54.710 +05:00 [INF] Users Request: CreateReasonsForCancellationCommand "00000000-0000-0000-0000-000000000000" {"RecordId":14,"Explantation":"as","$type":"CreateReasonsForCancellationCommand"} 
+2024-12-26 12:42:55.017 +05:00 [INF] Executed DbCommand (133ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[ReasonsForCancellation] ([CreatedOn], [Explanation], [RecordID])
+OUTPUT INSERTED.[ReasonID]
+VALUES (@p0, @p1, @p2);
+2024-12-26 12:42:55.054 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 12:42:55.057 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi) in 564.1899ms
+2024-12-26 12:42:55.058 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi)'
+2024-12-26 12:42:55.058 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 587.4624ms
+2024-12-26 12:43:01.291 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - null null
+2024-12-26 12:43:01.292 +05:00 [INF] CorrelationId: f3d3387a-dc85-49e6-a611-ef8e06517e00
+2024-12-26 12:43:01.292 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:43:01.292 +05:00 [INF] Route matched with {action = "GetAll", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ReasonsForCancellation]] GetAll() on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:43:01.293 +05:00 [INF] Users Request: GetReasonsForCancellationListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetReasonsForCancellationListQuery"} 
+2024-12-26 12:43:01.489 +05:00 [INF] Executed DbCommand (194ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ReasonID], [r].[CreatedOn], [r].[Explanation], [r].[RecordID]
+FROM [elec_queue].[ReasonsForCancellation] AS [r]
+2024-12-26 12:43:01.491 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ReasonsForCancellation, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 12:43:01.492 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi) in 199.4316ms
+2024-12-26 12:43:01.492 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:43:01.492 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 201.3695ms
+2024-12-26 12:43:34.038 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - application/json 46
+2024-12-26 12:43:34.040 +05:00 [INF] CorrelationId: 4c22798a-b099-498c-abe9-2722f1d51516
+2024-12-26 12:43:34.040 +05:00 [INF] CORS policy execution successful.
+2024-12-26 12:43:34.040 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Update (Queue.WebApi)'
+2024-12-26 12:43:34.047 +05:00 [INF] Route matched with {action = "Update", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ReasonsForCancellationContracts.UpdateReasonsForCancellationDto) on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:43:34.056 +05:00 [INF] Users Request: UpdateReasonsForCancellationCommand "00000000-0000-0000-0000-000000000000" {"ReasonId":1,"RecordId":null,"Explantation":"Askar","$type":"UpdateReasonsForCancellationCommand"} 
+2024-12-26 12:43:34.242 +05:00 [INF] Executed DbCommand (89ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[ReasonID], [r].[CreatedOn], [r].[Explanation], [r].[RecordID]
+FROM [elec_queue].[ReasonsForCancellation] AS [r]
+WHERE [r].[ReasonID] = @__p_0
+2024-12-26 12:43:34.307 +05:00 [INF] Executed DbCommand (60ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[ReasonsForCancellation] SET [Explanation] = @p0
+OUTPUT 1
+WHERE [ReasonID] = @p1;
+2024-12-26 12:43:34.309 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 12:43:34.309 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.Update (Queue.WebApi) in 262.1497ms
+2024-12-26 12:43:34.309 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Update (Queue.WebApi)'
+2024-12-26 12:43:34.310 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 271.5121ms
+2024-12-26 12:43:38.657 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - application/json 44
+2024-12-26 12:43:38.657 +05:00 [INF] CorrelationId: d69da1cd-0fc7-4d5c-8a90-d72fbb31d9d9
+2024-12-26 12:43:38.657 +05:00 [INF] CORS policy execution successful.
+2024-12-26 12:43:38.657 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi)'
+2024-12-26 12:43:38.658 +05:00 [INF] Route matched with {action = "Create", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Contracts.ReasonsForCancellationContracts.CreateReasonsForCancellationDto) on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:43:38.661 +05:00 [INF] Users Request: CreateReasonsForCancellationCommand "00000000-0000-0000-0000-000000000000" {"RecordId":14,"Explantation":"as","$type":"CreateReasonsForCancellationCommand"} 
+2024-12-26 12:43:38.763 +05:00 [INF] Executed DbCommand (99ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[ReasonsForCancellation] ([CreatedOn], [Explanation], [RecordID])
+OUTPUT INSERTED.[ReasonID]
+VALUES (@p0, @p1, @p2);
+2024-12-26 12:43:38.764 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 12:43:38.764 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi) in 106.5812ms
+2024-12-26 12:43:38.764 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.Create (Queue.WebApi)'
+2024-12-26 12:43:38.765 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 108.2786ms
+2024-12-26 12:43:51.516 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - null null
+2024-12-26 12:43:51.516 +05:00 [INF] CorrelationId: 5b172885-1d61-41d6-bfec-cdff793898d1
+2024-12-26 12:43:51.516 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:43:51.516 +05:00 [INF] Route matched with {action = "GetAll", controller = "ReasonsForCancellation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ReasonsForCancellation]] GetAll() on controller Queue.WebApi.Controllers.ReasonsForCancellationController (Queue.WebApi).
+2024-12-26 12:43:51.517 +05:00 [INF] Users Request: GetReasonsForCancellationListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetReasonsForCancellationListQuery"} 
+2024-12-26 12:43:51.594 +05:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[ReasonID], [r].[CreatedOn], [r].[Explanation], [r].[RecordID]
+FROM [elec_queue].[ReasonsForCancellation] AS [r]
+2024-12-26 12:43:51.594 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ReasonsForCancellation, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 12:43:51.594 +05:00 [INF] Executed action Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi) in 77.9725ms
+2024-12-26 12:43:51.594 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ReasonsForCancellationController.GetAll (Queue.WebApi)'
+2024-12-26 12:43:51.594 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ReasonsForCancellation?api-version=1 - 200 null application/json; charset=utf-8 79.0582ms
+2024-12-26 16:03:04.152 +05:00 [INF] Приложение запущено
+2024-12-26 16:03:04.484 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 16:03:04.486 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 16:03:04.489 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 16:03:04.490 +05:00 [INF] Hosting environment: Development
+2024-12-26 16:03:04.490 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 16:03:07.104 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 16:03:07.368 +05:00 [INF] CorrelationId: 5af038fc-249d-4e53-a27c-85b6d5fbfd12
+2024-12-26 16:03:07.743 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 667.6221ms
+2024-12-26 16:03:07.773 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 16:03:07.773 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 16:03:07.775 +05:00 [INF] CorrelationId: ed2ceea5-2b73-4b92-b6a8-1129c3fbe9a2
+2024-12-26 16:03:07.778 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.0109ms
+2024-12-26 16:03:07.789 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 16:03:07.790 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 17.858ms
+2024-12-26 16:03:07.903 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.3938ms
+2024-12-26 16:03:08.052 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 16:03:08.057 +05:00 [INF] CorrelationId: 9e1a3430-f2f0-4c11-8c43-178e5bf3aa14
+2024-12-26 16:03:08.602 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 550.4543ms
+2024-12-26 16:03:20.709 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:03:20.709 +05:00 [INF] CorrelationId: bd2a8322-6a18-4c8e-84b7-3e45ac809cd9
+2024-12-26 16:03:20.781 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:03:20.805 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ExceedingsTime]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:03:20.838 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:03:23.263 +05:00 [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:03:23.296 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:03:23.366 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 2557.6418ms
+2024-12-26 16:03:23.367 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:03:23.373 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 2664.6297ms
+2024-12-26 16:03:42.033 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/Window?api-version=1 - null null
+2024-12-26 16:03:42.034 +05:00 [INF] CorrelationId: f7b076d2-dad4-44f1-a55f-9dfbefcfcb41
+2024-12-26 16:03:42.036 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi)'
+2024-12-26 16:03:42.039 +05:00 [INF] Route matched with {action = "GetAll", controller = "Window"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Application.Windows.Queries.GetWindowList.WindowLIistVm]] GetAll() on controller Queue.WebApi.Controllers.WindowController (Queue.WebApi).
+2024-12-26 16:03:42.042 +05:00 [INF] Users Request: GetWindowListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetWindowListQuery"} 
+2024-12-26 16:03:42.185 +05:00 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[WindowID], [w].[CreatedBy], [w].[CreatedOn], [w].[WindowNumber], [w].[WindowStatusID]
+FROM [elec_queue].[Windows] AS [w]
+2024-12-26 16:03:42.238 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.Window, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:03:42.246 +05:00 [INF] Executed action Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi) in 206.7136ms
+2024-12-26 16:03:42.246 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.WindowController.GetAll (Queue.WebApi)'
+2024-12-26 16:03:42.247 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/Window?api-version=1 - 200 null application/json; charset=utf-8 213.4894ms
+2024-12-26 16:03:57.917 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 52
+2024-12-26 16:03:57.917 +05:00 [INF] CorrelationId: 5fefe4f7-16f9-4312-a645-41c8100ec6bc
+2024-12-26 16:03:57.923 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:03:57.925 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi)'
+2024-12-26 16:03:57.933 +05:00 [INF] Route matched with {action = "Create", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Contracts.ExceedingsTimeContracts.CreateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:03:58.148 +05:00 [INF] Users Request: CreateExceedingsTimeCommand "00000000-0000-0000-0000-000000000000" {"WindowId":16,"TimeForExcommunication":10,"$type":"CreateExceedingsTimeCommand"} 
+2024-12-26 16:03:58.610 +05:00 [INF] Executed DbCommand (264ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[ExceedingsTimes] ([CanceledOn], [CreatedOn], [TimeForExcommunication], [WindowID])
+OUTPUT INSERTED.[ExceedingsTimeID]
+VALUES (@p0, @p1, @p2, @p3);
+2024-12-26 16:03:58.643 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 16:03:58.644 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi) in 711.0924ms
+2024-12-26 16:03:58.644 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi)'
+2024-12-26 16:03:58.644 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 728.1388ms
+2024-12-26 16:04:03.790 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:04:03.790 +05:00 [INF] CorrelationId: 90274c06-a27e-40a9-a301-f16fb733ecee
+2024-12-26 16:04:03.790 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:04:03.790 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ExceedingsTime]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:04:03.791 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:04:03.919 +05:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:04:03.920 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:04:03.922 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 131.9689ms
+2024-12-26 16:04:03.922 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:04:03.922 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 133.3037ms
+2024-12-26 16:04:31.833 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 121
+2024-12-26 16:04:31.834 +05:00 [INF] CorrelationId: d71b81c8-309a-44d5-97db-b58f33fc8545
+2024-12-26 16:04:31.834 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:04:31.834 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:04:31.837 +05:00 [INF] Route matched with {action = "Update", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ExceedingsTimeContracts.UpdateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:04:31.851 +05:00 [INF] Users Request: UpdateExceedingsTimeCommand "00000000-0000-0000-0000-000000000000" {"ExceedingsTimeId":1,"WindowId":17,"TimeForExcommunication":20,"CanceledOn":"2024-12-26T11:04:14.0810000Z","$type":"UpdateExceedingsTimeCommand"} 
+2024-12-26 16:04:32.080 +05:00 [INF] Executed DbCommand (99ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+WHERE [e].[ExceedingsTimeID] = @__p_0
+2024-12-26 16:04:32.229 +05:00 [INF] Executed DbCommand (142ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[ExceedingsTimes] SET [CanceledOn] = @p0, [TimeForExcommunication] = @p1, [WindowID] = @p2
+OUTPUT 1
+WHERE [ExceedingsTimeID] = @p3;
+2024-12-26 16:04:32.232 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 16:04:32.232 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi) in 394.189ms
+2024-12-26 16:04:32.232 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:04:32.232 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 398.5928ms
+2024-12-26 16:04:37.163 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 52
+2024-12-26 16:04:37.163 +05:00 [INF] CorrelationId: c4576c50-473c-434a-9079-37ca8a8cadcf
+2024-12-26 16:04:37.163 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:04:37.163 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi)'
+2024-12-26 16:04:37.164 +05:00 [INF] Route matched with {action = "Create", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Int32]] Create(Queue.WebApi.Contracts.ExceedingsTimeContracts.CreateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:04:37.166 +05:00 [INF] Users Request: CreateExceedingsTimeCommand "00000000-0000-0000-0000-000000000000" {"WindowId":16,"TimeForExcommunication":10,"$type":"CreateExceedingsTimeCommand"} 
+2024-12-26 16:04:37.382 +05:00 [INF] Executed DbCommand (214ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [elec_queue].[ExceedingsTimes] ([CanceledOn], [CreatedOn], [TimeForExcommunication], [WindowID])
+OUTPUT INSERTED.[ExceedingsTimeID]
+VALUES (@p0, @p1, @p2, @p3);
+2024-12-26 16:04:37.383 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 16:04:37.383 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi) in 219.5207ms
+2024-12-26 16:04:37.383 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Create (Queue.WebApi)'
+2024-12-26 16:04:37.384 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 220.4735ms
+2024-12-26 16:04:41.501 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:04:41.501 +05:00 [INF] CorrelationId: 2d92440d-deb6-4a2e-ba78-37c46c7fc469
+2024-12-26 16:04:41.502 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:04:41.502 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ExceedingsTime]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:04:41.502 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:04:41.597 +05:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:04:41.598 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:04:41.598 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 96.7333ms
+2024-12-26 16:04:41.598 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:04:41.599 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 97.7204ms
+2024-12-26 16:05:04.260 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 62
+2024-12-26 16:05:04.271 +05:00 [INF] CorrelationId: 81870b1a-8015-442c-9dab-1c0e9b4cb8a8
+2024-12-26 16:05:04.303 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:05:04.303 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:05:04.303 +05:00 [INF] Route matched with {action = "Update", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ExceedingsTimeContracts.UpdateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:05:04.316 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-26 16:05:04.334 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi) in 30.3306ms
+2024-12-26 16:05:04.334 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:05:04.334 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 400 null application/json; charset=utf-8 74.6393ms
+2024-12-26 16:05:16.059 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 104
+2024-12-26 16:05:16.059 +05:00 [INF] CorrelationId: 1c0b9fa7-4807-4daf-9c6a-a2170511982f
+2024-12-26 16:05:16.059 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:05:16.060 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:05:16.060 +05:00 [INF] Route matched with {action = "Update", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ExceedingsTimeContracts.UpdateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:05:16.061 +05:00 [INF] Users Request: UpdateExceedingsTimeCommand "00000000-0000-0000-0000-000000000000" {"ExceedingsTimeId":1,"WindowId":null,"TimeForExcommunication":20,"CanceledOn":"2024-12-26T11:04:14.0810000Z","$type":"UpdateExceedingsTimeCommand"} 
+2024-12-26 16:05:16.136 +05:00 [INF] Executed DbCommand (66ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+WHERE [e].[ExceedingsTimeID] = @__p_0
+2024-12-26 16:05:16.180 +05:00 [INF] Executed DbCommand (43ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[ExceedingsTimes] SET [CanceledOn] = @p0
+OUTPUT 1
+WHERE [ExceedingsTimeID] = @p1;
+2024-12-26 16:05:16.181 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 16:05:16.181 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi) in 120.9584ms
+2024-12-26 16:05:16.181 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:05:16.181 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 122.2095ms
+2024-12-26 16:05:32.954 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:05:32.954 +05:00 [INF] CorrelationId: 3d554568-5e09-4247-a75e-bcec46a6b25a
+2024-12-26 16:05:32.954 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:05:32.954 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Queue.Domain.Entites.ExceedingsTime]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:05:32.954 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:05:33.015 +05:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:05:33.015 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:05:33.015 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 61.1561ms
+2024-12-26 16:05:33.015 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:05:33.016 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 62.1433ms
+2024-12-26 16:06:50.699 +05:00 [INF] Приложение запущено
+2024-12-26 16:06:51.206 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 16:06:51.211 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 16:06:51.217 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 16:06:51.219 +05:00 [INF] Hosting environment: Development
+2024-12-26 16:06:51.219 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 16:06:54.782 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 16:06:55.102 +05:00 [INF] CorrelationId: 595207fe-55f3-4061-a182-d7db7c585ff1
+2024-12-26 16:06:55.322 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 561.7609ms
+2024-12-26 16:06:55.332 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 16:06:55.332 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 16:06:55.334 +05:00 [INF] CorrelationId: 504aa914-48d9-44a1-a5c9-2c129b27c673
+2024-12-26 16:06:55.338 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.5505ms
+2024-12-26 16:06:55.343 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 16:06:55.350 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 17.9697ms
+2024-12-26 16:06:55.395 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.0875ms
+2024-12-26 16:06:55.494 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 16:06:55.497 +05:00 [INF] CorrelationId: cb26bcdf-35c0-4fd2-9545-b0160e3d5004
+2024-12-26 16:06:55.897 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 403.2029ms
+2024-12-26 16:08:40.873 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 72
+2024-12-26 16:08:40.874 +05:00 [INF] CorrelationId: 2422d6ce-1a78-48fc-8827-eb0e9625e6d3
+2024-12-26 16:08:40.878 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:08:40.938 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:08:40.964 +05:00 [INF] Route matched with {action = "Update", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ExceedingsTimeContracts.UpdateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:08:41.239 +05:00 [INF] Users Request: UpdateExceedingsTimeCommand "00000000-0000-0000-0000-000000000000" {"ExceedingsTimeId":1,"WindowId":null,"TimeForExcommunication":null,"CanceledOn":"2024-12-26T11:08:27.6140000Z","$type":"UpdateExceedingsTimeCommand"} 
+2024-12-26 16:08:43.290 +05:00 [INF] Executed DbCommand (142ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+WHERE [e].[ExceedingsTimeID] = @__p_0
+2024-12-26 16:17:05.801 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [elec_queue].[ExceedingsTimes] SET [CanceledOn] = @p0
+OUTPUT 1
+WHERE [ExceedingsTimeID] = @p1;
+2024-12-26 16:17:10.362 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result'.
+2024-12-26 16:17:10.379 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi) in 509411.9209ms
+2024-12-26 16:17:10.379 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:17:10.387 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 509514.3719ms
+2024-12-26 16:17:37.694 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - application/json 47
+2024-12-26 16:17:37.695 +05:00 [INF] CorrelationId: 4043a0e7-c3c6-4ab3-ba77-744dd64dd8ad
+2024-12-26 16:17:37.701 +05:00 [INF] CORS policy execution successful.
+2024-12-26 16:17:37.703 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:17:37.708 +05:00 [INF] Route matched with {action = "Update", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Queue.WebApi.Contracts.ExceedingsTimeContracts.UpdateExceedingsTimeDto) on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:17:37.724 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-26 16:17:37.746 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi) in 37.7818ms
+2024-12-26 16:17:37.746 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.Update (Queue.WebApi)'
+2024-12-26 16:17:37.746 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 400 null application/json; charset=utf-8 52.7429ms
+2024-12-26 16:24:42.014 +05:00 [INF] Приложение запущено
+2024-12-26 16:24:42.690 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 16:24:42.693 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 16:24:42.697 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 16:24:42.698 +05:00 [INF] Hosting environment: Development
+2024-12-26 16:24:42.699 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 16:24:43.388 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 16:24:43.604 +05:00 [INF] CorrelationId: 6a6cd262-1704-401c-af6c-33ab8d534b9f
+2024-12-26 16:24:43.859 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 491.3572ms
+2024-12-26 16:24:43.882 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 16:24:43.882 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 16:24:43.883 +05:00 [INF] CorrelationId: e6986bdf-cb6f-45f4-bd20-aea4124daa09
+2024-12-26 16:24:43.941 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 16:24:43.942 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 60.1893ms
+2024-12-26 16:24:43.955 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 73.2575ms
+2024-12-26 16:24:43.983 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.6476ms
+2024-12-26 16:24:44.038 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 16:24:44.041 +05:00 [INF] CorrelationId: 18698950-0256-4f98-a16c-f3040bd4b5e8
+2024-12-26 16:24:44.503 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 464.4731ms
+2024-12-26 16:24:51.042 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:24:51.042 +05:00 [INF] CorrelationId: 3804fe93-b684-480c-a53e-a857e3b8342f
+2024-12-26 16:24:51.167 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:24:51.211 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.ExceedingsTime]]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:24:51.250 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:24:53.714 +05:00 [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:24:53.830 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:24:53.915 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 2699.8262ms
+2024-12-26 16:24:53.916 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:24:53.923 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 2881.8631ms
+2024-12-26 16:25:23.396 +05:00 [INF] Приложение запущено
+2024-12-26 16:25:23.882 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 16:25:23.885 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 16:25:23.888 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 16:25:23.888 +05:00 [INF] Hosting environment: Development
+2024-12-26 16:25:23.888 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 16:25:26.970 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 16:25:27.198 +05:00 [INF] CorrelationId: e7fb2d14-b559-4c07-8fe1-82d2bc75de17
+2024-12-26 16:25:27.445 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 495.8602ms
+2024-12-26 16:25:27.459 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 16:25:27.459 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 16:25:27.461 +05:00 [INF] CorrelationId: fe09ce0f-0195-45d0-b3a3-0e2476635415
+2024-12-26 16:25:27.467 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 8.5356ms
+2024-12-26 16:25:27.470 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 16:25:27.501 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 42.7637ms
+2024-12-26 16:25:27.559 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.9492ms
+2024-12-26 16:25:27.639 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 16:25:27.642 +05:00 [INF] CorrelationId: e5390e94-1b21-4629-a07c-016f32e4d258
+2024-12-26 16:25:28.308 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 668.3378ms
+2024-12-26 16:25:36.753 +05:00 [INF] Приложение запущено
+2024-12-26 16:25:37.447 +05:00 [INF] Now listening on: https://localhost:7092
+2024-12-26 16:25:37.449 +05:00 [INF] Now listening on: http://localhost:5294
+2024-12-26 16:25:37.460 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-26 16:25:37.461 +05:00 [INF] Hosting environment: Development
+2024-12-26 16:25:37.461 +05:00 [INF] Content root path: C:\Users\chich\source\repos\Queue\Queue.WebApi
+2024-12-26 16:25:40.369 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.html - null null
+2024-12-26 16:25:40.564 +05:00 [INF] CorrelationId: a1af37ca-0155-4feb-a659-a960e84194ff
+2024-12-26 16:25:40.724 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.html - 200 null text/html;charset=utf-8 386.8324ms
+2024-12-26 16:25:40.732 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/index.js - null null
+2024-12-26 16:25:40.732 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - null null
+2024-12-26 16:25:40.734 +05:00 [INF] CorrelationId: d8b68cbe-16df-4c55-a7d4-229e34a66eff
+2024-12-26 16:25:40.737 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/index.js - 200 null application/javascript;charset=utf-8 5.8468ms
+2024-12-26 16:25:40.742 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/_vs/browserLink - null null
+2024-12-26 16:25:40.749 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_framework/aspnetcore-browser-refresh.js - 200 13760 application/javascript; charset=utf-8 17.5161ms
+2024-12-26 16:25:40.814 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.888ms
+2024-12-26 16:25:40.924 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - null null
+2024-12-26 16:25:40.930 +05:00 [INF] CorrelationId: dadf4f01-d53e-4b29-afc5-387b70a93b8b
+2024-12-26 16:25:41.472 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 547.3895ms
+2024-12-26 16:25:54.125 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:25:54.125 +05:00 [INF] CorrelationId: 974b583d-ca7a-425a-bd0e-8749516b3b09
+2024-12-26 16:25:54.194 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:25:54.222 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.ExceedingsTime]]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:25:58.511 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:26:01.054 +05:00 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:26:07.304 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:26:20.464 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 26237.3862ms
+2024-12-26 16:26:20.464 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:26:26.296 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 32171.3324ms
+2024-12-26 16:26:30.610 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 16:26:33.263 +05:00 [INF] CorrelationId: 61de5cce-deef-47c7-ae5a-13f677f1855a
+2024-12-26 16:26:33.266 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:26:33.267 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.ExceedingsTime]]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).
+2024-12-26 16:26:41.840 +05:00 [INF] Users Request: GetExceedingsTimeListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetExceedingsTimeListQuery"} 
+2024-12-26 16:26:41.936 +05:00 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExceedingsTimeID], [e].[CanceledOn], [e].[CreatedOn], [e].[TimeForExcommunication], [e].[WindowID]
+FROM [elec_queue].[ExceedingsTimes] AS [e]
+2024-12-26 16:26:49.518 +05:00 [INF] Executing OkObjectResult, writing value of type 'KDS.Primitives.FluentResult.Result`1[[System.Collections.Generic.List`1[[Queue.Domain.Entites.ExceedingsTime, Queue.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-26 16:27:07.994 +05:00 [INF] Executed action Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi) in 34727.1566ms
+2024-12-26 16:27:07.995 +05:00 [INF] Executed endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 16:27:21.293 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - 200 null application/json; charset=utf-8 50682.8468ms
+2024-12-26 18:06:25.200 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7092/api/1/ExceedingsTime?api-version=1 - null null
+2024-12-26 18:06:25.203 +05:00 [INF] CorrelationId: 0c9e4cf3-24ef-49aa-9473-9fd16c06ddfb
+2024-12-26 18:06:25.204 +05:00 [INF] Executing endpoint 'Queue.WebApi.Controllers.ExceedingsTimeController.GetAll (Queue.WebApi)'
+2024-12-26 18:06:25.204 +05:00 [INF] Route matched with {action = "GetAll", controller = "ExceedingsTime"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Queue.Domain.Entites.ExceedingsTime]]] GetAll() on controller Queue.WebApi.Controllers.ExceedingsTimeController (Queue.WebApi).

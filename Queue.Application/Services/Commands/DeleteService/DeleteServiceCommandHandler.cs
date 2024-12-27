@@ -10,6 +10,7 @@ public class DeleteServiceCommandHandler(IServiceRepository _serviceRepository, 
 {
     public async Task<Result> Handle(DeleteServiceCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на удалениие услуги");
         var result = await _serviceRepository.DeleteAsync(request.ServiceId);
         if (result is null || result.IsFailed)
         {

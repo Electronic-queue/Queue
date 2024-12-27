@@ -11,6 +11,7 @@ public class CreateNotificationTypeCommandHandler(INotificationTypeRepository _n
 {
     public async Task<Result> Handle(CreateNotificationTypeCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на создание типа уведомления");
         var notificationType = new NotificationType
         {
             NameRu = request.NameRu,
