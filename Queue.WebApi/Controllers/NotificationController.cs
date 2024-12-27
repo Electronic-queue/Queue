@@ -4,6 +4,7 @@ using Queue.Application.Notifications.Commands.DeleteNotification;
 using Queue.Application.Notifications.Commands.UpdateNotification;
 using Queue.Application.Notifications.Queries.GetNotificationById;
 using Queue.Application.Notifications.Queries.GetNotificationList;
+using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.NotificationContracts;
 using System.Net;
 
@@ -30,6 +31,10 @@ public class NotificationController : BaseController
     {
         var query = new GetNotificationListQuery();
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
         //return ResultSucces.Success(vm);
     }
@@ -49,6 +54,10 @@ public class NotificationController : BaseController
             NotificationId = notificationId
         };
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -67,7 +76,7 @@ public class NotificationController : BaseController
         var notificationId = await Mediator.Send(command);
         if (notificationId.IsFailed)
         {
-            return BadRequest(notificationId);
+            return ProblemResponse(notificationId.Error);
         }
         return Ok(notificationId);
 
@@ -86,7 +95,7 @@ public class NotificationController : BaseController
         var notificationId = await Mediator.Send(command);
         if (notificationId.IsFailed)
         {
-            return BadRequest(notificationId);
+            return ProblemResponse(notificationId.Error); ;
         }
         return Ok(notificationId);
     }
@@ -101,6 +110,10 @@ public class NotificationController : BaseController
     public async Task<IActionResult> Delete(int id)
     {
         var command = await Mediator.Send(new DeleteNotificationCommand(id));
+        if (command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
         return NoContent();
     }
 }

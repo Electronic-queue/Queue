@@ -11,6 +11,7 @@ public class UpdateServiceCommandHandler(IServiceRepository _serviceRepository, 
 {
     public async Task<Result> Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на обновление услуги");
         var service = await _serviceRepository.UpdateAsync(
             serviceId: request.ServiceId,
             nameRu: request.NameRu,

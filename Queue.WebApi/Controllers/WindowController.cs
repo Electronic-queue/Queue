@@ -4,6 +4,7 @@ using Queue.Application.Windows.Commands.DeleteWindow;
 using Queue.Application.Windows.Commands.UpdateWindow;
 using Queue.Application.Windows.Queries.GetWindowDetails;
 using Queue.Application.Windows.Queries.GetWindowList;
+using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.WIndowContracts;
 using System.Net;
 
@@ -34,6 +35,10 @@ public class WindowController : BaseController
         var query = new GetWindowListQuery();
        
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         
         return Ok(vm);
         //return ResultSucces.Success(vm);
@@ -55,6 +60,10 @@ public class WindowController : BaseController
             WindowId = WindowId
         };
         var vm = await Mediator.Send(query);
+        if(vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -74,7 +83,7 @@ public class WindowController : BaseController
         var windowId = await Mediator.Send(command);
         if (windowId.IsFailed)
         {
-            return BadRequest(windowId);
+            return ProblemResponse(windowId.Error);
         }
         return Ok(windowId);
 
@@ -89,8 +98,13 @@ public class WindowController : BaseController
 
     public async Task<IActionResult> Update([FromBody] UpdateWindowDto updateWindowDto)
     {
-        await Mediator.Send(new UpdateWindowCommand(updateWindowDto.WindowId, updateWindowDto.WindowNumber,updateWindowDto.WindowStatusId, updateWindowDto.CreatedBy));
-        return NoContent();
+        var command = Mapper.Map<UpdateWindowCommand>(updateWindowDto);
+        var windowId = await Mediator.Send(command);
+        if (windowId.IsFailed)
+        {
+            return ProblemResponse(windowId.Error);
+        }
+        return Ok(windowId);
     }
     /// <summary>
     /// Удалить окно.
@@ -103,7 +117,10 @@ public class WindowController : BaseController
     public async Task<IActionResult> Delete(int id)
     {
         var command = await Mediator.Send(new DeleteWindowCommand(id));
-
+        if (command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
 
         return NoContent();
     }

@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
@@ -11,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace Queue.Application.Windows.Commands.UpdateWindow
 {
-    public class UpdateWindowCommandHandler(IWindowRepository windowRepository):IRequestHandler<UpdateWindowCommand,Result>
+    public class UpdateWindowCommandHandler(IWindowRepository windowRepository,ILogger<UpdateWindowCommandHandler> _logger):IRequestHandler<UpdateWindowCommand,Result>
     {
         public async Task<Result> Handle(UpdateWindowCommand request,CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Запрос на обновление окна");
             var window = await windowRepository.UpdateAsync(
                 windowId: request.WindowId,
                 windowNumber: request.WindowNumber,
@@ -24,8 +26,10 @@ namespace Queue.Application.Windows.Commands.UpdateWindow
            
             if (window.IsFailed)
             {
-                return Result.Failure(new Error(Errors.BadRequest, "UpdateError"));
+                _logger.LogError($"Ошибка при обновлении окна с id: {request.WindowId}.");
+                return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления окна"));
             }
+            _logger.LogInformation($"Успешное обновление окна с id: {request.WindowId}.");
             return Result.Success();
         }
     }

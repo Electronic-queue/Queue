@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -17,7 +18,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
 
     }
@@ -30,7 +31,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             var window = await _dbContext.Windows.FindAsync(id);
             if (window is null)
             {
-                return Result.Failure(new Error("Not Found", "Window not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Window not Found"));
 
             }
             _dbContext.Windows.Remove(window);
@@ -39,11 +40,8 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
-
-
-
     }
 
     public async Task<Result<List<Window>>> GetAllAsync()
@@ -55,7 +53,7 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure<List<Window>>(new Error("Database Error", ex.Message));
+            return Result.Failure<List<Window>>(new Error(Errors.InternalServerError, ex.Message));
         }
 
     }
@@ -67,18 +65,18 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             var window = await _dbContext.Windows.FindAsync(id);
             if (window is null)
             {
-                return Result.Failure(new Error("Not Found", "Window not found"));
+                return Result.Failure(new Error(Errors.NotFound, "Window not Found"));
             }
             return Result.Success(window);
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
 
         }
     }
 
-    public async Task<Result> UpdateAsync(int windowId, int? windowStatusId=null, int? windowNumber = null,int? createdBy=null)
+    public async Task<Result> UpdateAsync(int windowId, int? windowStatusId = null, int? windowNumber = null, int? createdBy = null)
     {
 
         try
@@ -86,19 +84,19 @@ public class SqlWindowRepository(QueuesDbContext _dbContext) : IWindowRepository
             var windowUpdate = await _dbContext.Windows.FindAsync(windowId);
             if (windowUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "Window Not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Window not Found"));
             }
-          
-            windowUpdate.WindowNumber = windowNumber??windowUpdate.WindowNumber;
-            windowUpdate.WindowStatusId = windowStatusId?? windowUpdate.WindowStatusId;
-            windowUpdate.CreatedBy=createdBy??windowUpdate.CreatedBy;
+
+            windowUpdate.WindowNumber = windowNumber ?? windowUpdate.WindowNumber;
+            windowUpdate.WindowStatusId = windowStatusId ?? windowUpdate.WindowStatusId;
+            windowUpdate.CreatedBy = createdBy ?? windowUpdate.CreatedBy;
 
             await _dbContext.SaveChangesAsync();
             return Result.Success();
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 }

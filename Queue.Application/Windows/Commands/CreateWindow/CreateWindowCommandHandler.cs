@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
@@ -11,11 +12,12 @@ using System.Threading.Tasks;
 
 namespace Queue.Application.Windows.Commands.CreateWindow
 {
-    public class CreateWindowCommandHandler(IWindowRepository _windowRepository):IRequestHandler<CreateWindowCommand,Result>
+    public class CreateWindowCommandHandler(IWindowRepository _windowRepository,ILogger<CreateWindowCommandHandler> _logger):IRequestHandler<CreateWindowCommand,Result>
     {
         private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
         public async Task<Result> Handle(CreateWindowCommand request,CancellationToken cancellationToken)
         {
+            _logger.LogInformation("Запрос на создание океа");
             var window = new Window
             {
                 WindowNumber = request.WindowNumber,
@@ -26,8 +28,10 @@ namespace Queue.Application.Windows.Commands.CreateWindow
             var result =await _windowRepository.AddAsync(window);
             if(result is null)
             {
-                return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления"));
+                _logger.LogError($"Ошибка при создании окна.");
+                return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления окна"));
             }
+            _logger.LogInformation($"Успешное создание окна");
             return Result.Success();
         }
     }

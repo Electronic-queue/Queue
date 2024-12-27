@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -17,7 +18,7 @@ namespace Queue.Persistence.Repository
             }
             catch (Exception ex)
             {
-                return Result.Failure(new Error("Database Error", ex.Message));
+                return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
             }
         }
 
@@ -28,7 +29,7 @@ namespace Queue.Persistence.Repository
                 var recordStatus = await _dbContext.RecordStatuses.FindAsync(id);
                 if(recordStatus is null) 
                 {
-                    return Result.Failure(new Error("Not Found", "RecordStatus not Found"));
+                    return Result.Failure(new Error(Errors.NotFound, "RecordStatus not Found"));
                 }
                 _dbContext.Remove(recordStatus);
                 await _dbContext.SaveChangesAsync();
@@ -36,7 +37,7 @@ namespace Queue.Persistence.Repository
             }
             catch(Exception ex)
             {
-                return Result.Failure(new Error("Database Error", ex.Message));
+                return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
             }
         }
 
@@ -49,7 +50,7 @@ namespace Queue.Persistence.Repository
             }
             catch(Exception ex)
             {
-                return Result.Failure<List<RecordStatus>>(new Error("Database Error", ex.Message));
+                return Result.Failure<List<RecordStatus>>(new Error(Errors.InternalServerError, ex.Message));
 
             }
         }
@@ -61,7 +62,7 @@ namespace Queue.Persistence.Repository
                 var recUpdate = await _dbContext.RecordStatuses.FindAsync(recordStatusId);
                 if (recUpdate is null)
                 {
-                    return Result.Failure(new Error("Not Found", "RecordStatus Not Found"));
+                    return Result.Failure(new Error(Errors.NotFound, "RecordStatus not Found"));
                 }
                 recUpdate.NameRu = nameRu??recUpdate.NameRu;
                 recUpdate.NameKk = nameKk?? recUpdate.NameKk;
@@ -75,7 +76,7 @@ namespace Queue.Persistence.Repository
             }
             catch(Exception ex)
             {
-                return Result.Failure(new Error("Database Error", ex.Message));
+                return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
             }
         }
 
@@ -86,13 +87,13 @@ namespace Queue.Persistence.Repository
                 var recordStatus = await _dbContext.RecordStatuses.FindAsync(id);
                 if(recordStatus is null)
                 {
-                    return Result.Failure(new Error("Not Found", "RecordStatus not Found"));
+                    return Result.Failure(new Error(Errors.NotFound, "RecordStatus not Found"));
                 }
                 return Result.Success(recordStatus);
             }
             catch(Exception ex)
             {
-                return Result.Failure<List<RecordStatus>>(new Error("Database Error", ex.Message));
+                return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
             }
         }
     }

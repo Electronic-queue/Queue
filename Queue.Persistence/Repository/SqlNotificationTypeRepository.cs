@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -17,7 +18,7 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
 
     }
@@ -29,7 +30,7 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
             var notificationType = await _dbContext.NotificationTypes.FindAsync(id);
             if (notificationType is null)
             {
-                return Result.Failure(new Error("Not Found", "Notification Type not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification Type not Found"));
 
             }
             _dbContext.NotificationTypes.Remove(notificationType);
@@ -38,7 +39,7 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error",ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -51,25 +52,25 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
         }
         catch(Exception ex)
         {
-            return Result.Failure<List<NotificationType>>(new Error("Database Error", ex.Message));
+            return Result.Failure<List<NotificationType>>(new Error(Errors.InternalServerError, ex.Message));
         }
 
     }
 
-    public async Task<Result<NotificationType>> GetNotificationTypeById(int id)
+    public async Task<Result> GetNotificationTypeById(int id)
     {
         try
         {
             var notificationType = await _dbContext.NotificationTypes.FindAsync(id);
             if (notificationType is null)
             {
-                return (Result<NotificationType>)Result.Failure(new Error("Not Found", "Notification Type not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification Type not Found"));
             }
             return Result.Success(notificationType);
         }
         catch (Exception ex)
         {
-            return (Result<NotificationType>)Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
 
         }
     }
@@ -81,7 +82,7 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
             var notificationTypeUpdate = await _dbContext.NotificationTypes.FindAsync(notificationTypeId);
             if(notificationTypeUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "Notification Type not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Notification Type not Found"));
             }
             notificationTypeUpdate.NameRu = nameRu?? notificationTypeUpdate.NameRu;
             notificationTypeUpdate.NameKk = nameKk?? notificationTypeUpdate.NameKk;
@@ -94,7 +95,7 @@ public class SqlNotificationTypeRepository(QueuesDbContext _dbContext) : INotifi
         }
         catch(Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 }

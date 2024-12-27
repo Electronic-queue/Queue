@@ -31,11 +31,13 @@ public class RecordStatusController : BaseController
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<ActionResult<RecordStatus>> GetAll()
     {
-        var correlationId = HttpContext.Items["CorrelationId"]?.ToString();
-
         var query = new GetRecordStatusListQuery();
 
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
 
         return Ok(vm);
         //return ResultSucces.Success(vm);
@@ -52,9 +54,11 @@ public class RecordStatusController : BaseController
     public async Task<ActionResult<WindowDetailsVm>> Get(int RecordStatusId)
     {
         var query = new GetRecordStatusByIdQuery(RecordStatusId);
-
-
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -74,7 +78,7 @@ public class RecordStatusController : BaseController
         var recordStatusId = await Mediator.Send(command);
         if (recordStatusId.IsFailed)
         {
-            return BadRequest(recordStatusId);
+            return ProblemResponse(recordStatusId.Error);
         }
         return Ok(recordStatusId);
 
@@ -82,15 +86,21 @@ public class RecordStatusController : BaseController
     /// <summary>
     /// Обновить информацию о статусе записи.
     /// </summary>
-    /// <param name="updateWindowDto">Данные для обновления статуса записи.</param>
+    /// <param name="updateRecordStatusDto">Данные для обновления статуса записи.</param>
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
     public async Task<IActionResult> Update([FromBody] UpdateRecordStatusDto updateRecordStatusDto)
     {
-        await Mediator.Send(new UpdateRecordStatusCommand(updateRecordStatusDto.RecordId,updateRecordStatusDto.NameRu, updateRecordStatusDto.NameKk, updateRecordStatusDto.NameEn, updateRecordStatusDto.DescriptionRu, updateRecordStatusDto.DescriptionKk, updateRecordStatusDto.DescriptionEn, updateRecordStatusDto.CreatedBy));
-        return NoContent();
+
+        var command = Mapper.Map<UpdateRecordStatusCommand>(updateRecordStatusDto);
+        var recordStatusId = await Mediator.Send(command);
+        if (recordStatusId.IsFailed)
+        {
+            return ProblemResponse(recordStatusId.Error);
+        }
+        return Ok(recordStatusId);
     }
     /// <summary>
     /// Удалить статус записи.
@@ -103,7 +113,10 @@ public class RecordStatusController : BaseController
     public async Task<IActionResult> Delete(int id)
     {
         var command = await Mediator.Send(new DeleteRecordStatusCommand(id));
-
+        if(command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
 
         return NoContent();
     }

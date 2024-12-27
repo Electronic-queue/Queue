@@ -12,6 +12,7 @@ public class UpdateNotificationCommandHandler(INotificationRepository _notificat
 {
     public async Task<Result> Handle(UpdateNotificationCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на обновление уведомления");
         var notification = await _notificationRepository.UpdateAsync(
             notificationId:request.NotificationId,
             nameRu:request.NameRu,

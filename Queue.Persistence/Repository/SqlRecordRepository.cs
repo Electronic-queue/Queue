@@ -1,5 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.EntityFrameworkCore;
+using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -17,7 +18,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -28,7 +29,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
             var record = await _dbContext.Records.FindAsync(id);
             if (record is null)
             {
-                return Result.Failure(new Error("Not Found", "Record not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Record not Found"));
             }
             _dbContext.Records.Remove(record);
             await _dbContext.SaveChangesAsync();
@@ -36,7 +37,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -49,7 +50,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure<List<Record>>(new Error("Database Error", ex.Message));
+            return Result.Failure<List<Record>>(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -60,13 +61,13 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
             var record = await _dbContext.Records.FindAsync(id);
             if (record is null)
             {
-                return Result.Failure(new Error("Not Found", "Record not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Record not Found"));
             }
             return Result.Success();
         }
         catch (Exception ex)
         {
-            return Result.Failure<List<Record>>(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 
@@ -77,7 +78,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
             var recordUpdate = await _dbContext.Records.FindAsync(recordId);
             if (recordUpdate is null)
             {
-                return Result.Failure(new Error("Not Found", "Record Not Found"));
+                return Result.Failure(new Error(Errors.NotFound, "Record not Found"));
             }
 
             recordUpdate.FirstName = firstName??recordUpdate.FirstName;
@@ -95,7 +96,7 @@ public class SqlRecordRepository(QueuesDbContext _dbContext) : IRecordRepository
         }
         catch (Exception ex)
         {
-            return Result.Failure<List<Record>>(new Error("Database Error", ex.Message));
+            return Result.Failure(new Error(Errors.InternalServerError, ex.Message));
         }
     }
 }

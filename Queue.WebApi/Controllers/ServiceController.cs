@@ -4,6 +4,7 @@ using Queue.Application.Services.Commands.DeleteService;
 using Queue.Application.Services.Commands.UpdateService;
 using Queue.Application.Services.Queries.GetServiceById;
 using Queue.Application.Services.Queries.GetServiceList;
+using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.ServiceContracts;
 using System.Net;
 
@@ -30,6 +31,10 @@ public class ServiceController : BaseController
     {
         var query = new GetServiceListQuery();
         var vm = await Mediator.Send(query);
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
         //return ResultSucces.Success(vm);
     }
@@ -49,6 +54,10 @@ public class ServiceController : BaseController
             ServiceId = ServiceId
         };
         var vm = await Mediator.Send(query);
+        if(vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -64,12 +73,12 @@ public class ServiceController : BaseController
     public async Task<ActionResult<int>> Create([FromBody] CreateServiceDto createServiceDto)
     {
         var command = Mapper.Map<CreateServiceCommand>(createServiceDto);
-        var ServiceId = await Mediator.Send(command);
-        if (ServiceId.IsFailed)
+        var serviceId = await Mediator.Send(command);
+        if (serviceId.IsFailed)
         {
-            return BadRequest(ServiceId);
+            return ProblemResponse(serviceId.Error); 
         }
-        return Ok(ServiceId);
+        return Ok(serviceId);
 
     }
     /// <summary>
@@ -83,12 +92,12 @@ public class ServiceController : BaseController
     public async Task<IActionResult> Update([FromBody] UpdateServiceDto updateServiceDto)
     {
         var command = Mapper.Map<UpdateServiceCommand>(updateServiceDto);
-        var ServiceId = await Mediator.Send(command);
-        if (ServiceId.IsFailed)
+        var serviceId = await Mediator.Send(command);
+        if (serviceId.IsFailed)
         {
-            return BadRequest(ServiceId);
+            return ProblemResponse(serviceId.Error);
         }
-        return Ok(ServiceId);
+        return Ok(serviceId);
     }
     /// <summary>
     /// Удалить услугу.
@@ -101,6 +110,10 @@ public class ServiceController : BaseController
     public async Task<IActionResult> Delete(int id)
     {
         var command = await Mediator.Send(new DeleteServiceCommand(id));
+        if(command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
         return NoContent();
     }
 }

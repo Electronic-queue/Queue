@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Queue.Domain.Entites;
+﻿namespace Queue.Domain.Entites;
 
 public partial class ReasonsForCancellation
 {
@@ -14,4 +11,4 @@ public partial class ReasonsForCancellation
     public DateTime CreatedOn { get; set; }
 
     public virtual Record Record { get; set; } = null!;
-}
+} 

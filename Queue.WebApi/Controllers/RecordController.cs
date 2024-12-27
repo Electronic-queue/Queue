@@ -1,17 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Record.Commands.CreateRecord;
+using Queue.Application.Record.Commands.DeleteRecord;
 using Queue.Application.Record.Commands.UpdateRecord;
 using Queue.Application.Record.Queries.GetRecodList;
 using Queue.Application.Record.Queries.GetRecordById;
-using Queue.Application.RecordStatus.Commands.CreateRecordStatus;
-using Queue.Application.RecordStatus.Commands.DeleteRecordStatus;
-using Queue.Application.RecordStatus.Commands.UpdateRecordStatus;
-using Queue.Application.RecordStatus.Queries.GetRecordStatusById;
-using Queue.Application.RecordStatus.Queries.GetRecordStatusList;
-using Queue.Application.Windows.Queries.GetWindowDetails;
 using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.RecordContracts;
-using Queue.WebApi.Contracts.RecordStatusContracts;
 using System.Net;
 
 namespace Queue.WebApi.Controllers;
@@ -35,12 +29,13 @@ public class RecordController : BaseController
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     public async Task<ActionResult<Record>> GetAll()
     {
-        var correlationId = HttpContext.Items["CorrelationId"]?.ToString();
-
         var query = new GetRecordListQuery();
 
         var vm = await Mediator.Send(query);
-
+        if (vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
         //return ResultSucces.Success(vm);
     }
@@ -56,9 +51,11 @@ public class RecordController : BaseController
     public async Task<ActionResult<Record>> Get(int RecordId)
     {
         var query = new GetRecordByIdQuery(RecordId);
-
-
         var vm = await Mediator.Send(query);
+        if(vm.IsFailed)
+        {
+            return ProblemResponse(vm.Error);
+        }
         return Ok(vm);
     }
 
@@ -78,7 +75,7 @@ public class RecordController : BaseController
         var recordId = await Mediator.Send(command);
         if (recordId.IsFailed)
         {
-            return BadRequest(recordId);
+            return ProblemResponse(recordId.Error);
         }
         return Ok(recordId);
 
@@ -93,8 +90,13 @@ public class RecordController : BaseController
 
     public async Task<IActionResult> Update([FromBody] UpdateRecordDto updateRecordDto)
     {
-        await Mediator.Send(new UpdateRecordCommand(updateRecordDto.RecordId,updateRecordDto.FirstName, updateRecordDto.LastName, updateRecordDto.Surname, updateRecordDto.Iin, updateRecordDto.RecordStatusId, updateRecordDto.ServiceId, updateRecordDto.IsCreatedByEmployee, updateRecordDto.CreatedBy, updateRecordDto.TicketNumber));
-        return NoContent();
+        var command = Mapper.Map<UpdateRecordCommand>(updateRecordDto);
+        var recordId = await Mediator.Send(command);
+        if (recordId.IsFailed)
+        {
+            return ProblemResponse(recordId.Error);
+        }
+        return Ok(recordId);
     }
     /// <summary>
     /// Удалить  записи.
@@ -106,8 +108,11 @@ public class RecordController : BaseController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteRecordStatusCommand(id));
-
+        var command = await Mediator.Send(new DeleteRecordCommand(id));
+        if (command.IsFailed)
+        {
+            return ProblemResponse(command.Error);
+        }
 
         return NoContent();
     }

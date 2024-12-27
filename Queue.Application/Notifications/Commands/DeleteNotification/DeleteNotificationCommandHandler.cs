@@ -10,6 +10,7 @@ public class DeleteNotificationCommandHandler(INotificationRepository _notificat
 {
     public async Task<Result> Handle(DeleteNotificationCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на удалениие уведомления");
         var result = await _notificationRepository.DeleteAsync(request.NotificationId);
         if (result.IsFailed)
         {

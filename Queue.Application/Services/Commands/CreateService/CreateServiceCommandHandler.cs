@@ -9,8 +9,10 @@ namespace Queue.Application.Services.Commands.CreateService;
 
 public class CreateServiceCommandHandler(IServiceRepository _ServiceRepository, ILogger<CreateServiceCommandHandler> _logger) : IRequestHandler<CreateServiceCommand, Result>
 {
+    private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
     {
+        _logger.LogInformation("Запрос на создание услуги");
         var service = new Service
         {
             NameRu = request.NameRu,
@@ -22,7 +24,7 @@ public class CreateServiceCommandHandler(IServiceRepository _ServiceRepository, 
             AverageExecutionTime = request.AverageExecutionTime,
             QueueTypeId = request.QueueTypeId,
             ParentserviceId = request.ParentserviceId,
-            CreatedOn = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(5)).DateTime,
+            CreatedOn = DateTimeOffset.UtcNow.ToOffset(UtcOffset).DateTime,
             CreatedBy = request.CreatedBy,
         };
         var result = await _ServiceRepository.AddAsync(service);
