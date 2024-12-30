@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.Record.Commands.UpdateRecord;
 
@@ -10,8 +11,8 @@ public class UpdateRecordCommandHandler(IRecordRepository recordRepository,ILogg
 {
     public async Task<Result> Handle(UpdateRecordCommand request,CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление записи");
-        var record = await recordRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление записи в базе данных.");
+        var result = await recordRepository.UpdateAsync(
                  recordId:request.RecordId,
                  firstName: request.FirstName,
                  lastName: request.LastName,
@@ -24,12 +25,12 @@ public class UpdateRecordCommandHandler(IRecordRepository recordRepository,ILogg
                  ticketNumber: request.TicketNumber
              );;
        
-        if(record is null)
+        if(result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении записи с id: {request.RecordId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления записи"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление записи в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновления записи с id: {request.RecordId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

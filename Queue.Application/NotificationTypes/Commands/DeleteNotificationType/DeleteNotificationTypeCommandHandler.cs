@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.NotificationTypes.Commands.DeleteNotificationType;
 
@@ -10,14 +11,15 @@ public class DeleteNotificationTypeCommandHandler(INotificationTypeRepository _n
 {
     public async Task<Result> Handle(DeleteNotificationTypeCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие типа уведомления");
+        _logger.LogInformation("Обработка запроса на удалениие типа уведомления из базы данных.");
         var result = await _notificationTypeRepository.DeleteAsync(request.NotificationTypeId);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении типа уведомлений с id: {request.NotificationTypeId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления типа уведомления."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление типа уведомления из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление типа уведомления с id: {request.NotificationTypeId}.");
+
+        _logger.LogInformation("Запрос успешно обработан.");
         return result;
     }
 }

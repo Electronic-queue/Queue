@@ -16,7 +16,7 @@ namespace Queue.Application.Record.Commands.CreateRecord
         private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
         public async Task<Result> Handle(CreateRecordCommand request,CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Запрос на создание записи");
+            _logger.LogInformation("Обработка запроса на создание новой записи в базе данных.");
             var record = new Domain.Entites.Record
             {
                 FirstName = request.FirstName,
@@ -33,12 +33,12 @@ namespace Queue.Application.Record.Commands.CreateRecord
                 TicketNumber= request.TicketNumber,
             };
             var result=await recordRepository.AddAsync(record);
-            if(result is null)
+            if(result.IsFailed)
             {
-                _logger.LogError($"ошибка при создании записи");
-                return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления записи"));
+                _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание новой записи в базе данных.", result.Error.Code);
+                return Result.Failure(result.Error);
             }
-            _logger.LogInformation($"Успешное создание записи");
+            _logger.LogInformation("Запрос успешно обработан.");
             return Result.Success();
         }
     }

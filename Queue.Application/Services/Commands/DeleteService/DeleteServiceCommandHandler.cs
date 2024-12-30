@@ -10,14 +10,14 @@ public class DeleteServiceCommandHandler(IServiceRepository _serviceRepository, 
 {
     public async Task<Result> Handle(DeleteServiceCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие услуги");
+        _logger.LogInformation("Обработка запроса на удаление услуги из базы данных.");
         var result = await _serviceRepository.DeleteAsync(request.ServiceId);
-        if (result is null || result.IsFailed)
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении услуги с id: {request.ServiceId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления услуги."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление услуги из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление услуги с id: {request.ServiceId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return result;
     }
 }

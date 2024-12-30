@@ -4,14 +4,14 @@ using MediatR;
 namespace Queue.Application.Record.Commands.UpdateRecord;
 
 public record UpdateRecordCommand(int RecordId,
-    string FirstName,
-  string LastName,
-  string? Surname,
-  string Iin,
-  int RecordStatusId,
-  int ServiceId,
-  bool IsCreatedByEmployee,
-  int? CreatedBy,
-  int TicketNumber
+    string? FirstName=null,
+  string? LastName = null,
+  string? Surname = null,
+  string? Iin=null,
+  int? RecordStatusId=null,
+  int? ServiceId=null,
+  bool? IsCreatedByEmployee = null,
+  int? CreatedBy=null,
+  int? TicketNumber = null
     ) :IRequest<Result>;
 

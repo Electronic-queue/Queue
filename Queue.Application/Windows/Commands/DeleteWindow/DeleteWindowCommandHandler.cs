@@ -10,14 +10,14 @@ public record DeleteWindowCommandHandler(IWindowRepository windowRepository, ILo
 {
     public async Task<Result> Handle(DeleteWindowCommand request,CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие окна");
-        var entity = await windowRepository.DeleteAsync(request.WindowId);
-        if (entity.IsFailed)
+        _logger.LogInformation("Обработка запроса на удаление окна из базы данных.");
+        var result = await windowRepository.DeleteAsync(request.WindowId);
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении окна с id: {request.WindowId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления окна"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление окна из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление окна с id: {request.WindowId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

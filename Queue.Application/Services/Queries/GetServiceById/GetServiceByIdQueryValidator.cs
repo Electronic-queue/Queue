@@ -7,6 +7,7 @@ public class GetServiceByIdQueryValidator : AbstractValidator<GetServiceByIdQuer
     public GetServiceByIdQueryValidator()
     {
         RuleFor(x => x.ServiceId)
-            .GreaterThan(0).WithMessage("ServiceId должен быть больше нуля.");
+            .GreaterThan(0).WithMessage("ServiceId должен быть больше нуля.")
+            .NotEmpty().WithMessage("ServiceId обязательно.");
     }
 }

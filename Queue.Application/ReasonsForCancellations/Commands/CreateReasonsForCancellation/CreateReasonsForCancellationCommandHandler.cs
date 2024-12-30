@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.ReasonsForCancellations.Commands.CreateReasonsForCancellation;
 
@@ -12,7 +13,7 @@ public class CreateReasonsForCancellationCommandHandler(IReasonsForCancellationR
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateReasonsForCancellationCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание причины отмены");
+        _logger.LogInformation("Обработка запроса на создание новой причины для отмены в базе данных.");
         var reason = new ReasonsForCancellation
         {
             RecordId=request.RecordId,
@@ -23,10 +24,10 @@ public class CreateReasonsForCancellationCommandHandler(IReasonsForCancellationR
         var result=await reasonRepository.AddAsync(reason);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании причины для отмены.");
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления причины для отмены"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание новой причины для отмены в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание причины для отмены");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

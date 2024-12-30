@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.ReasonsForCancellations.Commands.CreateReasonsForCancellation;
 using Queue.Application.ReasonsForCancellations.Commands.DeleteReasonsForCancellation;
 using Queue.Application.ReasonsForCancellations.Commands.UpdateReasonsForCancellation;
@@ -15,9 +16,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class ReasonsForCancellationController : BaseController
+public class ReasonsForCancellationController(ILogger<ReasonsForCancellationController> _logger) : BaseController
 {
-    private readonly ILogger<ReasonsForCancellationController> _logger;
+
     /// <summary>
     /// Получить список всех записей
     /// </summary>
@@ -26,41 +27,55 @@ public class ReasonsForCancellationController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<ReasonsForCancellation>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<NotificationType>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
 
-
-        var query = new GetReasonsForCancellationListQuery();
-
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
-        }
+            _logger.LogInformation("Отправка запроса на чтение полного списка причин для отмены.");
+            var query = new GetReasonsForCancellationListQuery();
 
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
+        }
     }
 
     /// <summary>
     /// Получить информацию о конкретной записи.
     /// </summary>
-    /// <param name="id">Идентификатор  записи.</param>
+    /// <param name="reasonId">Идентификатор  записи.</param>
     /// <returns>Возвращает детали  записи.</returns>
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<ReasonsForCancellation>> Get(int ReasonId)
+    [HttpGet("{reasonId}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QueueType))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int reasonId)
     {
-        var query = new GetReasonsForCancellationByIdQuery(ReasonId);
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReasonsForCancellationId", reasonId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение причины для отмены с id");
+            var query = new GetReasonsForCancellationByIdQuery(reasonId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -70,18 +85,26 @@ public class ReasonsForCancellationController : BaseController
     /// <returns>Возвращает идентификатор созданного статуса записи.</returns>
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateReasonsForCancellationDto createReasonsForCancellationDto)
+
+    public async Task<IActionResult> Create([FromBody] CreateReasonsForCancellationDto createReasonsForCancellationDto)
     {
-        var command = Mapper.Map<CreateReasonsForCancellationCommand>(createReasonsForCancellationDto);
-        var reasonId = await Mediator.Send(command);
-        if (reasonId.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(reasonId.Error);
+            _logger.LogInformation("Отправка запроса на создание причины для отмены");
+            var result = await Mediator.Send(Mapper.Map<CreateReasonsForCancellationCommand>(createReasonsForCancellationDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(reasonId);
 
     }
     /// <summary>
@@ -89,35 +112,49 @@ public class ReasonsForCancellationController : BaseController
     /// </summary>
     /// <param name="updateReasonsForCancellationDto">Данные для обновления  записи.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
     public async Task<IActionResult> Update([FromBody] UpdateReasonsForCancellationDto updateReasonsForCancellationDto)
     {
-        var command = Mapper.Map<UpdateReasonsForCancellationCommand>(updateReasonsForCancellationDto);
-        var reasonId = await Mediator.Send(command);
-        if (reasonId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReasonsForCancellationId", updateReasonsForCancellationDto.ReasonId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(reasonId.Error);
+            _logger.LogInformation("Отправка запроса на обновление причины для отмены c id {Id}",updateReasonsForCancellationDto.ReasonId);
+            var result = await Mediator.Send(Mapper.Map<UpdateReasonsForCancellationCommand>(updateReasonsForCancellationDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(reasonId);
     }
     /// <summary>
     /// Удалить  записи.
     /// </summary>
     /// <param name="id">Идентификатор  записи.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteReasonsForCancellationCommand(id));
-        if(command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReasonsForCancellationId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление причины для отмены с id {Id}",id);
+            var result = await Mediator.Send(new DeleteReasonsForCancellationCommand(id));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
         }
-
+        _logger.LogInformation("Запрос прошел успешно.");
         return NoContent();
     }
 }

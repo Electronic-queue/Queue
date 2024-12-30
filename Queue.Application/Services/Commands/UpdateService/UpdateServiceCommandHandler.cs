@@ -11,8 +11,8 @@ public class UpdateServiceCommandHandler(IServiceRepository _serviceRepository, 
 {
     public async Task<Result> Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление услуги");
-        var service = await _serviceRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление услуги в базе данных.");
+        var result = await _serviceRepository.UpdateAsync(
             serviceId: request.ServiceId,
             nameRu: request.NameRu,
             nameKk: request.NameKk,
@@ -25,12 +25,12 @@ public class UpdateServiceCommandHandler(IServiceRepository _serviceRepository, 
             parentServiceId: request.ParentserviceId
             );
 
-        if (service.IsFailed)
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении услуги с id: {request.ServiceId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления услуги."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление услуги в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление услуги с id: {request.ServiceId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

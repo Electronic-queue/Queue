@@ -15,14 +15,14 @@ public class DeleteRecordCommandHandler(IRecordRepository recordRepository,ILogg
 {
     public async Task<Result> Handle(DeleteRecordCommand request,CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие записис");
-        var record=await recordRepository.DeleteAsync(request.RecordId);
-        if (record is null)
+        _logger.LogInformation("Обработка запроса на удаление записи из базы данных.");
+        var result = await recordRepository.DeleteAsync(request.RecordId);
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении записи с id: {request.RecordId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления записи"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление хаписи из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление записи с id: {request.RecordId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

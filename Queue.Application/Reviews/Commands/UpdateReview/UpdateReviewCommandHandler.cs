@@ -10,10 +10,10 @@ public class UpdateReviewCommandHandler(IReviewRepository reviewRepository,ILogg
 {
     public async Task<Result> Handle(UpdateReviewCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление отзыва");
+        _logger.LogInformation("Обработка запроса на обновление действия в базе данных.");
         var result = await reviewRepository.UpdateAsync(
             reviewId: request.ReviewId,
-            recordId: request.RecorId,
+            recordId: request.RecordId,
             rating: request.Rating,
             content: request.Content
             );

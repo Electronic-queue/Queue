@@ -12,7 +12,7 @@ public class CreateUserServiceCommandHandler(IUserServiceRepository userServiceR
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateUserServiceCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание UserService");
+        _logger.LogInformation("Обработка запроса на создание нового UserService в базе данных.");
         var userService = new UserService
         {
 
@@ -28,10 +28,10 @@ public class CreateUserServiceCommandHandler(IUserServiceRepository userServiceR
         var result=await userServiceRepository.AddAsync(userService);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании userService.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка создания userService"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового UserService в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание userService");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

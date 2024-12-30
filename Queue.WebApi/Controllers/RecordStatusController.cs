@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.RecordStatus.Commands.CreateRecordStatus;
 using Queue.Application.RecordStatus.Commands.DeleteRecordStatus;
 using Queue.Application.RecordStatus.Commands.UpdateRecordStatus;
@@ -16,9 +17,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class RecordStatusController : BaseController
+public class RecordStatusController(ILogger<RecordStatusController> _logger) : BaseController
 {
-    private readonly ILogger<WindowController> _logger;
+    
     /// <summary>
     /// Получить список всех статусов записей
     /// </summary>
@@ -27,39 +28,55 @@ public class RecordStatusController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<RecordStatus>> GetAll()
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<RecordStatus>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
-        var query = new GetRecordStatusListQuery();
-
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
-        }
+            _logger.LogInformation("Отправка запроса на чтение полного списка типа записей.");
+            var query = new GetRecordStatusListQuery();
 
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
+        }
     }
 
     /// <summary>
     /// Получить информацию о конкретном статусе записи.
     /// </summary>
-    /// <param name="id">Идентификатор статуса записи.</param>
+    /// <param name="recordStatusId">Идентификатор статуса записи.</param>
     /// <returns>Возвращает детали статуса записи.</returns>
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<WindowDetailsVm>> Get(int RecordStatusId)
+    [HttpGet("{recordStatusId}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RecordStatus))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int recordStatusId)
     {
-        var query = new GetRecordStatusByIdQuery(RecordStatusId);
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        _logger.LogInformation("Отправка запроса на чтение типа записи с id {Id}.",recordStatusId);
+        var scope=new Dictionary<string, object>() { {"RecordStatusId", recordStatusId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            var query = new GetRecordStatusByIdQuery(recordStatusId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -69,18 +86,26 @@ public class RecordStatusController : BaseController
     /// <returns>Возвращает идентификатор созданного статуса записи.</returns>
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateRecordStatusDto createRecordStatusDto)
+
+    public async Task<IActionResult> Create([FromBody] CreateRecordStatusDto createRecordStatusDto)
     {
-        var command = Mapper.Map<CreateRecordStatusCommand>(createRecordStatusDto);
-        var recordStatusId = await Mediator.Send(command);
-        if (recordStatusId.IsFailed)
+        _logger.LogInformation("Отправка запроса на создание типа записи.");
+        var scope = new Dictionary<string, object>() { { "RecordStatusName", createRecordStatusDto.NameEn } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(recordStatusId.Error);
+            var result = await Mediator.Send(Mapper.Map<CreateRecordStatusCommand>(createRecordStatusDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(recordStatusId);
 
     }
     /// <summary>
@@ -88,36 +113,52 @@ public class RecordStatusController : BaseController
     /// </summary>
     /// <param name="updateRecordStatusDto">Данные для обновления статуса записи.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+
 
     public async Task<IActionResult> Update([FromBody] UpdateRecordStatusDto updateRecordStatusDto)
     {
-
-        var command = Mapper.Map<UpdateRecordStatusCommand>(updateRecordStatusDto);
-        var recordStatusId = await Mediator.Send(command);
-        if (recordStatusId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "RecordStatusId", updateRecordStatusDto.RecordStatusId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(recordStatusId.Error);
+            _logger.LogInformation("Отправка запроса на обновление типа записи с id {Id}.", updateRecordStatusDto.RecordStatusId);
+
+            var result = await Mediator.Send(Mapper.Map<UpdateRecordStatusCommand>(updateRecordStatusDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(recordStatusId);
     }
     /// <summary>
     /// Удалить статус записи.
     /// </summary>
     /// <param name="id">Идентификатор статуса записи.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteRecordStatusCommand(id));
-        if(command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "RecordStatusId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
-        }
+            _logger.LogInformation("Отправка запроса на удаление типа записи с id {Id}.", id);
 
-        return NoContent();
+            var result = await Mediator.Send(new DeleteRecordStatusCommand(id));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
+        }
     }
 }

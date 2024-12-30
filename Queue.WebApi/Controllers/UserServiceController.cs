@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.UserServices.Commands.CreateUserService;
 using Queue.Application.UserServices.Commands.DeleteUserService;
 using Queue.Application.UserServices.Commands.UpdateUserService;
@@ -14,9 +15,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class UserServiceController : BaseController
+public class UserServiceController(ILogger<UserServiceController> _logger) : BaseController
 {
-    private readonly ILogger<UserServiceController> _logger;
+    
     /// <summary>
     /// Получить список всех услуг.
     /// </summary>
@@ -24,18 +25,25 @@ public class UserServiceController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<List<UserService>>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<UserService>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
-        var query = new GetUserServiceListQuery();
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope=new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение полного списка userService.");
+            var query = new GetUserServiceListQuery();
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
         }
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
     }
 
     /// <summary>
@@ -43,18 +51,28 @@ public class UserServiceController : BaseController
     /// </summary>
     /// <param name="userServiceId">Идентификатор услуги.</param>
     /// <returns>Возвращает детали услуги.</returns>
+    /// 
     [HttpGet("{userServiceId}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<UserService>> Get(int userServiceId)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserService))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int userServiceId)
     {
-        var query = new GetUserServiceByIdQuery(userServiceId);
-        var vm = await Mediator.Send(query);
-        if(vm.IsFailed)
+        var scope=new Dictionary<string, object>() { {"UserSeriveId",userServiceId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение userService с id {Id}",userServiceId);
+            var query = new GetUserServiceByIdQuery(userServiceId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -63,18 +81,25 @@ public class UserServiceController : BaseController
     /// <param name="createUserServiceDto">Данные новоой услуги.</param>
     /// <returns>Возвращает идентификатор созданной услуги.</returns>
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateUserServiceDto createUserServiceDto)
+    public async Task<IActionResult> Create([FromBody] CreateUserServiceDto createUserServiceDto)
     {
-        var command = Mapper.Map<CreateUserServiceCommand>(createUserServiceDto);
-        var userServiceId = await Mediator.Send(command);
-        if (userServiceId.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(userServiceId.Error);
+            _logger.LogInformation("Отправка запроса на создание userService");
+            var result = await Mediator.Send(Mapper.Map<CreateUserServiceCommand>(createUserServiceDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(userServiceId);
 
     }
     /// <summary>
@@ -82,34 +107,51 @@ public class UserServiceController : BaseController
     /// </summary>
     /// <param name="updateUserServiceDto">Данные для обновления услуги.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
     public async Task<IActionResult> Update([FromBody] UpdateUserServiceDto updateUserServiceDto)
     {
-        var command = Mapper.Map<UpdateUserServiceCommand>(updateUserServiceDto);
-        var userServiceId = await Mediator.Send(command);
-        if (userServiceId.IsFailed)
+        var scope=new Dictionary<string, object>() { {"UserServiceId",updateUserServiceDto.UserServiceId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(userServiceId.Error);
+            _logger.LogInformation("Отправка запроса на обновление userService с id {Id}", updateUserServiceDto.UserServiceId);
+            var result = await Mediator.Send(Mapper.Map<UpdateUserServiceCommand>(updateUserServiceDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(userServiceId);
     }
     /// <summary>
     /// Удалить услугу.
     /// </summary>
     /// <param name="id">Идентификатор услуги.</param>
+    /// 
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteUserServiceCommand(id));
-        if (command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "UserServiceId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление userService с id {Id}", id);
+            var result = await Mediator.Send(new DeleteUserServiceCommand(id));
+
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-        return NoContent();
     }
 }

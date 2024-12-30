@@ -1,24 +1,22 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Queue.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Queue.Application.Windows.Queries.GetWindowDetails
+namespace Queue.Application.Windows.Queries.GetWindowDetails;
+
+public class GetWindowDetailsQueryHandler(IWindowRepository windowRepository, ILogger<GetWindowDetailsQueryHandler> logger) :IRequestHandler<GetWindowDetailsQuery,Result>
 {
-    public class GetWindowDetailsQueryHandler(IWindowRepository windowRepository):IRequestHandler<GetWindowDetailsQuery,Result>
+    public async Task<Result> Handle(GetWindowDetailsQuery request,CancellationToken cancellationToken)
     {
-        public async Task<Result> Handle(GetWindowDetailsQuery request,CancellationToken cancellationToken)
+        logger.LogInformation("Обработка запроса на получение окна из базы данных.");
+        var result=await windowRepository.GetWindowById(request.WindowId);
+        if (result.IsFailed)
         {
-            var result=await windowRepository.GetWindowById(request.WindowId);
-            if (result == null)
-            {
-                return Result.Failure(new Error("405", "Error"));
-            }
-            return Result.Success();
+            logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на получение окна из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
+        logger.LogInformation("Запрос успешно обработан.");
+        return result;
     }
 }

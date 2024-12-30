@@ -1,7 +1,6 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
 
@@ -12,7 +11,7 @@ public class CreateReviewCommandHandler(IReviewRepository reviewRepository,ILogg
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateReviewCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание отзыва");
+        _logger.LogInformation("Обработка запроса на создание нового отзыва в базе данных.");
         var review = new Review
         {
             RecordId = request.RecordId,
@@ -23,10 +22,10 @@ public class CreateReviewCommandHandler(IReviewRepository reviewRepository,ILogg
         var result=await reviewRepository.AddAsync(review);
         if (result.IsFailed)
         {
-            _logger.LogError($"ошибка при создании отзыва");
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления отзыва"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового отзыва в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание отзыва");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

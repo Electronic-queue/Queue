@@ -12,7 +12,7 @@ public class CreateServiceCommandHandler(IServiceRepository _ServiceRepository, 
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateServiceCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание услуги");
+        _logger.LogInformation("Обработка запроса на создание новой услуги в базе данных.");
         var service = new Service
         {
             NameRu = request.NameRu,
@@ -30,10 +30,10 @@ public class CreateServiceCommandHandler(IServiceRepository _ServiceRepository, 
         var result = await _ServiceRepository.AddAsync(service);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании услуги.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка создания услуги."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание новой услуги в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание услуги.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return result;
     }
 }

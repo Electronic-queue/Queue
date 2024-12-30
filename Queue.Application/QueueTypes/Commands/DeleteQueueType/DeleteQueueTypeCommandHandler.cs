@@ -1,13 +1,7 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queue.Application.QueueTypes.Commands.DeleteQueueType;
 
@@ -15,14 +9,14 @@ public class DeleteQueueTypeCommandHandler(IQueueTypeRepository queueTypeReposit
 {
     public async Task<Result> Handle(DeleteQueueTypeCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие типа очереди");
+        _logger.LogInformation("Обработка запроса на удаление типа очереди из базы данных.");
         var result = await queueTypeRepository.DeleteAsync(request.QueueTypeId);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении типа очереди с id: {request.QueueTypeId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления типа очереди"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление типа очереди из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление уведомления с id: {request.QueueTypeId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

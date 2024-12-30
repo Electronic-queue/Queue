@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Notifications.Commands.CreateNotification;
 using Queue.Application.Notifications.Commands.DeleteNotification;
 using Queue.Application.Notifications.Commands.UpdateNotification;
@@ -15,9 +16,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class NotificationController : BaseController
+public class NotificationController(ILogger<NotificationController> _logger) : BaseController
 {
-    private readonly ILogger<NotificationController> _logger;
+
     /// <summary>
     /// Получить список всех уведомлений.
     /// </summary>
@@ -25,18 +26,25 @@ public class NotificationController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<NotificationListVm>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Notification>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
-        var query = new GetNotificationListQuery();
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение полного списка уведомлении.");
+            var query = new GetNotificationListQuery();
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
         }
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
     }
 
     /// <summary>
@@ -45,20 +53,27 @@ public class NotificationController : BaseController
     /// <param name="notificationId">Идентификатор уведомления.</param>
     /// <returns>Возвращает детали уведомления.</returns>
     [HttpGet("{notificationId}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<NotificationByIdVm>> Get(int notificationId)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Notification))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int notificationId)
     {
-        var query = new GetNotificationByIdQuery
+        var scope = new Dictionary<string, object>() { { "NotificationId", notificationId } };
+        using (_logger.BeginScope(scope))
         {
-            NotificationId = notificationId
-        };
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
-        {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение  уведомления с id.");
+            var query = new GetNotificationByIdQuery(notificationId);
+
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -67,18 +82,27 @@ public class NotificationController : BaseController
     /// <param name="createNotificationDto">Данные нового уведомления.</param>
     /// <returns>Возвращает идентификатор созданного уведомления.</returns>
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateNotificationDto createNotificationDto)
+    public async Task<IActionResult> Create([FromBody] CreateNotificationDto createNotificationDto)
     {
-        var command = Mapper.Map<CreateNotificationCommand>(createNotificationDto);
-        var notificationId = await Mediator.Send(command);
-        if (notificationId.IsFailed)
+
+        var scope = new Dictionary<string, object>() { { "NotficationName", createNotificationDto.NameEn } };
+
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(notificationId.Error);
+            _logger.LogInformation("Отправка запроса на создание  уведомления.");
+            var result = await Mediator.Send(Mapper.Map<CreateNotificationCommand>(createNotificationDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(notificationId);
 
     }
     /// <summary>
@@ -86,34 +110,49 @@ public class NotificationController : BaseController
     /// </summary>
     /// <param name="updateNotificationDto">Данные для обновления уведомления.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Update([FromBody] UpdateNotificationDto updateNotificationDto)
     {
-        var command = Mapper.Map<UpdateNotificationCommand>(updateNotificationDto);
-        var notificationId = await Mediator.Send(command);
-        if (notificationId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "NotificationId", updateNotificationDto.NotificationId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(notificationId.Error); ;
+            _logger.LogInformation("Отправка запроса на обновление уведомления с id {Id}", updateNotificationDto.NotificationId);
+            var command = Mapper.Map<UpdateNotificationCommand>(updateNotificationDto);
+            var result = await Mediator.Send(command);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error); ;
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(notificationId);
     }
     /// <summary>
     /// Удалить уведомление.
     /// </summary>
     /// <param name="id">Идентификатор уведомления.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteNotificationCommand(id));
-        if (command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "NotificationId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление  уведомления с id {Id}", id);
+            var result = await Mediator.Send(new DeleteNotificationCommand(id));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-        return NoContent();
     }
 }

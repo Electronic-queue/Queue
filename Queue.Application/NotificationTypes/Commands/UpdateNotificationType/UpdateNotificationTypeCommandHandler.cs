@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 
 namespace Queue.Application.NotificationTypes.Commands.UpdateNotificationType;
@@ -12,8 +13,8 @@ public class UpdateNotificationTypeCommandHandler(INotificationTypeRepository _n
 {
     public async Task<Result> Handle(UpdateNotificationTypeCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление типа уведомления");
-        var notificationType = await _notificationTypeRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление типа уведомления в базе данных.");
+        var result = await _notificationTypeRepository.UpdateAsync(
             notificationTypeId:request.NotificationTypeId,
             nameRu:request.NameRu,
             nameKk:request.NameKk,
@@ -23,12 +24,12 @@ public class UpdateNotificationTypeCommandHandler(INotificationTypeRepository _n
             descriptionEn:request.DescriptionEn
             );
        
-        if(notificationType.IsFailed) 
+        if(result.IsFailed) 
         {
-            _logger.LogError($"Ошибка при обновлении типа уведомлений с id: {request.NotificationTypeId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления типа уведомлений."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление типа уведомления в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление типа уведомления с id: {request.NotificationTypeId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.NotificationTypes.Commands.CreateNotificationType;
 
@@ -11,7 +12,7 @@ public class CreateNotificationTypeCommandHandler(INotificationTypeRepository _n
 {
     public async Task<Result> Handle(CreateNotificationTypeCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание типа уведомления");
+        _logger.LogInformation("Обработка запроса на создание нового типа уведомления в базе данных.");
         var notificationType = new NotificationType
         {
             NameRu = request.NameRu,
@@ -26,10 +27,10 @@ public class CreateNotificationTypeCommandHandler(INotificationTypeRepository _n
         var result = await _notificationTypeRepository.AddAsync(notificationType);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании типа уведомлений.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка создания типа уведомлений."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового типа уведомления в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание типа уведомления.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return result;
     }
 }
