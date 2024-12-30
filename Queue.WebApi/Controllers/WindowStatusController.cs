@@ -1,7 +1,7 @@
 ﻿using KDS.Primitives.FluentResult;
 using Microsoft.AspNetCore.Mvc;
 using Queue.Application.WindowStatuses.Commands.CreateWindowStatus;
-using Queue.Application.WindowStatuses.Commands.DeletWindowStatus;
+using Queue.Application.WindowStatuses.Commands.DeleteWindowStatus;
 using Queue.Application.WindowStatuses.Commands.UpdateWIndowStatus;
 using Queue.Application.WindowStatuses.Queries.GetWindowStatusById;
 using Queue.Application.WindowStatuses.Queries.GetWindowStatusList;
@@ -134,6 +134,8 @@ public class WindowStatusController(ILogger<WindowStatusController> _logger) : B
     /// Удалить окно.
     /// </summary>
     /// <param name="id">Идентификатор окна.</param>
+    /// 
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]

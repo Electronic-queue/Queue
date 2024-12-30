@@ -21,4 +21,4 @@ public class GetRecordStatusListQueryHandler(IRecordStatusRepository recordStatu
         return result;
     }
 }
-}
+

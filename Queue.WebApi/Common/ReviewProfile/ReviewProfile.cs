@@ -19,7 +19,7 @@ public class ReviewProfile:Profile
         CreateMap<UpdateReviewDto, UpdateReviewCommand>()
              .ForMember(x => x.ReviewId,
            opt => opt.MapFrom(y => y.ReviewId))
-              .ForMember(x => x.RecorId,
+              .ForMember(x => x.RecordId,
            opt => opt.MapFrom(y => y.RecordId))
                .ForMember(x => x.Rating,
            opt => opt.MapFrom(y => y.Rating))

@@ -132,6 +132,8 @@ public class UserServiceController(ILogger<UserServiceController> _logger) : Bas
     /// Удалить услугу.
     /// </summary>
     /// <param name="id">Идентификатор услуги.</param>
+    /// 
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]

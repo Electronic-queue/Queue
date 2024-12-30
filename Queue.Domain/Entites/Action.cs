@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Queue.Domain.Entites;
 
-public partial class Notification
+public partial class Action
 {
     [Key]
     public int ActionId { get; set; }

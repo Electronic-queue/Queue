@@ -13,7 +13,7 @@ public class UpdateReviewCommandHandler(IReviewRepository reviewRepository,ILogg
         _logger.LogInformation("Обработка запроса на обновление действия в базе данных.");
         var result = await reviewRepository.UpdateAsync(
             reviewId: request.ReviewId,
-            recordId: request.RecorId,
+            recordId: request.RecordId,
             rating: request.Rating,
             content: request.Content
             );

@@ -34,4 +34,4 @@ public class UpdateWindowStatusCommandValidator:AbstractValidator<UpdateWindowSt
             .When(x => !string.IsNullOrEmpty(x.DescriptionEn));
     }
 }
-}
+

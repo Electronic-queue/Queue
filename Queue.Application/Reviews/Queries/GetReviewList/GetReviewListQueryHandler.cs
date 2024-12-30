@@ -18,6 +18,6 @@ public class GetReviewListQueryHandler(IReviewRepository reviewRepository, ILogg
             return Result.Failure<List<Review>>(result.Error);
         }
         logger.LogInformation("Запрос успешно обработан.");
-        return м;
+        return result;
     }
 }

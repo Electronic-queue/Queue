@@ -26,7 +26,7 @@ namespace Queue.Application.Windows.Commands.CreateWindow
                 CreatedOn = DateTimeOffset.UtcNow.ToOffset(UtcOffset).DateTime
             };
             var result =await _windowRepository.AddAsync(window);
-            if(result is null)
+            if(result.IsFailed)
             {
                 _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового окна в базе данных.", result.Error.Code);
                 return Result.Failure(result.Error);

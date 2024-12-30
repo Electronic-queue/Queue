@@ -147,11 +147,11 @@ public class ReasonsForCancellationController(ILogger<ReasonsForCancellationCont
         using (_logger.BeginScope(scope))
         {
             _logger.LogInformation("Отправка запроса на удаление причины для отмены с id {Id}",id);
-            var command = await Mediator.Send(new DeleteReasonsForCancellationCommand(id));
-            if (command.IsFailed)
+            var result = await Mediator.Send(new DeleteReasonsForCancellationCommand(id));
+            if (result.IsFailed)
             {
                 _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
-                return ProblemResponse(command.Error);
+                return ProblemResponse(result.Error);
             }
         }
         _logger.LogInformation("Запрос прошел успешно.");

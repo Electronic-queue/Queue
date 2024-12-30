@@ -31,7 +31,7 @@ public class UpdateRecordCommandValidator:AbstractValidator<UpdateRecordCommand>
         RuleFor(x => x.IsCreatedByEmployee)
             .NotNull().When(x => x.IsCreatedByEmployee.HasValue).WithMessage("Поле IsCreatedByEmployee обязательно для заполнения, если оно указано.");
         RuleFor(x => x.CreatedBy)
-            .GreaterThan(0).When(x => x.CreatedBy.HasValue).WithMessage("CreatedBy должен быть больше нуля.")
+            .GreaterThan(0).When(x => x.CreatedBy.HasValue).WithMessage("CreatedBy должен быть больше нуля.");
 
 
         RuleFor(x => x.TicketNumber)

@@ -11,4 +11,4 @@ public class GetQueueTypeByIdQueryValidator:AbstractValidator<GetQueueTypeByIdQu
            .NotEmpty().WithMessage("QueueTypeId обязательно.");
     }
 }
-}
+

@@ -9,8 +9,10 @@ namespace Queue.Application.Notifications.Commands.CreateNotification;
 
 public class CreateNotificationCommandHandler(INotificationRepository _notificationRepository, ILogger<CreateNotificationCommandHandler> _logger) : IRequestHandler<CreateNotificationCommand, Result>
 {
+    private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateNotificationCommand request, CancellationToken cancellationToken)
     {
+
         _logger.LogInformation("Запрос на создание уведомления");
         var notification = new Notification
         {
