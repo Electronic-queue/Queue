@@ -10,7 +10,7 @@ public class UpdateReasonsForCancellationCommandHandler(IReasonsForCancellationR
 {
     public async Task<Result> Handle(UpdateReasonsForCancellationCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление причины отмены");
+        _logger.LogInformation("Обработка запроса на обновление причины для отмены в базе данных.");
         var result = await reasonRepository.UpdateAsync(
             reasonId:request.ReasonId,
             recordId:request.RecordId,
@@ -18,10 +18,10 @@ public class UpdateReasonsForCancellationCommandHandler(IReasonsForCancellationR
             );
         if(result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении причины отмены с id: {request.ReasonId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления причины отмены"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление причины для отмены в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновления причины отмены с id: {request.ReasonId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
 
     }

@@ -10,8 +10,8 @@ public class UpdateUserServiceCommandHandler(IUserServiceRepository userServiceR
 {
     public async Task<Result> Handle(UpdateUserServiceCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление UserService");
-        var userService = await userServiceRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление услуги в базе данных.");
+        var result = await userServiceRepository.UpdateAsync(
             userServiceId:request.UserServiceId,
             userId:request.UserId,
             serviceId:request.ServiceId,
@@ -20,12 +20,12 @@ public class UpdateUserServiceCommandHandler(IUserServiceRepository userServiceR
             descriptionEn:request.DescriptionEn,
             isActive:request.IsActive
             );
-        if (userService.IsFailed) 
+        if (result.IsFailed) 
         {
-            _logger.LogError($"Ошибка при обновлении userService с id: {request.UserServiceId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления userService"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление услуги в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление userService с id: {request.UserServiceId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

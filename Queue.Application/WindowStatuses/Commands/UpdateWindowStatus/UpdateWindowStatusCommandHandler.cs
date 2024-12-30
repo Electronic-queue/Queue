@@ -10,8 +10,8 @@ public class UpdateWindowStatusCommandHandler(IWindowStatusRepository windowStat
 {
     public async Task<Result> Handle(UpdateWindowStatusCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление статуса окна");
-        var windowStatus = await windowStatusRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление статуса окна в базе данных.");
+        var result = await windowStatusRepository.UpdateAsync(
             windowStatusId: request.WindowStatusId,
             nameRu: request.NameRu,
             nameKk: request.NameKk,
@@ -20,12 +20,12 @@ public class UpdateWindowStatusCommandHandler(IWindowStatusRepository windowStat
             descriptionKk: request.DescriptionKk,
             descriptionEn: request.DescriptionEn
             );
-        if (windowStatus.IsFailed)
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении статуса окна с id: {request.WindowStatusId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления статуса окна"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление статуса в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление статуса окна с id: {request.WindowStatusId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

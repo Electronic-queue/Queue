@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.Reviews.Commands.CreateReview;
 using Queue.Application.Reviews.Commands.DeleteReview;
 using Queue.Application.Reviews.Commands.UpdateReview;
@@ -14,9 +15,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class ReviewController : BaseController
+public class ReviewController(ILogger<ReviewController> _logger) : BaseController
 {
-    private readonly ILogger<ReviewController> _logger;
+
     /// <summary>
     /// Получить список всех записей
     /// </summary>
@@ -25,40 +26,54 @@ public class ReviewController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<Review>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Review>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
-
-
-        var query = new GetReviewListQuery();
-
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение полного списка отзывов.");
+            var query = new GetReviewListQuery();
+
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
         }
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
     }
 
     /// <summary>
     /// Получить информацию о конкретной записи.
     /// </summary>
-    /// <param name="id">Идентификатор  записи.</param>
+    /// <param name="reviewId">Идентификатор  записи.</param>
     /// <returns>Возвращает детали  записи.</returns>
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<Review>> Get(int ReviewId)
+    [HttpGet("{reviewId}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Review))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int reviewId)
     {
-        var query = new GetReviewByIdQuery(ReviewId);
-        var vm = await Mediator.Send(query);
-        if(vm.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReviewId", reviewId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение отзыва с id {Id}", reviewId);
+            var query = new GetReviewByIdQuery(reviewId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -68,18 +83,26 @@ public class ReviewController : BaseController
     /// <returns>Возвращает идентификатор созданного статуса записи.</returns>
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateReviewDto createReviewDto)
+    public async Task<IActionResult> Create([FromBody] CreateReviewDto createReviewDto)
     {
-        var command = Mapper.Map<CreateReviewCommand>(createReviewDto);
-        var reviewId = await Mediator.Send(command);
-        if (reviewId.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(reviewId.Error);
+            _logger.LogInformation("Отправка запроса на создание отзыва");
+            var result = await Mediator.Send(Mapper.Map<CreateReviewCommand>(createReviewDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(reviewId);
 
     }
     /// <summary>
@@ -87,36 +110,51 @@ public class ReviewController : BaseController
     /// </summary>
     /// <param name="updateReviewDto">Данные для обновления  записи.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
     public async Task<IActionResult> Update([FromBody] UpdateReviewDto updateReviewDto)
     {
-        var command = Mapper.Map<UpdateReviewCommand>(updateReviewDto);
-        var reviewId = await Mediator.Send(command);
-        if (reviewId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReviewId", updateReviewDto.ReviewId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(reviewId.Error);
+            _logger.LogInformation("Отправка запроса на обновление отзыва с id {Id}", updateReviewDto.ReviewId);
+            var result = await Mediator.Send(Mapper.Map<UpdateReviewCommand>(updateReviewDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(reviewId);
     }
     /// <summary>
     /// Удалить  записи.
     /// </summary>
     /// <param name="id">Идентификатор  записи.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteReviewCommand(id));
-
-        if(command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "ReviewId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление отзыва с id {Id}", id);
+            var result = await Mediator.Send(new DeleteReviewCommand(id));
+
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-        return NoContent();
     }
 }
 

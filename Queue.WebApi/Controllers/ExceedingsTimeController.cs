@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.ExceedingsTimes.Commands.CreateExceedingsTime;
 using Queue.Application.ExceedingsTimes.Commands.DeleteExceedingsTime;
 using Queue.Application.ExceedingsTimes.Commands.UpdateExceedingsTime;
@@ -14,109 +15,143 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class ExceedingsTimeController : BaseController
+public class ExceedingsTimeController(ILogger<ExceedingsTimeController> _logger) : BaseController
 {
-    private readonly ILogger<ExceedingsTimeController> _logger;
+
     /// <summary>
-    /// Получить список всех записей
+    /// Получить список всех времени перерывов
     /// </summary>
     ///
-    /// <returns>Возвращает список  записей.</returns>
+    /// <returns>Возвращает список  времени перерывов.</returns>
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<List<ExceedingsTime>>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK,Type=typeof(List<ExceedingsTime>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError,Type=typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
+        var scope = new Dictionary<string, object>();
 
-
-        var query = new GetExceedingsTimeListQuery();
-
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed) {
-            return ProblemResponse(vm.Error);
-        }
-
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
-    }
-
-    /// <summary>
-    /// Получить информацию о конкретной записи.
-    /// </summary>
-    /// <param name="id">Идентификатор  записи.</param>
-    /// <returns>Возвращает детали  записи.</returns>
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<ExceedingsTime>> Get(int ExceedingsTimeId)
-    {
-        var query = new GetExceedingsTimeByIdQuery(ExceedingsTimeId);
-        var vm = await Mediator.Send(query);
-        if(vm.IsFailed)
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение полного списка времени перерывов.");
+            var query = new GetExceedingsTimeListQuery();
+
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
         }
-        return Ok(vm);
     }
 
     /// <summary>
-    /// Создать новый  записи.
+    /// Получить информацию о конкретном времени перерыва.
     /// </summary>
-    /// <param name="createExceedingsTimeDto">Данные новой записи.</param>
-    /// <returns>Возвращает идентификатор созданного статуса записи.</returns>
+    /// <param name="exceedingsTimeId">Идентификатор  времени перерыва.</param>
+    /// <returns>Возвращает детали  времени перерыва.</returns>
+    [HttpGet("{exceedingsTimeId}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ExceedingsTime))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int exceedingsTimeId)
+    {
+        var scope = new Dictionary<string, object>() { { "exceedingsTimeId" , exceedingsTimeId } };
+        using (_logger.BeginScope(scope))
+        {
+            _logger.LogInformation("Отправка запроса на чтение врменеи перерыва с id");
+            var query = new GetExceedingsTimeByIdQuery(exceedingsTimeId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+        }
+    }
+
+    /// <summary>
+    /// Создать новый временный перерыв.
+    /// </summary>
+    /// <param name="createExceedingsTimeDto">Данные нового врменного перерыва.</param>
+    /// <returns>Возвращает идентификатор созданного времени перерыва.</returns>
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-    public async Task<ActionResult<int>> Create([FromBody] CreateExceedingsTimeDto createExceedingsTimeDto)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Create([FromBody] CreateExceedingsTimeDto createExceedingsTimeDto)
     {
-        var command = Mapper.Map<CreateExceedingsTimeCommand>(createExceedingsTimeDto);
-        var exceedingsTimeId = await Mediator.Send(command);
-        if (exceedingsTimeId.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(exceedingsTimeId.Error);
+            _logger.LogInformation("Отправка запроса на создание врменеи перерыва ");
+            var result = await Mediator.Send(Mapper.Map<CreateExceedingsTimeCommand>(createExceedingsTimeDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(exceedingsTimeId);
-
     }
     /// <summary>
-    /// Обновить информацию о  записи.
+    /// Обновить информацию о  времени перерыва.
     /// </summary>
-    /// <param name="updateExceedingsTimeDto">Данные для обновления  записи.</param>
+    /// <param name="updateExceedingsTimeDto">Данные для обновления  времени перерыва.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Update([FromBody] UpdateExceedingsTimeDto updateExceedingsTimeDto)
     {
-        var command = Mapper.Map<UpdateExceedingsTimeCommand>(updateExceedingsTimeDto);
-        var exceedingsTimeId = await Mediator.Send(command);
-        if (exceedingsTimeId.IsFailed)
+        var scope=new Dictionary<string, object>() { {"ExceedingsTimeId",updateExceedingsTimeDto.ExceedingsTimeId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(exceedingsTimeId.Error);
+            _logger.LogInformation("Отправка запроса на обновление врменеи перерыва с id {Id}",updateExceedingsTimeDto.ExceedingsTimeId);
+            var result = await Mediator.Send(Mapper.Map<UpdateExceedingsTimeCommand>(updateExceedingsTimeDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(exceedingsTimeId);
     }
     /// <summary>
-    /// Удалить  записи.
+    /// Удалить время перерыва.
     /// </summary>
-    /// <param name="id">Идентификатор  записи.</param>
+    /// <param name="id">Идентификатор  времени перерыва.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteExceedingsTimeCommand(id));
-
-        if (command.IsFailed)
+        var scope=new Dictionary<string, object>() { { "ExceedingsTimeId",id} };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление врменеи перерыва с id {Id}", id);
+            var result = await Mediator.Send(new DeleteExceedingsTimeCommand(id));
+
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-        return NoContent();
     }
 }
 

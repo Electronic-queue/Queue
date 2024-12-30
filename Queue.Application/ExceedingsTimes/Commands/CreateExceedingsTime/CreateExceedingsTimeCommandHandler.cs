@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Entites;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.ExceedingsTimes.Commands.CreateExceedingsTime;
 
@@ -24,8 +25,8 @@ public class CreateExceedingsTimeCommandHandler(IExceedingsTimeRepository timeRe
         var result=await timeRepository.AddAsync(exceedingsTime);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании времени перерыва.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка создания времени перерыва."));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового времени перерыва в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
         _logger.LogInformation($"Успешное создание времени перерыва ");
         return Result.Success();

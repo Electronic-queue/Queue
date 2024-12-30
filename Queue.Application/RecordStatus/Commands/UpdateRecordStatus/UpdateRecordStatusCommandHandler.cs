@@ -10,8 +10,8 @@ public class UpdateRecordStatusCommandHandler(IRecordStatusRepository recordStat
 {
     public async Task<Result> Handle(UpdateRecordStatusCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление статуса записи");
-        var recordStatus = await recordStatusRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление статуса записи в базе данных.");
+        var result = await recordStatusRepository.UpdateAsync(
             recordStatusId: request.RecordStatusId,
             nameRu: request.NameRu,
             nameKk: request.NameKk,
@@ -21,12 +21,12 @@ public class UpdateRecordStatusCommandHandler(IRecordStatusRepository recordStat
             descriptionEn: request.DescriptionEn,
             createdBy: request.CreatedBy
             ); ;
-        if (recordStatus is null)
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении статуса записи с id: {request.RecordStatusId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления статуса записи"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление статуса записи в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновления статуса записи с id: {request.RecordStatusId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

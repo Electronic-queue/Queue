@@ -17,7 +17,7 @@ namespace Queue.Application.Windows.Commands.CreateWindow
         private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
         public async Task<Result> Handle(CreateWindowCommand request,CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Запрос на создание океа");
+            _logger.LogInformation("Обработка запроса на создание нового окна в базе данных.");
             var window = new Window
             {
                 WindowNumber = request.WindowNumber,
@@ -28,10 +28,10 @@ namespace Queue.Application.Windows.Commands.CreateWindow
             var result =await _windowRepository.AddAsync(window);
             if(result is null)
             {
-                _logger.LogError($"Ошибка при создании окна.");
-                return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления окна"));
+                _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового окна в базе данных.", result.Error.Code);
+                return Result.Failure(result.Error);
             }
-            _logger.LogInformation($"Успешное создание окна");
+            _logger.LogInformation("Запрос успешно обработан.");
             return Result.Success();
         }
     }

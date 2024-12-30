@@ -1,14 +1,7 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Queue.Application.QueueTypes.Commands.DeleteQueueType;
-using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Queue.Application.QueueTypes.Commands.UpdateQueueType;
 
@@ -16,8 +9,8 @@ public class UpdateQueueTypeCommandHandler(IQueueTypeRepository queueTypeReposit
 {
     public async Task<Result> Handle(UpdateQueueTypeCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление типа очереди");
-        var queueType = await queueTypeRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление типа очереди в базе данных.");
+        var result = await queueTypeRepository.UpdateAsync(
             queueTypeId: request.QueueTypeId,
             nameRu: request.NameRu,
             nameKk: request.NameKk,
@@ -26,12 +19,12 @@ public class UpdateQueueTypeCommandHandler(IQueueTypeRepository queueTypeReposit
             decriptionKk: request.DescriptionKk,
             decriptionEn: request.DescriptionEn
             );
-        if (queueType.IsFailed)
+        if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при обновлении типа очереди с id: {request.QueueTypeId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления типа очереди"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление типа очереди в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление типа очереди с id: {request.QueueTypeId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
 
     }

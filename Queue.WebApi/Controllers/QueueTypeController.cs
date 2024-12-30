@@ -16,9 +16,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class QueueTypeController : BaseController
+public class QueueTypeController(ILogger<QueueTypeController> _logger) : BaseController
 {
-    private readonly ILogger<QueueTypeController> _logger;
+  
     /// <summary>
     /// Получить список всех типов очередей.
     /// </summary>
@@ -26,18 +26,25 @@ public class QueueTypeController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<QueueType>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<NotificationType>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
     {
-        var query = new GetQueueTypeListQuery();
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope=new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение полного списка типа очереди.");
+            var query = new GetQueueTypeListQuery();
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
         }
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
     }
 
     /// <summary>
@@ -46,17 +53,26 @@ public class QueueTypeController : BaseController
     /// <param name="queueTypeId">Идентификатор типа очереди.</param>
     /// <returns>Возвращает детали типа очереди.</returns>
     [HttpGet("{queueTypeId}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult<Result>> Get(int queueTypeId)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(QueueType))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int queueTypeId)
     {
-        var query = new GetQueueTypeByIdQuery(queueTypeId);
-        var vm = await Mediator.Send(query);
-        if (vm.IsFailed)
+        var scope = new Dictionary<string, object>() { {"QueueTypeId",queueTypeId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение типа очереди c id");
+            var query = new GetQueueTypeByIdQuery(queueTypeId);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -65,18 +81,25 @@ public class QueueTypeController : BaseController
     /// <param name="createQueueTypeDto">Данные нового типа очереди.</param>
     /// <returns>Возвращает идентификатор созданного типа очереди.</returns>
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-    public async Task<ActionResult<int>> Create([FromBody] CreateQueueTypeDto createQueueTypeDto)
+    public async Task<IActionResult> Create([FromBody] CreateQueueTypeDto createQueueTypeDto)
     {
-        var command = Mapper.Map<CreateQueueTypeCommand>(createQueueTypeDto);
-        var queueTypeId = await Mediator.Send(command);
-        if (queueTypeId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "QueueTypeName",createQueueTypeDto.NameEn} };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(queueTypeId.Error);
+            _logger.LogInformation("Отправка запроса на создание типа очереди");
+            var result = await Mediator.Send(Mapper.Map<CreateQueueTypeCommand>(createQueueTypeDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(queueTypeId);
             
     }
     /// <summary>
@@ -84,35 +107,49 @@ public class QueueTypeController : BaseController
     /// </summary>
     /// <param name="updateQueueTypeDto">Данные для обновления типа очереди.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Update([FromBody] UpdateQueueTypeDto updateQueueTypeDto)
     {
-        var command = Mapper.Map<UpdateQueueTypeCommand>(updateQueueTypeDto);
-        var queueTypeId = await Mediator.Send(command);
-        if (queueTypeId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "QueueTypeId", updateQueueTypeDto.QueueTypeId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(queueTypeId.Error);
+            _logger.LogInformation("Отправка запроса на обновление типа очереди с id {Id}",updateQueueTypeDto.QueueTypeId);
+            var result = await Mediator.Send(Mapper.Map<UpdateQueueTypeCommand>(updateQueueTypeDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(queueTypeId);
     }
     /// <summary>
     /// Удалить тип очереди.
     /// </summary>
     /// <param name="id">Идентификатор типа очереди.</param>
     [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteQueueTypeCommand(id));
-        if(command.IsFailed)
+        var scope = new Dictionary<string, object>() { {"QueueTypeId",id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление типа очереди с id {Id}", id);
+            var result = await Mediator.Send(new DeleteQueueTypeCommand(id));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-        return NoContent();
     }
 }
 

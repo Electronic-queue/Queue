@@ -1,18 +1,22 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Queue.Domain.Interfaces;
 
 namespace Queue.Application.QueueTypes.Queries.GetQueueTypeById;
 
-public class GetQueueTypeByIdQueryHandler(IQueueTypeRepository queueTypeRepository):IRequestHandler<GetQueueTypeByIdQuery, Result>
+public class GetQueueTypeByIdQueryHandler(IQueueTypeRepository queueTypeRepository, ILogger<GetQueueTypeByIdQueryHandler> logger) :IRequestHandler<GetQueueTypeByIdQuery, Result>
 {
     public async Task<Result> Handle(GetQueueTypeByIdQuery request, CancellationToken cancellationToken)
     {
-        var queueType = await queueTypeRepository.GetQueueTypedById(request.QueueTypeId);
-        if(queueType.IsFailed)
+        logger.LogInformation("Обработка запроса на получение типа очереди из базы данных.");
+        var result = await queueTypeRepository.GetQueueTypedById(request.QueueTypeId);
+        if(result.IsFailed)
         {
-            return Result.Failure(new Error("405", "Error"));
+            logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на получение типа очереди из базы данных.", result.Error.Code);
+            return Result.Failure<Action>(result.Error);
         }
-        return Result.Success();
+        logger.LogInformation("Запрос успешно обработан.");
+        return result;
     }
 }

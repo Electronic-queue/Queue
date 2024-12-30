@@ -12,7 +12,7 @@ public class CreateUserWindowCommandHandler(IUserWindowRepository userWIndowRepo
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateUserWindowCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание UserWindow");
+        _logger.LogInformation("Обработка запроса на создание нового UserWindow в базе данных.");
         var userWindow = new UserWindow
         {
             UserId= request.UserId,
@@ -25,10 +25,10 @@ public class CreateUserWindowCommandHandler(IUserWindowRepository userWIndowRepo
         var result=await userWIndowRepository.AddAsync(userWindow);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании userWindow.");
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления userWindow"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового UserWindow в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание userWindow");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }

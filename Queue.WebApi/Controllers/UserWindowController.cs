@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.UserWindows.Commands.CreateUserWindow;
 using Queue.Application.UserWindows.Commands.DeleteUserWindow;
 using Queue.Application.UserWindows.Commands.UpdateUserWindow;
 using Queue.Application.UserWindows.Queries.GetUserWindowById;
 using Queue.Application.UserWindows.Queries.GetUserWindowList;
 using Queue.Domain.Entites;
+using Queue.WebApi.Contracts.UserServiceContracts;
 using Queue.WebApi.Contracts.UserWindowComtracts;
 using System.Net;
 
@@ -15,9 +17,8 @@ namespace Queue.WebApi.Controllers
     [Produces("application/json")]
     [Route("api/{apiversion:}/[controller]")]
 
-    public class UserWindowController : BaseController
+    public class UserWindowController(ILogger<UserWindowController> _logger) : BaseController
     {
-        private readonly ILogger<UserWindowController> _logger;
         /// <summary>
         /// Получить список всех услуг.
         /// </summary>
@@ -25,18 +26,25 @@ namespace Queue.WebApi.Controllers
         /// 
 
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<ActionResult<List<UserWindow>>> GetAll()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<UserWindow>))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+        public async Task<IActionResult> GetAll()
         {
-            var query = new GetUserWindowListQuery();
-            var vm = await Mediator.Send(query);
-            if (vm.IsFailed)
+            var scope = new Dictionary<string, object>();
+            using (_logger.BeginScope(scope))
             {
-                return ProblemResponse(vm.Error);
+                _logger.LogInformation("Отправка запроса на чтение полного списка userService.");
+                var query = new GetUserWindowListQuery();
+                var result = await Mediator.Send(query);
+                if (result.IsFailed)
+                {
+                    _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                    return ProblemResponse(result.Error);
+                }
+                _logger.LogInformation("Запрос прошел успешно.");
+                return Ok(result);
+                //return ResultSucces.Success(vm);
             }
-            return Ok(vm);
-            //return ResultSucces.Success(vm);
         }
 
         /// <summary>
@@ -44,18 +52,27 @@ namespace Queue.WebApi.Controllers
         /// </summary>
         /// <param name="userWindowId">Идентификатор услуги.</param>
         /// <returns>Возвращает детали услуги.</returns>
-        [HttpGet("{userServiceId}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<ActionResult<UserWindow>> Get(int userWindowId)
+        [HttpGet("{userWindowId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserWindow))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+        public async Task<IActionResult> Get(int userWindowId)
         {
-            var query = new GetUserWindowByIdQuery(userWindowId);
-            var vm = await Mediator.Send(query);
-            if (vm.IsFailed)
+            var scope = new Dictionary<string, object>() { { "UserWindowId", userWindowId } };
+            using (_logger.BeginScope(scope))
             {
-                return ProblemResponse(vm.Error);
+                _logger.LogInformation("Отправка запроса на чтение userWindow с id {Id}", userWindowId);
+                var query = new GetUserWindowByIdQuery(userWindowId);
+                var result = await Mediator.Send(query);
+                if (result.IsFailed)
+                {
+                    _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                    return ProblemResponse(result.Error);
+                }
+                _logger.LogInformation("Запрос прошел успешно.");
+                return Ok(result);
             }
-            return Ok(vm);
         }
 
         /// <summary>
@@ -64,18 +81,27 @@ namespace Queue.WebApi.Controllers
         /// <param name="createUserWindowDto">Данные новоой услуги.</param>
         /// <returns>Возвращает идентификатор созданной услуги.</returns>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
-        public async Task<ActionResult<int>> Create([FromBody] CreateUserWindowDto createUserWindowDto)
+
+        public async Task<IActionResult> Create([FromBody] CreateUserWindowDto createUserWindowDto)
         {
-            var command = Mapper.Map<CreateUserWindowCommand>(createUserWindowDto);
-            var userWindowId = await Mediator.Send(command);
-            if (userWindowId.IsFailed)
+            var scope = new Dictionary<string, object>();
+            using (_logger.BeginScope(scope))
+
             {
-                return ProblemResponse(userWindowId.Error);
+                _logger.LogInformation("Отправка запроса на создание userWindow");
+                var result = await Mediator.Send(Mapper.Map<CreateUserWindowCommand>(createUserWindowDto));
+                if (result.IsFailed)
+                {
+                    _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                    return ProblemResponse(result.Error);
+                }
+                _logger.LogInformation("Запрос прошел успешно.");
+                return Ok(result);
             }
-            return Ok(userWindowId);
 
         }
         /// <summary>
@@ -83,35 +109,50 @@ namespace Queue.WebApi.Controllers
         /// </summary>
         /// <param name="updateUserWindowDto">Данные для обновления услуги.</param>
         [HttpPut]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
         public async Task<IActionResult> Update([FromBody] UpdateUserWindowDto updateUserWindowDto)
         {
-            var command = Mapper.Map<UpdateUserWindowCommand>(updateUserWindowDto);
-            var userWindowId = await Mediator.Send(command);
-            if (userWindowId.IsFailed)
+            var scope = new Dictionary<string, object>() { { "UserWIndowId", updateUserWindowDto.UserWindowId } };
+            using (_logger.BeginScope(scope))
             {
-                return ProblemResponse(userWindowId.Error);
+                _logger.LogInformation("Отправка запроса на обновление userWindow с id {Id}", updateUserWindowDto.UserWindowId);
+                var result = await Mediator.Send(Mapper.Map<UpdateUserWindowCommand>(updateUserWindowDto));
+                if (result.IsFailed)
+                {
+                    _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                    return ProblemResponse(result.Error);
+                }
+                _logger.LogInformation("Запрос прошел успешно.");
+                return Ok(result);
             }
-            return Ok(userWindowId);
         }
         /// <summary>
         /// Удалить услугу.
         /// </summary>
         /// <param name="id">Идентификатор услуги.</param>
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
         public async Task<IActionResult> Delete(int id)
         {
-            var command = await Mediator.Send(new DeleteUserWindowCommand(id));
-            if(command.IsFailed)
+            var scope = new Dictionary<string, object>() { { "UserWindowId", id } };
+            using (_logger.BeginScope(scope))
             {
-                return ProblemResponse(command.Error);
+                _logger.LogInformation("Отправка запроса на удаление userWindow с id {Id}", id);
+                var result = await Mediator.Send(new DeleteUserWindowCommand(id));
+                if (result.IsFailed)
+                {
+                    _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                    return ProblemResponse(result.Error);
+                }
+                _logger.LogInformation("Запрос прошел успешно.");
+                return NoContent();
             }
-            return NoContent();
         }
     }
 

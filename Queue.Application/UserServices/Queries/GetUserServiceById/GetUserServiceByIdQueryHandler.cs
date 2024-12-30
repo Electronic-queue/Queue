@@ -1,20 +1,22 @@
 ﻿using KDS.Primitives.FluentResult;
 using MediatR;
-using Queue.Domain.Common.Exceptions;
-using Queue.Domain.Entites;
+using Microsoft.Extensions.Logging;
 using Queue.Domain.Interfaces;
 
 namespace Queue.Application.UserServices.Queries.GetUserServiceById;
 
-public class GetUserServiceByIdQueryHandler(IUserServiceRepository userServiceRepository) : IRequestHandler<GetUserServiceByIdQuery, Result>
+public class GetUserServiceByIdQueryHandler(IUserServiceRepository userServiceRepository, ILogger<GetUserServiceByIdQueryHandler> logger) : IRequestHandler<GetUserServiceByIdQuery, Result>
 {
     public async Task<Result> Handle(GetUserServiceByIdQuery request, CancellationToken cancellationToken)
     {
+        logger.LogInformation("Обработка запроса на получение услуги из базы данных.");
         var result = await userServiceRepository.GetUserServiceById(request.UserServiceId);
         if (result.IsFailed) 
         {
-            return Result.Failure<Service>(new Error(Errors.NotAllowed, "Ошибка при запросе"));
+            logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на получение услуги из базы данных.", result.Error.Code);
+            return Result.Failure<Action>(result.Error);
         }
-        return Result.Success();
+        logger.LogInformation("Запрос успешно обработан.");
+        return result;
     }
 }

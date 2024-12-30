@@ -10,18 +10,18 @@ public class UpdateUserWindowCommandHandler(IUserWindowRepository userWIndowRepo
 {
     public async Task<Result> Handle(UpdateUserWindowCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на обновление UserWindow");
-        var userWindow = await userWIndowRepository.UpdateAsync(
+        _logger.LogInformation("Обработка запроса на обновление UserWindow в базе данных.");
+        var result = await userWIndowRepository.UpdateAsync(
             userWindowId: request.UserWindowId,
             windowId: request.WindowId,
             userId: request.UserId
             ) ;
-        if( userWindow.IsFailed) 
+        if(result.IsFailed) 
         {
-            _logger.LogError($"Ошибка при обновлении userWindow с id: {request.UserWindowId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления userWindow"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление UserWindow в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное обновление userWindow с id: {request.UserWindowId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
 
     }

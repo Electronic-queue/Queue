@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KDS.Primitives.FluentResult;
+using Microsoft.AspNetCore.Mvc;
 using Queue.Application.WindowStatuses.Commands.CreateWindowStatus;
 using Queue.Application.WindowStatuses.Commands.DeletWindowStatus;
 using Queue.Application.WindowStatuses.Commands.UpdateWIndowStatus;
@@ -6,7 +7,6 @@ using Queue.Application.WindowStatuses.Queries.GetWindowStatusById;
 using Queue.Application.WindowStatuses.Queries.GetWindowStatusList;
 using Queue.Domain.Entites;
 using Queue.WebApi.Contracts.WindowStatusContracts;
-using System.Net;
 
 namespace Queue.WebApi.Controllers;
 
@@ -14,9 +14,9 @@ namespace Queue.WebApi.Controllers;
 [Produces("application/json")]
 [Route("api/{apiversion:}/[controller]")]
 
-public class WindowStatusController : BaseController
+public class WindowStatusController(ILogger<WindowStatusController> _logger) : BaseController
 {
-    private readonly ILogger<WindowStatusController> _logger;
+
     /// <summary>
     /// Получить список всех окон
     /// </summary>
@@ -25,42 +25,56 @@ public class WindowStatusController : BaseController
     /// 
 
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<WindowStatus>> GetAll()
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<WindowStatus>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> GetAll()
+
     {
-        var correlationId = HttpContext.Items["CorrelationId"]?.ToString();
-
-        var query = new GetWindowStatusListQuery();
-
-        var vm = await Mediator.Send(query);
-        if(vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
-        }
+            _logger.LogInformation("Отправка запроса на чтение полного списка статуса окон.");
+            var query = new GetWindowStatusListQuery();
 
-        return Ok(vm);
-        //return ResultSucces.Success(vm);
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
+            //return ResultSucces.Success(vm);
+        }
     }
 
     /// <summary>
     /// Получить информацию о конкретном окне.
     /// </summary>
-    /// <param name="id">Идентификатор окна.</param>
+    /// <param name="windowStatusId">Идентификатор окна.</param>
     /// <returns>Возвращает детали окна.</returns>
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult> Get(int WindowStatusId)
+    [HttpGet("{windowStatusId}")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(WindowStatus))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Get(int windowStatusId)
     {
-        var query = new GetWindowStatusByIdQuery(WindowStatusId);
-        
-        var vm = await Mediator.Send(query);
-        if(vm.IsFailed)
+        var scope = new Dictionary<string, object>();
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(vm.Error);
+            _logger.LogInformation("Отправка запроса на чтение статуса окна с id {Id}", windowStatusId);
+            var query = new GetWindowStatusByIdQuery(windowStatusId);
+
+            var result = await Mediator.Send(query);
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(vm);
     }
 
     /// <summary>
@@ -70,18 +84,24 @@ public class WindowStatusController : BaseController
     /// <returns>Возвращает идентификатор созданного окна.</returns>
 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-
-    public async Task<ActionResult<int>> Create([FromBody] CreateWindowStatusDto createWindowStatusDto)
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
+    public async Task<IActionResult> Create([FromBody] CreateWindowStatusDto createWindowStatusDto)
     {
-        var command = Mapper.Map<CreateWindowStatusCommand>(createWindowStatusDto);
-        var windowStatusId = await Mediator.Send(command);
-        if (windowStatusId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "WindowStatusName", createWindowStatusDto.NameEn } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(windowStatusId.Error);
+            _logger.LogInformation("Отправка запроса на создание статуса окна");
+            var result = await Mediator.Send(Mapper.Map<CreateWindowStatusCommand>(createWindowStatusDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(windowStatusId);
 
     }
     /// <summary>
@@ -89,36 +109,49 @@ public class WindowStatusController : BaseController
     /// </summary>
     /// <param name="updateWindowStatusDto">Данные для обновления окна.</param>
     [HttpPut]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
 
     public async Task<IActionResult> Update([FromBody] UpdateWindowStatusDto updateWindowStatusDto)
     {
-        var command = Mapper.Map<UpdateWindowStatusCommand>(updateWindowStatusDto);
-        var windowStatusId = await Mediator.Send(command);
-        if (windowStatusId.IsFailed)
+        var scope = new Dictionary<string, object>() { { "WindowStatusId", updateWindowStatusDto.WindowStatusId } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(windowStatusId.Error);
+            _logger.LogInformation("Отправка запроса на обновление окна с id {Id}", updateWindowStatusDto.WindowStatusId);
+            var result = await Mediator.Send(Mapper.Map<UpdateWindowStatusCommand>(updateWindowStatusDto));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return Ok(result);
         }
-        return Ok(windowStatusId);
     }
     /// <summary>
     /// Удалить окно.
     /// </summary>
     /// <param name="id">Идентификатор окна.</param>
-    [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Result))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Result))]
     public async Task<IActionResult> Delete(int id)
     {
-        var command = await Mediator.Send(new DeleteWindowStatusCommand(id));
-        if(command.IsFailed)
+        var scope = new Dictionary<string, object>() { { "WindowStatusId", id } };
+        using (_logger.BeginScope(scope))
         {
-            return ProblemResponse(command.Error);
+            _logger.LogInformation("Отправка запроса на удаление статуса окна с id {Id}", id);
+            var result = await Mediator.Send(new DeleteWindowStatusCommand(id));
+            if (result.IsFailed)
+            {
+                _logger.LogError("Запрос вернул ошибку [{ErrorCode}] [{ErrorMessage}].", result.Error.Code, result.Error.Message);
+                return ProblemResponse(result.Error);
+            }
+            _logger.LogInformation("Запрос прошел успешно.");
+            return NoContent();
         }
-
-        return NoContent();
     }
 }
 

@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Queue.Domain.Common.Exceptions;
 using Queue.Domain.Interfaces;
+using Serilog.Core;
 
 namespace Queue.Application.ExceedingsTimes.Commands.DeleteExceedingsTime;
 
@@ -14,8 +15,8 @@ public class DeleteExceedingsTimeCommandHandler(IExceedingsTimeRepository timeRe
         var result = await timeRepository.DeleteAsync(request.ExceedingsTimeId);
         if(result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении времени отдыха с id: {request.ExceedingsTimeId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления времени отдыха"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление времени отдыха из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
         _logger.LogInformation($"Успешное удаление времени отдыха с id: {request.ExceedingsTimeId}.");
         return Result.Success();

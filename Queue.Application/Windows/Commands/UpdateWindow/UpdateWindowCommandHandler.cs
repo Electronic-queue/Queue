@@ -16,20 +16,20 @@ namespace Queue.Application.Windows.Commands.UpdateWindow
     {
         public async Task<Result> Handle(UpdateWindowCommand request,CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Запрос на обновление окна");
-            var window = await windowRepository.UpdateAsync(
+            _logger.LogInformation("Обработка запроса на обновление окна в базе данных.");
+            var result = await windowRepository.UpdateAsync(
                 windowId: request.WindowId,
                 windowNumber: request.WindowNumber,
                 windowStatusId: request.WindowStatusId,
                 createdBy:request.CreatedBy
                 );
            
-            if (window.IsFailed)
+            if (result.IsFailed)
             {
-                _logger.LogError($"Ошибка при обновлении окна с id: {request.WindowId}.");
-                return Result.Failure(new Error(Errors.BadRequest, "Ошибка обновления окна"));
+                _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на обновление окна в базе данных.", result.Error.Code);
+                return Result.Failure(result.Error);
             }
-            _logger.LogInformation($"Успешное обновление окна с id: {request.WindowId}.");
+            _logger.LogInformation("Запрос успешно обработан.");
             return Result.Success();
         }
     }

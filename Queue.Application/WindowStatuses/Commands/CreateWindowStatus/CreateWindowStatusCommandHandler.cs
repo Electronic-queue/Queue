@@ -12,7 +12,7 @@ public class CreateWindowStatusCommandHandler(IWindowStatusRepository windowStat
     private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
     public async Task<Result> Handle(CreateWindowStatusCommand request,CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на создание статуса окна");
+        _logger.LogInformation("Обработка запроса на создание нового статуса окна в базе данных.");
         var windowStatus = new WindowStatus
         {
             NameRu = request.NameRu,
@@ -27,10 +27,10 @@ public class CreateWindowStatusCommandHandler(IWindowStatusRepository windowStat
         var result=await windowStatusRepository.AddAsync(windowStatus);
         if(result.IsFailed)
         {
-            _logger.LogError($"Ошибка при создании статуса окна.");
-            return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления окна"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового статуса окна в базе данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное создание статуса окна");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
 
     }

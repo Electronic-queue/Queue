@@ -16,7 +16,7 @@ namespace Queue.Application.RecordStatus.Commands.CreateRecordStatus
         private static readonly TimeSpan UtcOffset = TimeSpan.FromHours(5);
         public async Task<Result> Handle(CreateRecordStatusCommand request,CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Запрос на создание статуса записи");
+            _logger.LogInformation("Обработка запроса на создание нового статуса записи в базе данных.");
             var recordStatus = new Domain.Entites.RecordStatus
             {
                 NameRu = request.NameRu,
@@ -29,12 +29,12 @@ namespace Queue.Application.RecordStatus.Commands.CreateRecordStatus
                 CreatedBy = request.CreatedBy
             };
             var result=await recordStatusRepository.AddAsync(recordStatus);
-            if (result is null)
+            if (result.IsFailed)
             {
-                _logger.LogError($"ошибка при создании статуса записи");
-                return Result.Failure<int>(new Error(Errors.BadRequest, "Ошибка добавления статуса записи"));
+                _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на создание нового статуса записи в базе данных.", result.Error.Code);
+                return Result.Failure(result.Error);
             }
-            _logger.LogInformation($"Успешное создание статуса записи");
+            _logger.LogInformation("Запрос успешно обработан.");
             return Result.Success();
         }
     }

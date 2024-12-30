@@ -10,14 +10,14 @@ public class DeleteUserWindowCommandHandler(IUserWindowRepository userWIndowRepo
 {
     public async Task<Result> Handle(DeleteUserWindowCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Запрос на удалениие userWindow");
+        _logger.LogInformation("Обработка запроса на удаление UserWindow из базы данных.");
         var result = await userWIndowRepository.DeleteAsync(request.UserWindowId);
         if (result.IsFailed)
         {
-            _logger.LogError($"Ошибка при удалении userWindow с id: {request.UserWindowId}.");
-            return Result.Failure(new Error(Errors.BadRequest, "Ошибка удаления userWindow"));
+            _logger.LogError("Ошибка [{ErrorCode}] при обработке запроса на удаление UserWindow из базы данных.", result.Error.Code);
+            return Result.Failure(result.Error);
         }
-        _logger.LogInformation($"Успешное удаление userWindow с id: {request.UserWindowId}.");
+        _logger.LogInformation("Запрос успешно обработан.");
         return Result.Success();
     }
 }
